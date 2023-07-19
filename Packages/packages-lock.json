@@ -12,6 +12,13 @@
       },
       "hash": "76f76584a113b240a4ec11f324b17302bde9a53a"
     },
+    "com.hwaet.projectcloner": {
+      "version": "https://github.com/hwaet/UnityProjectCloner.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f8c8347af3a144069dffd6120f1c4142f8120891"
+    },
     "com.readyplayerme.avatarloader": {
       "version": "https://github.com/readyplayerme/rpm-unity-sdk-avatar-loader.git#v1.3.4",
       "depth": 0,

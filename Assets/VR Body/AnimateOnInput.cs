@@ -14,7 +14,7 @@ public class AnimationInput
 public class AnimateOnInput : MonoBehaviour
 {
     public List<AnimationInput> animationInputs;
-    public Vector3 position;
+    //public Vector3 position;
     public Animator animator;
 
     // Update is called once per frame

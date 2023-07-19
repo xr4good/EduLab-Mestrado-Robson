@@ -26,7 +26,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         //instancia o avatar e recupera o seu controler
         if (XR.GetComponent<ActiveAvatar>().avatar != null)
         {
-            Destroy(XR.GetComponent<ActiveAvatar>().avatar);
+            PhotonNetwork.Destroy(XR.GetComponent<ActiveAvatar>().avatar);            
         }
 
         if(setup.player == "Player1")
