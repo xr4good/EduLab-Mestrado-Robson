@@ -6,8 +6,9 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
+using Photon.Pun;
 
-public class GetDataAPI : MonoBehaviour
+public class GetDataAPI : MonoBehaviourPunCallbacks
 {
     public Text emailText;
     public GameObject inGameToggle;
@@ -268,7 +269,11 @@ public class GetDataAPI : MonoBehaviour
             UserLoginData.usingHeadset = false;
         }
 
-
-        SceneManager.LoadScene("Laboratory");
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("Starting Game");
+            PhotonNetwork.LoadLevel(1);
+        }
+        //SceneManager.LoadScene("Laboratory");
     }
 }

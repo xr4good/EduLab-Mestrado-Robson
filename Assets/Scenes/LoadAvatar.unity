@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 3575
       objectReference: {fileID: 0}
+    - target: {fileID: 2078903666717338529, guid: 0275e05918fff584f9c23af7eed8e2ab, type: 3}
+      propertyPath: sceneViewId
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6130907640763748248, guid: 0275e05918fff584f9c23af7eed8e2ab, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -666,6 +670,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 946700191}
     m_Modifications:
+    - target: {fileID: -810676992996886792, guid: 39a31d7481b9bf04ab87cdcf9b8f30e3, type: 3}
+      propertyPath: sceneViewId
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 399750954721643570, guid: 39a31d7481b9bf04ab87cdcf9b8f30e3, type: 3}
       propertyPath: sceneViewId
       value: 9
@@ -855,6 +863,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1926794841}
     m_Modifications:
+    - target: {fileID: -810676992996886792, guid: 39a31d7481b9bf04ab87cdcf9b8f30e3, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 399750954721643570, guid: 39a31d7481b9bf04ab87cdcf9b8f30e3, type: 3}
       propertyPath: sceneViewId
       value: 5
@@ -1091,7 +1103,6 @@ MonoBehaviour:
   footOffset: {x: 0, y: 0, z: 0}
   footRotOffset: {x: 240, y: 180, z: 0}
   footYPosOffset: 0
-  footXPosOffset: -1.6
   rayStartYOffset: 0
   rayLength: 1.5
 --- !u!4 &812814518 stripped
@@ -1270,6 +1281,10 @@ PrefabInstance:
     - target: {fileID: 4937247071307422678, guid: 5b6092aa2dc70d34a9b05d7ce75ea41b, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 3575
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273770048601477356, guid: 5b6092aa2dc70d34a9b05d7ce75ea41b, type: 3}
+      propertyPath: sceneViewId
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5518090611524446808, guid: 5b6092aa2dc70d34a9b05d7ce75ea41b, type: 3}
       propertyPath: m_Enabled
@@ -1558,7 +1573,6 @@ MonoBehaviour:
   footOffset: {x: 0, y: 0, z: 0}
   footRotOffset: {x: 240, y: 180, z: 0}
   footYPosOffset: 0
-  footXPosOffset: -1.6
   rayStartYOffset: 0
   rayLength: 1.5
 --- !u!1 &874847911 stripped
@@ -2085,6 +2099,7 @@ MonoBehaviour:
         m_SingletonActionBindings: []
         m_Flags: 0
       m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  position: {x: 0, y: 0, z: 0}
   animator: {fileID: 1041286677}
 --- !u!114 &1041286680
 MonoBehaviour:

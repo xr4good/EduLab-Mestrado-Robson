@@ -3983,6 +3983,7 @@ GameObject:
   - component: {fileID: 6943178093232854151}
   - component: {fileID: -836665161620117312}
   - component: {fileID: -4661592119786073724}
+  - component: {fileID: 6572139200908805056}
   m_Layer: 0
   m_Name: Avatar0
   m_TagString: Untagged
@@ -4386,6 +4387,20 @@ MonoBehaviour:
   footOffset: {x: 0, y: 0.24, z: 0}
   raycastOffsetLeft: {x: 0, y: 0, z: 0}
   raycastOffsRight: {x: 0, y: 0, z: 0}
+--- !u!114 &6572139200908805056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019301001775906908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98785f4d3c3e93c4dbb4d415e19a93ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  animator: {fileID: 5590989445293971230}
 --- !u!1 &8042338186785914920
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 6039165204582882204}
   - component: {fileID: -4544975487197809673}
   - component: {fileID: 2029767311408268250}
+  - component: {fileID: 2990977934458019697}
   m_Layer: 0
   m_Name: Avatar2
   m_TagString: Untagged
@@ -454,6 +455,20 @@ MonoBehaviour:
   footOffset: {x: 0, y: 0.24, z: 0}
   raycastOffsetLeft: {x: 0, y: 0, z: 0}
   raycastOffsRight: {x: 0, y: 0, z: 0}
+--- !u!114 &2990977934458019697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130675964393310767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98785f4d3c3e93c4dbb4d415e19a93ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  animator: {fileID: 133062355674348677}
 --- !u!1 &189785866430954152
 GameObject:
   m_ObjectHideFlags: 0

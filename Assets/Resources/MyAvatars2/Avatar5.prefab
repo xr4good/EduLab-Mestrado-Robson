@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 2564878563199220802}
   - component: {fileID: 3024723184303418025}
   - component: {fileID: 1585957326220548168}
+  - component: {fileID: 4271627753946600644}
   m_Layer: 0
   m_Name: Avatar5
   m_TagString: Untagged
@@ -582,6 +583,20 @@ MonoBehaviour:
   footOffset: {x: 0, y: 0.24, z: 0}
   raycastOffsetLeft: {x: 0, y: 0, z: 0}
   raycastOffsRight: {x: 0, y: 0, z: 0}
+--- !u!114 &4271627753946600644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577838362902234577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98785f4d3c3e93c4dbb4d415e19a93ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  animator: {fileID: 8187888706174144890}
 --- !u!1 &799710815970315181
 GameObject:
   m_ObjectHideFlags: 0

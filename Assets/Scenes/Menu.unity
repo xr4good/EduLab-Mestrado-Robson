@@ -1314,7 +1314,6 @@ GameObject:
   m_Component:
   - component: {fileID: 414442004}
   - component: {fileID: 414442003}
-  - component: {fileID: 414442002}
   m_Layer: 0
   m_Name: RoomControler
   m_TagString: Untagged
@@ -1322,20 +1321,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &414442002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414442001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4575736daf82bd34892e2f0607e8ca04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  multiplayerSceneIndex: 0
-  joined: 0
 --- !u!114 &414442003
 MonoBehaviour:
   m_ObjectHideFlags: 0
