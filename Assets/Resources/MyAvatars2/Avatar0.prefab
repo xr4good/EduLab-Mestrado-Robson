@@ -4187,7 +4187,7 @@ MonoBehaviour:
   head:
     vrTarget: {fileID: 0}
     IKTarget: {fileID: 5690965810904823119}
-    trackingPositionOffset: {x: 0, y: -0.35, z: -0.03}
+    trackingPositionOffset: {x: 0, y: 0, z: -0.03}
     trackingRotationOffset: {x: 0, y: 0, z: 0}
     correction: {fileID: 0}
   leftHand:
@@ -4204,7 +4204,7 @@ MonoBehaviour:
     correction: {fileID: 0}
   turnSmoothness: 5
   IKHead: {fileID: 5690965810904823119}
-  headBodyOffset: {x: 0, y: -0.2, z: 0}
+  headBodyOffset: {x: 0, y: -1.65, z: 0}
   player: Player2
 --- !u!114 &1138807696066601299
 MonoBehaviour:
@@ -4371,7 +4371,6 @@ MonoBehaviour:
         m_SingletonActionBindings: []
         m_Flags: 0
       m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  position: {x: 0, y: 0, z: 0}
   animator: {fileID: 5590989445293971230}
 --- !u!114 &-4661592119786073724
 MonoBehaviour:
@@ -4386,11 +4385,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5590989445293971230}
-  leftFootPosWeight: 0.2
+  leftFootPosWeight: 0.18
   rightFootPosWeight: 0.18
   leftFootRotWeight: 0.08
   rightFootRotWeight: 0.12
-  footOffset: {x: 0, y: 0.24, z: 0}
+  footOffset: {x: 0, y: 0, z: 0}
   raycastOffsetLeft: {x: 0, y: 0, z: 0}
   raycastOffsRight: {x: 0, y: 0, z: 0}
 --- !u!114 &6572139200908805056
@@ -4405,7 +4404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98785f4d3c3e93c4dbb4d415e19a93ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   animator: {fileID: 5590989445293971230}
 --- !u!1 &8042338186785914920
 GameObject:
