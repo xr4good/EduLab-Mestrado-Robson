@@ -5,40 +5,41 @@ using UnityEngine;
 public class CheckCorreto : MonoBehaviour
 {
     
-    public GameObject bolaPrefab;   
-    private GameObject bola;
+    public List<GameObject> bolaPrefabs;   
+    //private GameObject bola;
     [SerializeField] private Vector3 posicaoInicial;
     public SequenciaAtiva sequencia;
+    [SerializeField] ParticleSystem smoke;
 
     private void Start()
     {
-        sequencia = gameObject.GetComponent<SequenciaAtiva>();
+        smoke.Stop();
+        //sequencia = gameObject.GetComponent<SequenciaAtiva>();
     }
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.GetComponent<NumeroBola>().numeroDaBola == sequencia.getProximo()){
-            int numero = other.GetComponent<NumeroBola>().numeroDaBola;
-            
+        int numero = other.GetComponent<NumeroBola>().numeroDaBola;
+        if (numero == sequencia.getProximo()){
 
-            bola = bolaPrefab;
-            bola.GetComponent<NumeroBola>().numeroDaBola = numero;
-            bola = Instantiate(bola, posicaoInicial, Quaternion.identity);
+            //Debug.Log("Número da Bola:" +  numero);
+            //bola = bolaPrefab;
+            //bola.GetComponent<NumeroBola>().numeroDaBola = numero;
+            Instantiate(bolaPrefabs[numero-1], posicaoInicial, Quaternion.identity);
 
             sequencia.updateProximo();
 
         }
         else
         {
-            int numero = other.GetComponent<NumeroBola>().numeroDaBola;
             
+            smoke.Play();
             Destroy(other.gameObject);
-            bola = bolaPrefab;
-            bola.GetComponent<NumeroBola>().numeroDaBola = numero;
-            bola = Instantiate(bola, posicaoInicial, Quaternion.identity);
+            //bola = bolaPrefab;
+            //bola.GetComponent<NumeroBola>().numeroDaBola = numero;
+            Instantiate(bolaPrefabs[numero-1], posicaoInicial, Quaternion.identity);
             
         }
 

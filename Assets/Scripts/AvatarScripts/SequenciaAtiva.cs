@@ -11,6 +11,11 @@ public class SequenciaAtiva : MonoBehaviour
     public Material mat;
     private int pos = 0;
 
+    private void Start()
+    {
+        updateProximo();
+    }
+
     public int getProximo()
     {
         return proximo;
