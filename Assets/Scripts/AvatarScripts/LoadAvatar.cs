@@ -20,7 +20,12 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
 
     public void AvatarChange()
     {
-        
+        //Caso ainda exista algum controle, o desativa.
+        if (XR.GetComponent<ActiveModel>().isActive)
+        {
+            XR.GetComponent<ActiveModel>().desativarModel();
+        }
+
         XR = setup.ActiveVR;
 
         //instancia o avatar e recupera o seu controler

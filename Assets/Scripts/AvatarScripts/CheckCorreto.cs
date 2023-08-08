@@ -5,9 +5,7 @@ using UnityEngine;
 public class CheckCorreto : MonoBehaviour
 {
     
-    public List<GameObject> bolaPrefabs;   
-    //private GameObject bola;
-    [SerializeField] private Vector3 posicaoInicial;
+    public List<GameObject> bolaPrefabs; 
     public SequenciaAtiva sequencia;
     [SerializeField] ParticleSystem smoke;
 
@@ -22,6 +20,7 @@ public class CheckCorreto : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         int numero = other.GetComponent<NumeroBola>().numeroDaBola;
+        Vector3 posicaoInicial = other.GetComponent<SphereFall>().posicaoInicial;
         if (numero == sequencia.getProximo()){
 
             //Debug.Log("Número da Bola:" +  numero);

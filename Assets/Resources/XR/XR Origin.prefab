@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3419459780870284847}
   - component: {fileID: 3419459780870284842}
   - component: {fileID: -8562825677785857629}
+  - component: {fileID: -4495615254988999012}
   m_Layer: 2
   m_Name: XR Origin
   m_TagString: Untagged
@@ -289,6 +290,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatar: {fileID: 0}
   player: 
+--- !u!114 &-4495615254988999012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988280611455067288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f1f5950bce3bd4db6e6a8ca575bbd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
+  controllers:
+  - {fileID: 8722193153788861857}
+  - {fileID: 8722193155609075009}
 --- !u!1 &8722193153788861882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Poke Interactor
       objectReference: {fileID: 0}
+    - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8259524632637961923, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.005
@@ -2035,6 +2056,10 @@ PrefabInstance:
     - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_Name
       value: Poke Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8259524632637961923, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_LocalPosition.x

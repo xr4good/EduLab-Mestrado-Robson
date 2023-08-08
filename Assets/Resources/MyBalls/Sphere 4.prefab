@@ -277,4 +277,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933abfc0ee3349c40897365dfac98758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posicaoInicial: {x: -21.954, y: -6.879, z: 0.458}
+  posicaoInicial: {x: -21.632, y: -6.866722, z: 0.16}
