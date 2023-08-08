@@ -130,10 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numeroDaBola: 2
-  mat1: {fileID: 2100000, guid: 25c863202111af64db9b8dc99aca774b, type: 2}
-  mat2: {fileID: 2100000, guid: 068b5bb677c19744595a2e291dde1c49, type: 2}
-  mat3: {fileID: 2100000, guid: c18f3007e9184104fbc1a67436eb0c61, type: 2}
-  mat4: {fileID: 2100000, guid: 52ab6691ea5c02041abd767af39dc199, type: 2}
 --- !u!114 &4465091613089503397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +148,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
