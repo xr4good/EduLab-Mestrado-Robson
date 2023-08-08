@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4575736daf82bd34892e2f0607e8ca04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplayerSceneIndex: 0
+  multiplayerSceneIndex: 1
   joined: 0
 --- !u!4 &414442004
 Transform:
@@ -5038,6 +5038,7 @@ MonoBehaviour:
   email: {fileID: 2004970799}
   emailSpinning: {fileID: 1777397137}
   quickStartRoomController: {fileID: 414442003}
+  isWorking: 0
 --- !u!4 &1960359903
 Transform:
   m_ObjectHideFlags: 0

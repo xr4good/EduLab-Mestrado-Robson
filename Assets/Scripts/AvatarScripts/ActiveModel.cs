@@ -16,7 +16,8 @@ public class ActiveModel : MonoBehaviour
         isActive = false;
         foreach (var controller in controllers)
         {        
-            controller.model = null;
+            controller.hideControllerModel = true;
+            
         }
     }
 }

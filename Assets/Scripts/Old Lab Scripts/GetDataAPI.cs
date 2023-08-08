@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
 using Photon.Pun;
+using UnityEditor.Experimental.GraphView;
 
 public class GetDataAPI : MonoBehaviourPunCallbacks
 {
@@ -51,11 +52,19 @@ public class GetDataAPI : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
 
 
+    public bool isWorking = false;
+
+
     void Start()
-    {
-        StartCoroutine(GetContent());
-        setTime = new System.Random().Next(1, 5);
-                Debug.Log(setTime);
+    {   
+        if (isWorking)
+        {
+            StartCoroutine(GetContent());
+            setTime = new System.Random().Next(1, 5);
+            Debug.Log(setTime);   
+        }        
+        
+        
 
     }
 
@@ -72,7 +81,12 @@ public class GetDataAPI : MonoBehaviourPunCallbacks
         }
     }
     public void checkMailValid(){
-         StartCoroutine(verifyMail());
+        if (isWorking)
+        {
+            StartCoroutine(verifyMail());
+        }
+        
+         
     }
 
     IEnumerator verifyMail(){
@@ -269,11 +283,18 @@ public class GetDataAPI : MonoBehaviourPunCallbacks
             UserLoginData.usingHeadset = false;
         }
 
+        LoadLaboratorio();
+
+        
+        //SceneManager.LoadScene("Laboratory");
+    }
+
+    public void LoadLaboratorio()
+    {
         if (PhotonNetwork.IsMasterClient)
         {
             Debug.Log("Starting Game");
             PhotonNetwork.LoadLevel(1);
         }
-        //SceneManager.LoadScene("Laboratory");
     }
 }

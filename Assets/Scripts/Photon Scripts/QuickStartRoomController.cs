@@ -7,6 +7,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
 {
     [SerializeField] private int multiplayerSceneIndex; //Number for the build index to the multiplay scene
     public bool joined = false;
+    [SerializeField] private GameObject ButtonEntrar;
 
     public override void OnEnable()
     {
@@ -21,8 +22,10 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Joined Room");
-        //StartGame();
+        StartGame();
         joined = true;
+        ButtonEntrar.SetActive(true);
+
     }
 
     public void StartGame()

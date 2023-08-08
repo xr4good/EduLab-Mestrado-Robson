@@ -20,6 +20,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
 
     public void AvatarChange()
     {
+        XR = GameObject.FindGameObjectWithTag("Player");
         //Caso ainda exista algum controle, o desativa.
         if (XR.GetComponent<ActiveModel>().isActive)
         {
