@@ -6,7 +6,14 @@ public class ActiveAvatar : MonoBehaviour
 {
     public GameObject avatar;
     public string player;
-    
-    // Start is called before the first frame update
-  
+    [SerializeField] ActiveModel activeModel;
+
+    private void Update()
+    {      
+        if (avatar != null)
+        {
+            activeModel.desativarModel();
+        }
+    }
+
 }

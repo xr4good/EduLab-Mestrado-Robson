@@ -1,7 +1,9 @@
 using UnityEngine;
 using Photon.Pun;
 using System.IO;
-
+using UnityEngine.XR.Interaction.Toolkit;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class GameSetupController : MonoBehaviour
 {
@@ -13,15 +15,15 @@ public class GameSetupController : MonoBehaviour
     public GameObject ActiveVR;
     private GameObject Mirror;
     public string player;
-    
-
-    
+    [SerializeField] List<GameObject> gameObjects;
+        
 
 
     // Start is called before the first frame update
     void Start()
     {
         CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
+        AtivateTeleportationArea();
         
     }
 
@@ -100,6 +102,16 @@ public class GameSetupController : MonoBehaviour
             vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
             */
 
+        }
+
+    }
+
+    private void AtivateTeleportationArea()
+    {
+
+        foreach(GameObject obj in gameObjects)
+        {
+            obj.SetActive(true);
         }
 
     }
