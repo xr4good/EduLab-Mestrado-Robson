@@ -15,7 +15,8 @@ public class GameSetupController : MonoBehaviour
     public GameObject ActiveVR;
     private GameObject Mirror;
     public string player;
-    [SerializeField] List<GameObject> gameObjects;
+    [SerializeField] List<GameObject> teleportAreas;
+    [SerializeField] List<StartSphere> startSpheres;
         
 
 
@@ -53,6 +54,11 @@ public class GameSetupController : MonoBehaviour
             vRMirror.cameraTransform.originTransform = mainCamera.transform;
             vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
             vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
+
+            foreach(StartSphere startSphere in startSpheres)
+            {
+                startSphere.CreateSpheres();
+            }
 
         }
         else if(PhotonNetwork.CountOfPlayers == 2)
@@ -109,7 +115,7 @@ public class GameSetupController : MonoBehaviour
     private void AtivateTeleportationArea()
     {
 
-        foreach(GameObject obj in gameObjects)
+        foreach(GameObject obj in teleportAreas)
         {
             obj.SetActive(true);
         }

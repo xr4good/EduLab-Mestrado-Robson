@@ -1,19 +1,39 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-public class StartSphere : MonoBehaviour
-{
 
-    [SerializeField] List<GameObject> sphereList = new List<GameObject>();
-    // Start is called before the first frame update
-    void Start()
+[System.Serializable]
+public class ballPosition
+{
+    public GameObject sphere;
+    public SphereFall  posicaoInicial;
+    public string pasta;
+    public string numero;
+
+    public void InstaciateSphere()
     {
-        for (int i = 0; i < sphereList.Count; i++)
-        {
-            Vector3 pos = sphereList[i].GetComponent<SphereFall>().posicaoInicial;
-            Instantiate(sphereList[i], pos, Quaternion.identity);
-        }
+        PhotonNetwork.Instantiate(Path.Combine(pasta, "Sphere " + numero), posicaoInicial.posicaoInicial, Quaternion.identity);
+    }
+
+
+}
+public class StartSphere : MonoBehaviourPunCallbacks
+{
+    [SerializeField] public ballPosition sphere1;
+    [SerializeField] public ballPosition sphere2;
+    [SerializeField] public ballPosition sphere3;
+    [SerializeField] public ballPosition sphere4;
+
+    
+    public void CreateSpheres()
+    {
+        sphere1.InstaciateSphere();
+        sphere2.InstaciateSphere();
+        sphere3.InstaciateSphere();
+        sphere4.InstaciateSphere();
     }
 }
 
