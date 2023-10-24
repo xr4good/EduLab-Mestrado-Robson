@@ -17,15 +17,37 @@ public class GameSetupController : MonoBehaviour
     public string player;
     [SerializeField] List<GameObject> teleportAreas;
     [SerializeField] List<StartSphere> startSpheres;
-        
-
+    private int gameTipe;
 
     // Start is called before the first frame update
     void Start()
     {
         CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
         AtivateTeleportationArea();
-        
+        gameTipe = SetGameConfig.gameConfig;
+
+        /*switch (gameTipe)
+        {
+            
+            case 1: //perto ob individual / perto ob  Grupo
+            case 2: //perto ob individual  / longe ob Grupo
+            case 3: //perto ob individual  / perto cp Grupo
+            case 4: //perto ob individual  / longe cp Grupo
+            case 5: //perto ob individual / perto ob Grupo
+            case 6: //perto ob individual / longe ob Grupo
+            case 7: //perto ob individual / perto cp Grupo                   
+            case 8: //longe ob individual / longe cp Grupo
+            case 9: //perto cp individual / perto ob Grupo                
+            case 10: //perto cp individual / longe ob Grupo
+            case 11: //perto cp individual / perto cp Grupo
+            case 12: //perto cp individual / longe cp Grupo
+            case 13: //longe cp individual / perto ob Grupo
+            case 14: //longe cp individual / longe ob Grupo                   
+            case 15: //longe cp individual / perto cp Grupo
+            case 16: //longe cp individual / longe cp Grupo
+                        
+
+        }*/
     }
 
 

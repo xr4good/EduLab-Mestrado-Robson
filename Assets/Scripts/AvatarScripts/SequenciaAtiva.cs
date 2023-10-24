@@ -10,6 +10,7 @@ public class SequenciaAtiva : MonoBehaviour
     public GameObject tubo;
     public Material mat;
     private int pos = 0;
+    public bool concluido = false;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class SequenciaAtiva : MonoBehaviour
         else
         {
             tubo.GetComponent<Renderer>().material = mat;
+            concluido=true;
 
         }
     }

@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
-using System.Runtime.CompilerServices;
-
+using UnityEngine.UI;
 
 public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject quickStartButton;
     [SerializeField] private GameObject quickCancelButton;
     [SerializeField] private int roomSize;
+    public Slider slider;
+    public GameObject painel;
 
     //Callback function for when first connection is estabilish
     public override void OnConnectedToMaster()
@@ -21,10 +21,19 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     public void QuickStart() //Paired to the Quick Start Button
     {
-        quickStartButton.SetActive(false);
-        quickCancelButton.SetActive(true);
-        PhotonNetwork.JoinRoom("Lab"); //First tries to join an existing room
-        Debug.Log("Quick Start");
+        SetGameConfig.gameConfig = (int)slider.value;
+        if(SetGameConfig.gameConfig > 0)
+        {
+            quickStartButton.SetActive(false);
+            quickCancelButton.SetActive(true);
+            PhotonNetwork.JoinRoom("Lab"); //First tries to join an existing room
+            Debug.Log("Quick Start");
+        }
+        else
+        {
+            painel.SetActive(true);
+        }
+        
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message) //
