@@ -12,6 +12,12 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     public Slider slider;
     public GameObject painel;
 
+    public Toggle check;
+    public Toggle distancia;
+    public Toggle posicaoInicial;
+    public Toggle sequencia;
+    public Toggle corpo;
+
     //Callback function for when first connection is estabilish
     public override void OnConnectedToMaster()
     {
@@ -21,9 +27,14 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     public void QuickStart() //Paired to the Quick Start Button
     {
-        SetGameConfig.gameConfig = (int)slider.value;
-        if(SetGameConfig.gameConfig > 0)
+        
+        if(check.isOn)
         {
+            SetGameConfig.DISTANCIA = distancia.isOn;
+            SetGameConfig.CORPO = corpo.isOn;
+            SetGameConfig.SEQUENCIA = sequencia.isOn;
+            SetGameConfig.POSICAOINICAL = posicaoInicial.isOn;
+
             quickStartButton.SetActive(false);
             quickCancelButton.SetActive(true);
             PhotonNetwork.JoinRoom("Lab"); //First tries to join an existing room

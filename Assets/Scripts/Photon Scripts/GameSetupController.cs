@@ -8,9 +8,10 @@ using System.Collections.Generic;
 public class GameSetupController : MonoBehaviour
 {
 
-    [SerializeField]    private Vector3 pos1;
-    [SerializeField]    private Vector3 pos2;
-    [SerializeField]    private Vector3 pos3;
+    [SerializeField]    private Vector3 pos1; //posicao player 1
+    [SerializeField]    private Vector3 pos2; //posicao player 2, caso individual
+    [SerializeField]    private Vector3 pos3; // posicao player 2, caso grupo
+    [SerializeField] private Vector3 pos4; //posicao tutor
     public GameObject XRPrefab;
     public GameObject ActiveVR;
     private GameObject Mirror;
@@ -24,30 +25,7 @@ public class GameSetupController : MonoBehaviour
     {
         CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
         AtivateTeleportationArea();
-        gameTipe = SetGameConfig.gameConfig;
-
-        /*switch (gameTipe)
-        {
-            
-            case 1: //perto ob individual / perto ob  Grupo
-            case 2: //perto ob individual  / longe ob Grupo
-            case 3: //perto ob individual  / perto cp Grupo
-            case 4: //perto ob individual  / longe cp Grupo
-            case 5: //perto ob individual / perto ob Grupo
-            case 6: //perto ob individual / longe ob Grupo
-            case 7: //perto ob individual / perto cp Grupo                   
-            case 8: //longe ob individual / longe cp Grupo
-            case 9: //perto cp individual / perto ob Grupo                
-            case 10: //perto cp individual / longe ob Grupo
-            case 11: //perto cp individual / perto cp Grupo
-            case 12: //perto cp individual / longe cp Grupo
-            case 13: //longe cp individual / perto ob Grupo
-            case 14: //longe cp individual / longe ob Grupo                   
-            case 15: //longe cp individual / perto cp Grupo
-            case 16: //longe cp individual / longe cp Grupo
-                        
-
-        }*/
+                
     }
 
 
@@ -88,8 +66,16 @@ public class GameSetupController : MonoBehaviour
 
             UnityEngine.Debug.Log("Creating Player 2");
 
-            //Instanciate XROrigin            
-            ActiveVR = Instantiate(XRPrefab, pos2, Quaternion.identity);
+            //Instanciate XROrigin
+            if (SetGameConfig.POSICAOINICAL)
+            {
+                ActiveVR = Instantiate(XRPrefab, pos2, Quaternion.identity);
+            }
+            else
+            {
+                ActiveVR = Instantiate(XRPrefab, pos3, Quaternion.identity);
+            }
+            
             ActiveVR.GetComponent<ActiveAvatar>().player = "Player2";
             player = "Player2";
 
@@ -113,7 +99,7 @@ public class GameSetupController : MonoBehaviour
 
             /*
             //Instanciate XROrigin            
-            ActiveVR = Instantiate(XRPrefab, pos3, Quaternion.identity);
+            ActiveVR = Instantiate(XRPrefab, pos4, Quaternion.identity);
             ActiveVR.GetComponent<ActiveAvatar>().player = "Player3";
             player = "Player3";
 
@@ -123,7 +109,7 @@ public class GameSetupController : MonoBehaviour
             mainCamera.GetComponent<AudioListener>().enabled = true;
 
             //Instanciate VR Rig Mirror
-            Mirror = PhotonNetwork.Instantiate(Path.Combine("XR", "VRRigMirror3"), pos3, Quaternion.identity);
+            Mirror = PhotonNetwork.Instantiate(Path.Combine("XR", "VRRigMirror3"), pos4, Quaternion.identity);
             VRMirror vRMirror = Mirror.GetComponent<VRMirror>();
             vRMirror.cameraTransform.originTransform = mainCamera.transform;
             vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
