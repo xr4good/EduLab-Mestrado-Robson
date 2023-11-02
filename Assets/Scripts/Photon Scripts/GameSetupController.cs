@@ -67,13 +67,13 @@ public class GameSetupController : MonoBehaviour
             UnityEngine.Debug.Log("Creating Player 2");
 
             //Instanciate XROrigin
-            if (SetGameConfig.POSICAOINICAL)
+            if (SetGameConfig.JUNTO)
             {
-                ActiveVR = Instantiate(XRPrefab, pos2, Quaternion.identity);
+                ActiveVR = Instantiate(XRPrefab, pos2, Quaternion.identity);  // jogando junto
             }
             else
             {
-                ActiveVR = Instantiate(XRPrefab, pos3, Quaternion.identity);
+                ActiveVR = Instantiate(XRPrefab, pos3, Quaternion.identity); // jogando separado
             }
             
             ActiveVR.GetComponent<ActiveAvatar>().player = "Player2";

@@ -2,9 +2,10 @@ using UnityEngine.UI;
 
 public class SetGameConfig
 {
-    public static bool DISTANCIA = false;
-    public static bool CORPO = false;
-    public static bool POSICAOINICAL = false;
-    public static bool SEQUENCIA = false;
+    public static bool DISTANCIA = false;       // true prof perto, false prof longe
+    public static bool CORPO = false;           // true corpo, false obj
+    public static bool JUNTO = false;           // true player2 junto, false player 2 separado
+    public static bool SEQUENCIA = false;       //true seq1, false seq 2
+    public static bool PRIMEIROEXPERIMENTO = true; //true se primeiro experimento, false se segundo.
 
 }

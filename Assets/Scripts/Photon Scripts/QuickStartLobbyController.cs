@@ -33,7 +33,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
             SetGameConfig.DISTANCIA = distancia.isOn;
             SetGameConfig.CORPO = corpo.isOn;
             SetGameConfig.SEQUENCIA = sequencia.isOn;
-            SetGameConfig.POSICAOINICAL = posicaoInicial.isOn;
+            SetGameConfig.JUNTO = posicaoInicial.isOn;
 
             quickStartButton.SetActive(false);
             quickCancelButton.SetActive(true);
