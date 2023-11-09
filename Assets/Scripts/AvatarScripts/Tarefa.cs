@@ -7,8 +7,8 @@ public class Tarefa : MonoBehaviour
     public SequenciaAtiva tubo1;
     public SequenciaAtiva tubo2;
 
-    public GameObject fogos;
-    public ParticleSystem fogosArtificio;
+    public GameObject fogos;   
+    public GameObject limpar;    
 
     [SerializeField] private List<int> sequencia1 = new List<int>() { 1, 1, 2, 2 };
     [SerializeField] private List<int> sequencia2 = new List<int>() { 2, 2, 1, 1 };
@@ -18,7 +18,7 @@ public class Tarefa : MonoBehaviour
     [SerializeField] private List<int> sequencia5 = new List<int>() { 4, 2, 4, 2 };
     [SerializeField] private List<int> sequencia6 = new List<int>() { 3, 1, 3, 1 };
     [SerializeField] private List<int> sequencia7 = new List<int>() { 4, 3, 4, 3 };
-    [SerializeField] private List<int> sequencia8 = new List<int>() { 3, 4, 3, 4 };
+    [SerializeField] private List<int> sequencia8 = new List<int>() { 1, 2, 1, 2 };
 
     private int contConcluidos = 0;
 
@@ -27,33 +27,17 @@ public class Tarefa : MonoBehaviour
 
     private void Start()
     {
-        if (SetGameConfig.PRIMEIROEXPERIMENTO)
+        if (SetGameConfig.SEQUENCIA)
         {
-            if (SetGameConfig.SEQUENCIA)
-            {
-                tubo1.sequencia = sequencia1;
-                tubo2.sequencia = sequencia1;
-            }
-            else
-            {
-                tubo1.sequencia = sequencia5;
-                tubo2.sequencia = sequencia5;
-            }
+            tubo1.sequencia = sequencia1;
+            tubo2.sequencia = sequencia2;
         }
         else
         {
-            if (SetGameConfig.SEQUENCIA)
-            {
-                tubo1.sequencia = sequencia3;
-                tubo2.sequencia = sequencia3;
-            }
-            else
-            {
-                tubo1.sequencia = sequencia7;
-                tubo2.sequencia = sequencia7;
-            }
+            tubo1.sequencia = sequencia5;
+            tubo2.sequencia = sequencia6;
         }
-        
+
     }
 
    
@@ -64,65 +48,41 @@ public class Tarefa : MonoBehaviour
             contConcluidos++;            //conta quantas sequencias foram concluídas
 
             
-
-            if (contConcluidos == 2)
+            if (contConcluidos == 2)  //se tiver concluído a segunda sequencia ativa os fogos e abre a msg
             {
-                fogos.SetActive(true);
-                fogosArtificio.Play();
-                EncerrarExperimento();
+                fogos.SetActive(true);             
+                painelFinalExperimento.SetActive(true);
             }
-            else
+            else                       //se não abre o painel do meio
             {
-                TrocarSequencia();
+                painelMeioExperimento.SetActive(true);
             }       
-
             
         }
     }
+    
 
-    void EncerrarExperimento()
-    {
-        if (SetGameConfig.PRIMEIROEXPERIMENTO)
+    
+    public void TrocarSequencia()
+    { 
+        limpar.SetActive(true);    //ativa animação de limpar
+                
+        tubo1.resertarTubo();      //resta cor e tira as bolinhas do tubo
+        tubo2.resertarTubo();
+
+        if (SetGameConfig.SEQUENCIA)   //coloca a segunda sequencia
         {
-            painelMeioExperimento.SetActive(true);
-            TrocarSequencia();
+            tubo1.sequencia = sequencia3;
+            tubo2.sequencia = sequencia4;
         }
         else
         {
-            painelFinalExperimento.SetActive(true);
+            tubo1.sequencia = sequencia7;
+            tubo2.sequencia = sequencia8;
         }
-    }
 
-    void TrocarSequencia()
-    {
-        tubo1.concluido = false;
-        tubo2.concluido = false;
-        if(SetGameConfig.PRIMEIROEXPERIMENTO)
-        {
-            if (SetGameConfig.SEQUENCIA)
-            {
-                tubo1.sequencia = sequencia2;
-                tubo2.sequencia = sequencia2;
-            }
-            else
-            {
-                tubo1.sequencia = sequencia6;
-                tubo2.sequencia = sequencia6;
-            }
-        }
-        else
-        {
-            if (SetGameConfig.SEQUENCIA)
-            {
-                tubo1.sequencia = sequencia4;
-                tubo2.sequencia = sequencia4;
-            }
-            else
-            {
-                tubo1.sequencia = sequencia8;
-                tubo2.sequencia = sequencia8;
-            }
-        }
-        
+
+
+
     }
 }

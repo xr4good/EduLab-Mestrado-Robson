@@ -9,7 +9,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject quickStartButton;
     [SerializeField] private GameObject quickCancelButton;
     [SerializeField] private int roomSize;
-    public Slider slider;
+    
     public GameObject painel;
 
     public Toggle check;

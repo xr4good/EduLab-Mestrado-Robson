@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class CheckCorreto : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class CheckCorreto : MonoBehaviour
     private void Start()
     {
         smoke.Stop();
-        //sequencia = gameObject.GetComponent<SequenciaAtiva>();
+        
     }
 
 
@@ -23,12 +24,14 @@ public class CheckCorreto : MonoBehaviour
         Vector3 posicaoInicial = other.GetComponent<SphereFall>().posicaoInicial;
         if (numero == sequencia.getProximo()){
 
-            //Debug.Log("Número da Bola:" +  numero);
-            //bola = bolaPrefab;
-            //bola.GetComponent<NumeroBola>().numeroDaBola = numero;
-            Instantiate(bolaPrefabs[numero-1], posicaoInicial, Quaternion.identity);
+            if (!other.GetComponent<XRGrabInteractable>().isActiveAndEnabled)
+            {
+                Instantiate(bolaPrefabs[numero - 1], posicaoInicial, Quaternion.identity);
+                sequencia.tuboList.Add(other.gameObject);
+                sequencia.updateProximo();
 
-            sequencia.updateProximo();
+                other.GetComponent<XRGrabInteractable>().enabled = false;
+            }            
 
         }
         else
@@ -36,16 +39,10 @@ public class CheckCorreto : MonoBehaviour
             
             smoke.Play();
             Destroy(other.gameObject);
-            //bola = bolaPrefab;
-            //bola.GetComponent<NumeroBola>().numeroDaBola = numero;
             Instantiate(bolaPrefabs[numero-1], posicaoInicial, Quaternion.identity);
             
         }
 
     }
-    
-    IEnumerator WaitBall()
-    {
-        yield return new WaitForSeconds(5);
-    }
+
 }
