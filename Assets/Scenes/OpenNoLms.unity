@@ -332,7 +332,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PosInicial
+  m_Text: Junto
 --- !u!222 &75988905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sequencia
+  m_Text: Sequencia1
 --- !u!222 &245281559
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3369,9 +3369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Distancia
-
-'
+  m_Text: Perto
 --- !u!222 &1885268554
 CanvasRenderer:
   m_ObjectHideFlags: 0
