@@ -25,18 +25,24 @@ public class Tarefa : MonoBehaviour
     public GameObject painelMeioExperimento;
     public GameObject painelFinalExperimento;
 
+
+
     private void Start()
     {
         if (SetGameConfig.SEQUENCIA1)
         {
             tubo1.sequencia = sequencia1;
             tubo2.sequencia = sequencia2;
+            
         }
         else
         {
             tubo1.sequencia = sequencia5;
             tubo2.sequencia = sequencia6;
         }
+
+        tubo1.updateProximo();
+        tubo2.updateProximo();
 
     }
 
@@ -45,29 +51,41 @@ public class Tarefa : MonoBehaviour
     {
        if (tubo1.concluido & tubo2.concluido) 
         {
-            contConcluidos++;            //conta quantas sequencias foram concluídas
-
-            
-            if (contConcluidos == 2)  //se tiver concluído a segunda sequencia ativa os fogos e abre a msg
+                   
+            if (contConcluidos == 2 )  //se tiver concluído a segunda sequencia ativa os fogos e abre a msg
             {
-                fogos.SetActive(true);             
-                painelFinalExperimento.SetActive(true);
+                chamarPaineldeFim();
             }
             else                       //se não abre o painel do meio
             {
-                painelMeioExperimento.SetActive(true);
+                chamarPaineldeMeio();
             }       
             
         }
+    }
+
+    void chamarPaineldeMeio()
+    {
+        painelMeioExperimento.SetActive(true);
+        tubo1.concluido = false;
+        tubo2.concluido = false;
+        contConcluidos++;
+    }
+
+    void chamarPaineldeFim()
+    {
+        fogos.SetActive(true);
+        painelFinalExperimento.SetActive(true);
     }
     
 
     
     public void TrocarSequencia()
     { 
-        limpar.SetActive(true);    //ativa animação de limpar
+        limpar.SetActive(true);                //ativa animação de limpar
+        StartCoroutine(AguardarParaFechar());  //Desativa depois de 3s
                 
-        tubo1.resertarTubo();      //resta cor e tira as bolinhas do tubo
+        tubo1.resertarTubo();      //reseta cor e tira as bolinhas do tubo
         tubo2.resertarTubo();
 
         if (SetGameConfig.SEQUENCIA1)   //coloca a segunda sequencia
@@ -81,8 +99,16 @@ public class Tarefa : MonoBehaviour
             tubo2.sequencia = sequencia8;
         }
 
+        tubo1.updateProximo();
+        tubo2.updateProximo();
 
 
 
+    }
+
+    IEnumerator AguardarParaFechar()
+    {
+        yield return new WaitForSeconds(3);
+        limpar.SetActive(false);
     }
 }

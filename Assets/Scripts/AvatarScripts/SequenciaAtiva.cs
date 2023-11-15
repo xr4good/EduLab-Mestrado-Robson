@@ -16,11 +16,6 @@ public class SequenciaAtiva : MonoBehaviour
 
     public List<GameObject> tuboList = new List<GameObject>(); 
 
-    private void Start()
-    {
-        updateProximo();
-    }
-
     public int getProximo()
     {
         return proximo;
@@ -46,6 +41,7 @@ public class SequenciaAtiva : MonoBehaviour
         concluido = false;
         tuboList.ForEach(gameObject => Destroy(gameObject));
         tubo.GetComponent<Renderer>().material = materialNormal;
+        pos = 0;
     }
 
 }

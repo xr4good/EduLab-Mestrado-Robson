@@ -4138,6 +4138,7 @@ MonoBehaviour:
         m_SingletonActionBindings: []
         m_Flags: 0
       m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  position: {x: 0, y: 0, z: 0}
   animator: {fileID: 5590989445293971230}
 --- !u!114 &-4661592119786073724
 MonoBehaviour:
