@@ -17,7 +17,7 @@ public class Tarefa : MonoBehaviour
 
     [SerializeField] private List<int> sequencia5 = new List<int>() { 4, 2, 4, 2 };
     [SerializeField] private List<int> sequencia6 = new List<int>() { 3, 1, 3, 1 };
-    [SerializeField] private List<int> sequencia7 = new List<int>() { 4, 3, 4, 3 };
+    [SerializeField] private List<int> sequencia7 = new List<int>() { 3, 4, 3, 4 };
     [SerializeField] private List<int> sequencia8 = new List<int>() { 1, 2, 1, 2 };
 
     private int contConcluidos = 0;
@@ -52,7 +52,7 @@ public class Tarefa : MonoBehaviour
        if (tubo1.concluido & tubo2.concluido) 
         {
                    
-            if (contConcluidos == 2 )  //se tiver concluído a segunda sequencia ativa os fogos e abre a msg
+            if (contConcluidos == 1 )  //se tiver concluído a segunda sequencia ativa os fogos e abre a msg
             {
                 chamarPaineldeFim();
             }

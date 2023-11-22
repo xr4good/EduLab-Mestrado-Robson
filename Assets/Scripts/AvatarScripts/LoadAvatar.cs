@@ -17,9 +17,10 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
     //public VRTargetsPosition positions;
     //public int nplayer;
 
-
-    public void AvatarChange()
+    IEnumerator trocarAvatar()
     {
+        yield return new WaitForSeconds(2);
+
         XR = GameObject.FindGameObjectWithTag("Player");
 
         XR = setup.ActiveVR;
@@ -27,10 +28,10 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         //instancia o avatar e recupera o seu controler
         if (XR.GetComponent<ActiveAvatar>().avatar != null)
         {
-            PhotonNetwork.Destroy(XR.GetComponent<ActiveAvatar>().avatar);            
+            PhotonNetwork.Destroy(XR.GetComponent<ActiveAvatar>().avatar);
         }
 
-        
+
 
         if (setup.player == "Player1")
         {
@@ -43,10 +44,10 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         else
         {
 
-        }       
-        
+        }
+
         AvatarController control = avatar.GetComponent<AvatarController>();
-        
+
 
         //troca o layer dos componentes que serão invisíveis para a camera
         NotSeeHead notSeeHead = avatar.GetComponent<NotSeeHead>();
@@ -56,7 +57,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         //Trocando o que a câmera pode ver       
         Transform cameraOffSet = XR.transform.Find("CameraOffset");
         Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
-        Camera camera = mainCamera.GetComponent <Camera>();
+        Camera camera = mainCamera.GetComponent<Camera>();
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer(notSeeHead.IgnoreLayer));
 
 
@@ -78,7 +79,11 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         photonAnimatorView.SetParameterSynchronized("Right Grab", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("isMoving", PhotonAnimatorView.ParameterType.Bool, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("animSpeed", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+    }
 
+    public void AvatarChange()
+    {
+        StartCoroutine(trocarAvatar());
 
     }
 

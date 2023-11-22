@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 public class MoveToLab : MonoBehaviour
@@ -7,19 +8,16 @@ public class MoveToLab : MonoBehaviour
     [SerializeField] Vector3 posicao2;
     [SerializeField] Vector3 posicao3;
 
-    public bool isDupla = false;
+    public GameObject load1;
+    public GameObject load2;
 
-    private void Start()
-    {
-        isDupla = SetGameConfig.JUNTO;
-    }
-
-    public void Teleporte()
+   
+    /*public void Teleporte()
     {
         GameObject XR = GameObject.FindGameObjectWithTag("Player");
         ActiveAvatar activeAvatar = XR.GetComponent<ActiveAvatar>();
 
-        if (isDupla)
+        if (SetGameConfig.JUNTO)
         {
             if (activeAvatar.player.Equals("Player1"))
             {
@@ -41,5 +39,40 @@ public class MoveToLab : MonoBehaviour
                 XR.transform.position = posicao3;
             }
         }
+    }*/
+
+    public void LoadScene1()
+    {
+        StartCoroutine(aoPressionar1());
+    }
+    public void LoadScene2()
+    {
+        StartCoroutine(aoPressionar2());
+    }
+
+    IEnumerator aoPressionar2()
+    {
+        yield return new WaitForSeconds(2);
+        GameObject XR = GameObject.FindGameObjectWithTag("Player");
+        ActiveAvatar activeAvatar = XR.GetComponent<ActiveAvatar>();
+        if (SetGameConfig.JUNTO)
+        {
+            XR.transform.position = posicao2;
+        }
+        else
+        {
+            XR.transform.position = posicao3;
+        }
+        load2.SetActive(false);
+
+    }
+
+    IEnumerator aoPressionar1()
+    {
+        yield return new WaitForSeconds(2);
+        GameObject XR = GameObject.FindGameObjectWithTag("Player");
+        ActiveAvatar activeAvatar = XR.GetComponent<ActiveAvatar>();
+        XR.transform.position = posicao1;
+        load1.SetActive(false);
     }
 }
