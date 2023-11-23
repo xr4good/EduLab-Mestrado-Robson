@@ -11,6 +11,7 @@ public class GameSetupController : MonoBehaviour
     [SerializeField]    private Vector3 pos3; // posicao tutor
     
     
+
     public GameObject XRPrefab;
     public GameObject ActiveVR;
     private GameObject Mirror;
@@ -23,13 +24,16 @@ public class GameSetupController : MonoBehaviour
     private int gameTipe;
     private int n;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         n = PhotonNetwork.CountOfPlayers;
         CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
         AtivateTeleportationArea(); //ativa as áreas de teleporte
-        CriarEsferas(n); //cria as esferas e a bancada de acordo                
+        CriarEsferas(n); //cria as esferas e a bancada de acordo
+
     }
 
 
@@ -81,6 +85,8 @@ public class GameSetupController : MonoBehaviour
         }
         
     }
+
+  
 
     private Vector3 pos(int n)
     {
