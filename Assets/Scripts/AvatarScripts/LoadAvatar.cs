@@ -68,6 +68,8 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
 
         //Informa qual o avatar ativo para o XR
         XR.GetComponent<ActiveAvatar>().avatar = avatar;
+        avatar.GetComponent<AnimateOnInput>().ativeAvatar = XR.GetComponent<ActiveAvatar>();
+        avatar.GetComponent<AvatarAnimationController>().enabled = true;
 
         PhotonAnimatorView photonAnimatorView = avatar.GetComponent<PhotonAnimatorView>();
         photonAnimatorView.SetLayerSynchronized(0, PhotonAnimatorView.SynchronizeType.Discrete);

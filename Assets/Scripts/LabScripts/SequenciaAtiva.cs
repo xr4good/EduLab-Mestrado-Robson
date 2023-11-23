@@ -32,6 +32,7 @@ public class SequenciaAtiva : MonoBehaviour
         {
             tubo.GetComponent<Renderer>().material = materialConcluido;
             concluido=true;
+            proximo = 7;
 
         }
     }

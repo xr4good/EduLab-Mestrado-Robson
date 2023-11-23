@@ -4125,21 +4125,9 @@ MonoBehaviour:
         m_SingletonActionBindings: []
         m_Flags: 0
       m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  - animationPropertyName: isMoving
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: 1fc6fd0a-00ec-43cc-8c43-b4e3abaf38b8
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  position: {x: 0, y: 0, z: 0}
   animator: {fileID: 5590989445293971230}
+  self: {fileID: 8019301001775906908}
+  ativeAvatar: {fileID: 0}
 --- !u!114 &-4661592119786073724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4167,13 +4155,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8019301001775906908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98785f4d3c3e93c4dbb4d415e19a93ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   animator: {fileID: 5590989445293971230}
+  self: {fileID: 8019301001775906908}
+  activeAvatar: {fileID: 0}
 --- !u!1 &8042338186785914920
 GameObject:
   m_ObjectHideFlags: 0

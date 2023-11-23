@@ -29,6 +29,9 @@ public class Tarefa : MonoBehaviour
 
     private void Start()
     {
+        tubo1.sequencia.Clear();
+        tubo2.sequencia.Clear();
+
         if (SetGameConfig.SEQUENCIA1)
         {
             tubo1.sequencia = sequencia1;
@@ -83,10 +86,13 @@ public class Tarefa : MonoBehaviour
     public void TrocarSequencia()
     { 
         limpar.SetActive(true);                //ativa animação de limpar
-        StartCoroutine(AguardarParaFechar());  //Desativa depois de 3s
+        StartCoroutine(AguardarParaFechar());  //Desativa depois de 2s
                 
         tubo1.resertarTubo();      //reseta cor e tira as bolinhas do tubo
         tubo2.resertarTubo();
+
+        tubo1.sequencia.Clear();
+        tubo2.sequencia.Clear();
 
         if (SetGameConfig.SEQUENCIA1)   //coloca a segunda sequencia
         {
@@ -103,12 +109,11 @@ public class Tarefa : MonoBehaviour
         tubo2.updateProximo();
 
 
-
     }
 
     IEnumerator AguardarParaFechar()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         limpar.SetActive(false);
     }
 }

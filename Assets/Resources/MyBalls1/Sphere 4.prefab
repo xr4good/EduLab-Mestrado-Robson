@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 2096019070598200249}
   - component: {fileID: 2096019070598200248}
   - component: {fileID: 2785145516338815416}
-  - component: {fileID: 250308607056657228}
   - component: {fileID: 7476083463085773393}
   m_Layer: 0
   m_Name: Sphere 4
@@ -313,7 +312,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096019070598200240}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
   m_Name: 
@@ -321,7 +320,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 0.1
+    TeleportIfDistanceGreaterThan: 0.01
     InterpolateOption: 1
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -339,22 +338,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &250308607056657228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096019070598200240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!114 &7476083463085773393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,12 +353,12 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
+  Synchronization: 1
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2785145516338815416}
-  - {fileID: 250308607056657228}
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
