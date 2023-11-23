@@ -5,8 +5,8 @@ using UnityEngine;
 public class MoveToLab : MonoBehaviour
 {
     [SerializeField] Vector3 posicao1;
-    [SerializeField] Vector3 posicao2;
-    [SerializeField] Vector3 posicao3;
+    [SerializeField] Vector3 posicao2junto;
+    [SerializeField] Vector3 posicao2separado;
 
     public GameObject load1;
     public GameObject load2;
@@ -57,11 +57,11 @@ public class MoveToLab : MonoBehaviour
         ActiveAvatar activeAvatar = XR.GetComponent<ActiveAvatar>();
         if (SetGameConfig.JUNTO)
         {
-            XR.transform.position = posicao2;
+            XR.transform.position = posicao2junto;
         }
         else
         {
-            XR.transform.position = posicao3;
+            XR.transform.position = posicao2separado;
         }
         load2.SetActive(false);
 

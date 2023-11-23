@@ -16,8 +16,8 @@ public class Tarefa : MonoBehaviour
     [SerializeField] private List<int> sequencia4 = new List<int>() { 4, 4, 3, 3 };
 
     [SerializeField] private List<int> sequencia5 = new List<int>() { 4, 2, 4, 2 };
-    [SerializeField] private List<int> sequencia6 = new List<int>() { 3, 1, 3, 1 };
-    [SerializeField] private List<int> sequencia7 = new List<int>() { 3, 4, 3, 4 };
+    [SerializeField] private List<int> sequencia6 = new List<int>() { 2, 4, 2, 4 };
+    [SerializeField] private List<int> sequencia7 = new List<int>() { 2, 1, 2, 1 };
     [SerializeField] private List<int> sequencia8 = new List<int>() { 1, 2, 1, 2 };
 
     private int contConcluidos = 0;

@@ -8,7 +8,7 @@ public class GameSetupController : MonoBehaviour
 
     [SerializeField]    private Vector3 pos1; //posicao player 1 na LoadScene 1
     [SerializeField]    private Vector3 pos2; //posicao player 2 na Load Scene 2
-    [SerializeField]    private Vector3 pos3; // posicao tutor
+    [SerializeField]    private Vector3 pos3; // posicao tutor humanoide
     
     
 

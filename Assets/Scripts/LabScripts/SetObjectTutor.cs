@@ -21,8 +21,13 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     {
         if(PhotonNetwork.CountOfPlayers == 1)
         {
+
+            if (!SetGameConfig.JUNTO)
+            {
+                Bancada2.SetActive(true);
+            }
+
             
-            //se estiver junto só bancada 1 se não 1 e 2 ativas
             if (SetGameConfig.CORPO) //se o tutor for corpóreo
             {
                 if (SetGameConfig.PERTO)
@@ -31,8 +36,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
                     if (!SetGameConfig.JUNTO)
                     {
-                        Help2.SetActive(true);
-                        Bancada2.SetActive(true);
+                        Help2.SetActive(true);                        
                     }
 
                 }
@@ -50,8 +54,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
                     if (!SetGameConfig.JUNTO)       //se estiver trabalhando em dupla
                     {                     
-                        LaptopBancada2.SetActive(true);
-                        Bancada2.SetActive(true);
+                        LaptopBancada2.SetActive(true);                       
                     }
                 }
                 else  //se o tutor estiver longe

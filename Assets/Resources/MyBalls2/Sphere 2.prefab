@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933abfc0ee3349c40897365dfac98758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posicaoInicial: {x: -14.501418, y: -6.866722, z: 0.21507987}
+  posicaoInicial: {x: -18.27, y: -6.865, z: 0.252}
 --- !u!114 &-3662300140131697166
 MonoBehaviour:
   m_ObjectHideFlags: 0
