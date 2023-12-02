@@ -43,6 +43,7 @@ public class StatementSender : MonoBehaviour
     }
 
     public async void logQuizFinished() {
+
         Agent actor = getActor(UserLoginData.email);
 
         //Build out Verb details
@@ -57,6 +58,8 @@ public class StatementSender : MonoBehaviour
 
         StartCoroutine(SaveStatement(actor, verb, activity, result));
     }
+
+
 
     public async void logPassSlide() {
         Agent actor = getActor(UserLoginData.email);
