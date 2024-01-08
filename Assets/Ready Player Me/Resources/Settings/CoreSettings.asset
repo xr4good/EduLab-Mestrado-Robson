@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CoreSettings
   m_EditorClassIdentifier: 
   Subdomain: edulab
+  AppId: 
   EnableLogging: 0
   EnableAnalytics: 1

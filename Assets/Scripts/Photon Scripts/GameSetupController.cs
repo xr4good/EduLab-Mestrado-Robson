@@ -2,16 +2,16 @@ using UnityEngine;
 using Photon.Pun;
 using System.IO;
 using System.Collections.Generic;
+using UnityEditor.XR.LegacyInputHelpers;
+using System.Collections;
 
-public class GameSetupController : MonoBehaviour
+public class GameSetupController : MonoBehaviourPunCallbacks
 {
 
     [SerializeField]    private Vector3 pos1; //posicao player 1 na LoadScene 1
     [SerializeField]    private Vector3 pos2; //posicao player 2 na Load Scene 2
     [SerializeField]    private Vector3 pos3; // posicao tutor humanoide
-    
-    
-
+        
     public GameObject XRPrefab;
     public GameObject ActiveVR;
     private GameObject Mirror;
@@ -21,46 +21,64 @@ public class GameSetupController : MonoBehaviour
     [SerializeField] StartSphere startSphere1;
     [SerializeField] StartSphere startSphere2;
 
-    private int gameTipe;
     private int n;
 
 
 
     // Start is called before the first frame update
+    
     void Start()
     {
-        n = PhotonNetwork.CountOfPlayers;
         CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
+        
         AtivateTeleportationArea(); //ativa as áreas de teleporte
-        CriarEsferas(n); //cria as esferas e a bancada de acordo
-
+        StartCoroutine( CriarEsferas() ); //cria as esferas e a bancada de acordo
     }
 
+    IEnumerator CreateVrMirror (Transform cameraOffSet,Transform mainCamera)
+    {
+        yield return new WaitForSeconds(2);
+        if (GameObject.FindGameObjectsWithTag("Player1").Length == 0)
+        {
+            n = 1;
+        }
+        else if (GameObject.FindGameObjectsWithTag("Player2").Length == 0)
+        {
+            n = 2;
+        }
+        else
+        {
+            n = 3;
+        }
+
+        UnityEngine.Debug.Log("Creating Online Player " + n);
+        ActiveVR.GetComponent<ActiveAvatar>().player = "Player" + n;
+        player = "Player" + n;
+
+        //Instanciate VR Rig Mirror
+        Mirror = PhotonNetwork.Instantiate(Path.Combine("XR", "VRRigMirror" + n), pos(n), Quaternion.identity);
+        VRMirror vRMirror = Mirror.GetComponent<VRMirror>();
+
+        
+        vRMirror.cameraTransform.originTransform = mainCamera.transform;
+        vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
+        vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
+    }
 
     private void CreatePlayer()
     {
-        
-        UnityEngine.Debug.Log("Creating Player "+ n);
-
 
         //Instanciate XROrigin            
         ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
-        ActiveVR.GetComponent<ActiveAvatar>().player = "Player"+n;
-        player = "Player"+n;
+
 
         //ativa o áudio
         Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
         Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
         mainCamera.GetComponent<AudioListener>().enabled = true;
 
-        //Instanciate VR Rig Mirror
-        Mirror = PhotonNetwork.Instantiate(Path.Combine("XR", "VRRigMirror"+n), pos(n), Quaternion.identity);
-        VRMirror vRMirror = Mirror.GetComponent<VRMirror>();
-        vRMirror.cameraTransform.originTransform = mainCamera.transform;
-        vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
-        vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
-
-   
+        //Aguarda 2 segundos e cria VRRig Mirror
+        StartCoroutine(CreateVrMirror(cameraOffSet ,mainCamera));
     }
 
     private void AtivateTeleportationArea()
@@ -73,21 +91,20 @@ public class GameSetupController : MonoBehaviour
 
     }
 
-    private void CriarEsferas(int n)
+    IEnumerator CriarEsferas()
     {
-        if (n == 1)
-        {
+        yield return new WaitForSeconds(2);
+        Debug.Log(GameObject.FindGameObjectsWithTag("Sphere").Length);
+        if (GameObject.FindGameObjectsWithTag("Sphere").Length == 0){
             startSphere1.CreateSpheres();
             if (!SetGameConfig.JUNTO)
             {
                 startSphere2.CreateSpheres();
             }
-        }
+        }       
         
     }
-
-  
-
+      
     private Vector3 pos(int n)
     {
         switch (n)

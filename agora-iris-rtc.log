@@ -1,0 +1,148 @@
+[2023-12-26 10:22:21.852] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 10:22:21.853] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 10:22:21.854] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 10:22:21.854] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_initialize ret 0 result {"result":-101}
+[2023-12-26 10:22:21.863] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_muteLocalAudioStream params {"mute":true}
+[2023-12-26 10:22:21.863] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:21.863] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_muteLocalAudioStream ret 0 result {"result":-7}
+[2023-12-26 10:22:21.864] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_muteAllRemoteAudioStreams params {"mute":true}
+[2023-12-26 10:22:21.864] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:21.864] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_muteAllRemoteAudioStreams ret 0 result {"result":-7}
+[2023-12-26 10:22:21.864] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_enableAudio params {}
+[2023-12-26 10:22:21.864] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:21.864] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_enableAudio ret 0 result {"result":-7}
+[2023-12-26 10:22:21.864] [17712] [error] [iris_rtc_spatial_audio_engine_impl.cc:222] error code: -7
+[2023-12-26 10:22:21.866] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_registerEventHandler params {"event":1500605996480}
+[2023-12-26 10:22:21.866] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:21.866] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_registerEventHandler ret 0 result {"result":0}
+[2023-12-26 10:22:25.170] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_enableVideo params {}
+[2023-12-26 10:22:25.170] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:25.170] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_enableVideo ret 0 result {"result":-7}
+[2023-12-26 10:22:25.170] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_setClientRole params {"role":1}
+[2023-12-26 10:22:25.170] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:25.170] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_setClientRole ret 0 result {"result":-7}
+[2023-12-26 10:22:25.171] [17712] [info] [iris_rtc_engine_impl.cc:94] api name RtcEngine_joinChannel params {"token":"","channelId":"unity3d","info":"","uid":0}
+[2023-12-26 10:22:25.171] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:25.171] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_joinChannel ret 0 result {"result":-7}
+[2023-12-26 10:22:44.613] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_leaveChannel params {}
+[2023-12-26 10:22:44.613] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:44.613] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_leaveChannel ret 0 result {"result":-7}
+[2023-12-26 10:22:44.614] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_disableVideo params {}
+[2023-12-26 10:22:44.614] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 10:22:44.614] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_disableVideo ret 0 result {"result":-7}
+[2023-12-26 10:22:44.620] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_release params {"sync":false}
+[2023-12-26 10:22:44.620] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_release ret 0 result {"result":0}
+[2023-12-26 10:22:44.620] [17712] [info] [iris_rtc_engine_impl.cc:42] IrisRtcEngineImpl Destroy
+[2023-12-26 10:22:44.620] [17712] [info] [iris_rtc_music_center_impl.cc:16] IrisMusiImpl Destroy
+[2023-12-26 10:22:44.620] [17712] [info] [iris_rtc_media_recorder_impl.cc:13] IrisMediaRecodrerImpl Destroy
+[2023-12-26 10:22:44.620] [17712] [info] [iris_rtc_spatial_audio_engine_impl.cc:201] IrisLocalSpatialAudioEngineImpl Destroy
+[2023-12-26 10:22:44.620] [17712] [info] [iris_rtc_media_player_impl.cc:26] IrisMediaPlayerImpl Destroy
+[2023-12-26 10:22:44.620] [17712] [info] [iris_rtc_device_manager_impl.cc:25] IrisRtcDeviceManagerImpl Destroy
+[2023-12-26 12:04:11.874] [17712] [info] [iris_rtc_engine_impl.cc:52] IrisRtcEngineImpl Initialize
+[2023-12-26 12:04:11.894] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 12:04:11.894] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 12:04:11.895] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 12:04:11.895] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_initialize ret 0 result {"result":-101}
+[2023-12-26 12:04:11.905] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_muteLocalAudioStream params {"mute":true}
+[2023-12-26 12:04:11.905] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:11.905] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_muteLocalAudioStream ret 0 result {"result":-7}
+[2023-12-26 12:04:11.905] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_muteAllRemoteAudioStreams params {"mute":true}
+[2023-12-26 12:04:11.905] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:11.905] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_muteAllRemoteAudioStreams ret 0 result {"result":-7}
+[2023-12-26 12:04:11.905] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_enableAudio params {}
+[2023-12-26 12:04:11.905] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:11.905] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_enableAudio ret 0 result {"result":-7}
+[2023-12-26 12:04:11.905] [17712] [error] [iris_rtc_spatial_audio_engine_impl.cc:222] error code: -7
+[2023-12-26 12:04:11.907] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_registerEventHandler params {"event":1501992454912}
+[2023-12-26 12:04:11.907] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:11.907] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_registerEventHandler ret 0 result {"result":0}
+[2023-12-26 12:04:24.894] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_enableVideo params {}
+[2023-12-26 12:04:24.894] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:24.894] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_enableVideo ret 0 result {"result":-7}
+[2023-12-26 12:04:24.894] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_setClientRole params {"role":1}
+[2023-12-26 12:04:24.894] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:24.894] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_setClientRole ret 0 result {"result":-7}
+[2023-12-26 12:04:24.895] [17712] [info] [iris_rtc_engine_impl.cc:94] api name RtcEngine_joinChannel params {"token":"","channelId":"unity3d","info":"","uid":0}
+[2023-12-26 12:04:24.895] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:24.895] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_joinChannel ret 0 result {"result":-7}
+[2023-12-26 12:04:26.810] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_leaveChannel params {}
+[2023-12-26 12:04:26.810] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:26.810] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_leaveChannel ret 0 result {"result":-7}
+[2023-12-26 12:04:26.810] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_disableVideo params {}
+[2023-12-26 12:04:26.810] [17712] [warning] [iris_rtc_engine_impl.cc:106] error code : -7
+[2023-12-26 12:04:26.810] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_disableVideo ret 0 result {"result":-7}
+[2023-12-26 12:04:27.966] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_release params {"sync":false}
+[2023-12-26 12:04:27.966] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_release ret 0 result {"result":0}
+[2023-12-26 12:04:27.966] [17712] [info] [iris_rtc_engine_impl.cc:42] IrisRtcEngineImpl Destroy
+[2023-12-26 12:04:27.966] [17712] [info] [iris_rtc_music_center_impl.cc:16] IrisMusiImpl Destroy
+[2023-12-26 12:04:27.966] [17712] [info] [iris_rtc_media_recorder_impl.cc:13] IrisMediaRecodrerImpl Destroy
+[2023-12-26 12:04:27.966] [17712] [info] [iris_rtc_spatial_audio_engine_impl.cc:201] IrisLocalSpatialAudioEngineImpl Destroy
+[2023-12-26 12:04:27.966] [17712] [info] [iris_rtc_media_player_impl.cc:26] IrisMediaPlayerImpl Destroy
+[2023-12-26 12:04:27.966] [17712] [info] [iris_rtc_device_manager_impl.cc:25] IrisRtcDeviceManagerImpl Destroy
+[2023-12-26 14:31:02.297] [17712] [info] [iris_rtc_engine_impl.cc:52] IrisRtcEngineImpl Initialize
+[2023-12-26 14:31:02.316] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 14:31:02.316] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 14:31:02.317] [17712] [info] [iris_logger.cc:116] reset logger with path .\agora-iris-rtc.log
+[2023-12-26 14:31:13.151] [17712] [info] [iris_rtc_device_manager_impl.cc:29] IrisRtcDeviceManagerImpl Initialize
+[2023-12-26 14:31:13.167] [17712] [info] [iris_rtc_media_player_impl.cc:30] IrisMediaPlayerImpl Initialize
+[2023-12-26 14:31:13.168] [17712] [info] [iris_rtc_spatial_audio_engine_impl.cc:205] IrisLocalSpatialAudioEngineImpl Initialize
+[2023-12-26 14:31:13.169] [17712] [info] [iris_rtc_media_recorder_impl.cc:17] IrisMediaRecorderImpl Initialize
+[2023-12-26 14:31:13.172] [17712] [info] [iris_rtc_music_center_impl.cc:20] IrisMusicPlayerImpl Initialize
+[2023-12-26 14:31:13.173] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_initialize ret 0 result {"result":0}
+[2023-12-26 14:31:13.183] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_setAppType params {"appType":2}
+[2023-12-26 14:31:13.186] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_setAppType ret 0 result {"result":0}
+[2023-12-26 14:31:13.186] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_muteLocalAudioStream params {"mute":true}
+[2023-12-26 14:31:13.187] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_muteLocalAudioStream ret 0 result {"result":0}
+[2023-12-26 14:31:13.187] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_muteAllRemoteAudioStreams params {"mute":true}
+[2023-12-26 14:31:13.188] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_muteAllRemoteAudioStreams ret 0 result {"result":0}
+[2023-12-26 14:31:13.189] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_enableAudio params {}
+[2023-12-26 14:31:13.191] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_enableAudio ret 0 result {"result":0}
+[2023-12-26 14:31:13.191] [17712] [info] [iris_rtc_spatial_audio_engine_impl.cc:226] api name LocalSpatialAudioEngine_initialize params {}
+[2023-12-26 14:31:13.196] [17712] [info] [iris_rtc_spatial_audio_engine_impl.cc:240] api name LocalSpatialAudioEngine_initialize ret 0 result {"result":0}
+[2023-12-26 14:31:13.201] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_registerEventHandler params {"event":1500738479552}
+[2023-12-26 14:31:13.201] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_registerEventHandler ret 0 result {"result":0}
+[2023-12-26 14:31:18.134] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_enableVideo params {}
+[2023-12-26 14:31:18.134] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_enableVideo ret 0 result {"result":0}
+[2023-12-26 14:31:18.135] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_setClientRole params {"role":1}
+[2023-12-26 14:31:18.136] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_setClientRole ret 0 result {"result":0}
+[2023-12-26 14:31:18.136] [17712] [info] [iris_rtc_engine_impl.cc:94] api name RtcEngine_joinChannel params {"token":"","channelId":"unity3d","info":"","uid":0}
+[2023-12-26 14:31:18.357] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_joinChannel ret 0 result {"result":0}
+[2023-12-26 14:31:18.448] [17712] [error] [rtc_engine_event_handler.cc:100] err 110 msg 
+[2023-12-26 14:31:18.454] [17712] [error] [rtc_engine_event_handler.cc:100] err 110 msg 
+[2023-12-26 14:31:18.454] [17712] [error] [rtc_engine_event_handler.cc:100] err 110 msg 
+[2023-12-26 14:31:45.536] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_leaveChannel params {}
+[2023-12-26 14:31:45.550] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_leaveChannel ret 0 result {"result":0}
+[2023-12-26 14:31:45.551] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_disableVideo params {}
+[2023-12-26 14:31:45.551] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_disableVideo ret 0 result {"result":0}
+[2023-12-26 14:31:45.552] [17712] [info] [rtc_engine_event_handler.cc:1457] channel unity3d uid 0
+[2023-12-26 14:31:46.820] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_enableVideo params {}
+[2023-12-26 14:31:46.821] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_enableVideo ret 0 result {"result":0}
+[2023-12-26 14:31:46.821] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_setClientRole params {"role":1}
+[2023-12-26 14:31:46.821] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_setClientRole ret 0 result {"result":0}
+[2023-12-26 14:31:46.822] [17712] [info] [iris_rtc_engine_impl.cc:94] api name RtcEngine_joinChannel params {"token":"","channelId":"unity3d","info":"","uid":0}
+[2023-12-26 14:31:46.842] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_joinChannel ret 0 result {"result":0}
+[2023-12-26 14:31:46.892] [17712] [error] [rtc_engine_event_handler.cc:100] err 110 msg 
+[2023-12-26 14:31:50.233] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_leaveChannel params {}
+[2023-12-26 14:31:50.244] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_leaveChannel ret 0 result {"result":0}
+[2023-12-26 14:31:50.244] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_disableVideo params {}
+[2023-12-26 14:31:50.244] [17712] [info] [rtc_engine_event_handler.cc:1457] channel unity3d uid 0
+[2023-12-26 14:31:50.244] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_disableVideo ret 0 result {"result":0}
+[2023-12-26 14:31:53.361] [17712] [info] [iris_rtc_engine_impl.cc:96] api name RtcEngine_release params {"sync":false}
+[2023-12-26 14:31:53.361] [17712] [info] [iris_rtc_engine_impl.cc:195] IrisRtcEngineImpl __release
+[2023-12-26 14:31:53.361] [17712] [info] [iris_rtc_device_manager_impl.cc:36] IrisRtcDeviceManagerImpl Release
+[2023-12-26 14:31:53.361] [17712] [info] [iris_rtc_device_manager_wrapper.cc:791] IDeviceManagerWrapper release
+[2023-12-26 14:31:53.362] [17712] [info] [iris_rtc_media_player_impl.cc:41] IrisMediaPlayerImpl Release
+[2023-12-26 14:31:53.362] [17712] [info] [iris_rtc_media_player_wrapper.cc:38] IMediaPlayerWrapper release
+[2023-12-26 14:31:53.362] [17712] [info] [iris_rtc_spatial_audio_engine_impl.cc:212] IrisLocalSpatialAudioEngineImpl Release
+[2023-12-26 14:31:53.362] [17712] [info] [iris_rtc_spatial_audio_engine_wrapper.cc:388] ILocalSpatialAudioEngineWrapper release
+[2023-12-26 14:31:53.363] [17712] [info] [iris_rtc_media_recorder_impl.cc:24] IrisMediaRecorderImpl Release
+[2023-12-26 14:31:53.363] [17712] [info] [iris_rtc_music_center_impl.cc:26] IrisMusicCenterImpl Release
+[2023-12-26 14:31:53.363] [17712] [info] [iris_rtc_music_center_wrapper.cc:27] IrisMusicContentCenterWrapper release
+[2023-12-26 14:31:53.364] [17712] [info] [iris_rtc_engine_wrapper.cc:8077] IRtcEngineWrapper release
+[2023-12-26 14:31:53.391] [17712] [info] [iris_rtc_engine_impl.cc:112] api name RtcEngine_release ret 0 result {"result":0}
+[2023-12-26 14:31:53.391] [17712] [info] [iris_rtc_engine_impl.cc:42] IrisRtcEngineImpl Destroy
+[2023-12-26 14:31:53.391] [17712] [info] [iris_rtc_music_center_impl.cc:16] IrisMusiImpl Destroy
+[2023-12-26 14:31:53.392] [17712] [info] [iris_rtc_media_recorder_impl.cc:13] IrisMediaRecodrerImpl Destroy
+[2023-12-26 14:31:53.392] [17712] [info] [iris_rtc_spatial_audio_engine_impl.cc:201] IrisLocalSpatialAudioEngineImpl Destroy
+[2023-12-26 14:31:53.392] [17712] [info] [iris_rtc_media_player_impl.cc:26] IrisMediaPlayerImpl Destroy
+[2023-12-26 14:31:53.392] [17712] [info] [iris_rtc_device_manager_impl.cc:25] IrisRtcDeviceManagerImpl Destroy

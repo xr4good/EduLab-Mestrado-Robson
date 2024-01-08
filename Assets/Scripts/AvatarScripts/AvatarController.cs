@@ -27,6 +27,8 @@ public class MapTransform
         }
         
     }
+
+
 }
 
 public class AvatarController : MonoBehaviourPunCallbacks//, IPunObservable
@@ -41,6 +43,7 @@ public class AvatarController : MonoBehaviourPunCallbacks//, IPunObservable
 
     [SerializeField] private Vector3 headBodyOffset;
     [SerializeField] private string player;
+    [SerializeField] private float height;
 
     private GameObject Mirror;
 
@@ -49,16 +52,20 @@ public class AvatarController : MonoBehaviourPunCallbacks//, IPunObservable
         GameObject gameSetup = GameObject.Find("GameSetup");
         
         Mirror = GameObject.FindWithTag(player);
-        head.vrTarget = Mirror.transform.Find("CameraMirror");
-        leftHand.vrTarget = Mirror.transform.Find("LeftHandMirror");
-        rightHand.vrTarget = Mirror.transform.Find("RightHandMirror");
+        if(Mirror != null)
+        {
+            head.vrTarget = Mirror.transform.Find("CameraMirror");
+            leftHand.vrTarget = Mirror.transform.Find("LeftHandMirror");
+            rightHand.vrTarget = Mirror.transform.Find("RightHandMirror");
+        }
+        
     }
 
 
     private void LateUpdate()
     {
-        
-            transform.position = IKHead.position + headBodyOffset;
+            transform.position = new Vector3(IKHead.position.x, height, IKHead.position.z) + headBodyOffset;
+            //transform.position = IKHead.position + headBodyOffset;
             //transform.rotation = IKHead.rotation * Quaternion.Euler(headBodyRotationOffset);
             transform.forward = Vector3.Lerp(transform.forward, Vector3.ProjectOnPlane(IKHead.forward, Vector3.up).normalized, Time.deltaTime * turnSmoothness); ;
             head.MapVRAvatar();

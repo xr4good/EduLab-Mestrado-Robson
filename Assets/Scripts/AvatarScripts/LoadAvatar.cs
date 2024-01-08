@@ -6,6 +6,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UIElements;
 using System.IO;
+using UnityEditor.XR.LegacyInputHelpers;
+using ReadyPlayerMe.Core.WebView;
 
 public class LoadAvatar : MonoBehaviourPunCallbacks
 {
@@ -16,6 +18,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
     private GameObject avatar;    
     //public VRTargetsPosition positions;
     //public int nplayer;
+
 
     IEnumerator trocarAvatar()
     {
@@ -59,6 +62,11 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
         Camera camera = mainCamera.GetComponent<Camera>();
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer(notSeeHead.IgnoreLayer));
+
+        //troca a proporção do avatar de acordo com a altura do usuario
+        //float value = 1 * (cameraOffSet.transform.position.y / mainCamera.transform.position.y);        
+        //avatar.transform.localScale = new Vector3(value, value, value);
+        
 
 
         /*Setup the VR Target in the Avatar        
