@@ -8,7 +8,6 @@ public class SequenciaAtiva : MonoBehaviour
     public List<int> sequencia = new List<int>();
     [SerializeField] private int proximo;
     public GameObject tubo;
-    public Material materialNormal;
     public Material materialConcluido;
 
     private int pos = 0;
@@ -35,14 +34,6 @@ public class SequenciaAtiva : MonoBehaviour
             proximo = 7;
 
         }
-    }
-
-    public void resertarTubo()
-    {
-        concluido = false;
-        tuboList.ForEach(gameObject => Destroy(gameObject));
-        tubo.GetComponent<Renderer>().material = materialNormal;
-        pos = 0;
-    }
+    } 
 
 }

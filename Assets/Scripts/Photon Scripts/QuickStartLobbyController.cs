@@ -3,6 +3,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using UnityEngine.InputSystem.Controls;
 
 public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 {
@@ -12,11 +13,14 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     
     public GameObject painel;
 
+    /*
     public Toggle check;
     public Toggle distancia;
     public Toggle posicaoInicial;
     public Toggle sequencia;
-    public Toggle corpo;
+    public Toggle corpo;*/
+
+    public Slider slider;
 
     //Callback function for when first connection is estabilish
     public override void OnConnectedToMaster()
@@ -27,7 +31,8 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     public void QuickStart() //Paired to the Quick Start Button
     {
-        
+
+        /*
         if(check.isOn)
         {
             SetGameConfig.PERTO = distancia.isOn;
@@ -43,14 +48,37 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         else
         {
             painel.SetActive(true);
-        }
-        
+        }*/
+
+           
+
+        PhotonNetwork.JoinRandomRoom();//First tries to join an existing room
+        //PhotonNetwork.JoinRoom("Lab"); 
+        Debug.Log("Quick Start");
+
+
     }
+
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        Debug.Log("Failed to join the random Room");
+        CreateRoom();
+    }
+
 
     public override void OnJoinRoomFailed(short returnCode, string message) //
     {
-        Debug.Log("Failed to join the Room");
-        CreateRoom();
+        Debug.Log("Failed to join the especifed Room");
+        //CreateRoom();
+    }
+
+    public override void OnJoinedRoom()
+    {
+        string name = PhotonNetwork.CurrentRoom.Name;
+        int n = int.Parse(name.Substring(name.Length - 1, 1));
+        Debug.Log("Room number " + n);
+
+        setgameconfig(n);
     }
 
     void CreateRoom() //Trying to create our own Room
@@ -58,8 +86,17 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         Debug.Log("Creating Room");
         //int RandomRoomNumber = Random.Range(0, 2);
         RoomOptions roomOptions = new RoomOptions() { IsVisible= true, IsOpen=true, MaxPlayers = (byte)roomSize};
-        PhotonNetwork.CreateRoom("Lab", roomOptions); //attempting to create a new Room
-        Debug.Log("RoomCreated");
+        if(slider.value != 0 )
+        {
+            PhotonNetwork.CreateRoom("Lab" + slider.value, roomOptions); //attempting to create a new Room
+            Debug.Log("RoomCreated");
+        }
+        else
+        {
+            painel.active = true;
+
+        }
+        
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
@@ -74,4 +111,79 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         quickStartButton.SetActive(true);
         PhotonNetwork.LeaveRoom();
     }
+
+    private void setgameconfig(int n)
+    {
+        switch (n)
+        {
+            case 1:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case 2:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            case 3:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case 4:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            case 5:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case 6:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            case 7:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case 8:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
+}
 }
