@@ -3982,7 +3982,6 @@ GameObject:
   - component: {fileID: 661507460205893978}
   - component: {fileID: 6943178093232854151}
   - component: {fileID: -836665161620117312}
-  - component: {fileID: -4661592119786073724}
   - component: {fileID: 6572139200908805056}
   - component: {fileID: -2645032625827756450}
   - component: {fileID: -4414396625594247875}
@@ -4190,7 +4189,7 @@ MonoBehaviour:
   head:
     vrTarget: {fileID: 0}
     IKTarget: {fileID: 5690965810904823119}
-    trackingPositionOffset: {x: 0, y: 0, z: -0.03}
+    trackingPositionOffset: {x: 0, y: 0, z: -0.17}
     trackingRotationOffset: {x: 0, y: 0, z: 0}
     correction: {fileID: 0}
   leftHand:
@@ -4286,29 +4285,29 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Left Pinch
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Left Grab
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Right Pinch
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Right Grab
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: isMoving
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: animSpeed
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
   - SynchronizeType: 1
     LayerIndex: 1
-  - SynchronizeType: 0
+  - SynchronizeType: 1
     LayerIndex: 2
 --- !u!114 &-836665161620117312
 MonoBehaviour:
@@ -4378,26 +4377,6 @@ MonoBehaviour:
   animator: {fileID: 5590989445293971230}
   self: {fileID: 8019301001775906908}
   ativeAvatar: {fileID: 0}
---- !u!114 &-4661592119786073724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8019301001775906908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a2ddcd86246b374ba4344df2a559841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 5590989445293971230}
-  leftFootPosWeight: 0.18
-  rightFootPosWeight: 0.18
-  leftFootRotWeight: 0.08
-  rightFootRotWeight: 0.12
-  footOffset: {x: 0, y: 0, z: 0}
-  raycastOffsetLeft: {x: 0, y: 0, z: 0}
-  raycastOffsRight: {x: 0, y: 0, z: 0}
 --- !u!114 &6572139200908805056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4405,7 +4384,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8019301001775906908}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98785f4d3c3e93c4dbb4d415e19a93ad, type: 3}
   m_Name: 

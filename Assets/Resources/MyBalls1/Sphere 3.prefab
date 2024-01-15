@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2332929926009971365}
   - component: {fileID: -6690509069300428993}
   - component: {fileID: -6269393517095099039}
+  - component: {fileID: -350382169160046703}
   m_Layer: 0
   m_Name: Sphere 3
   m_TagString: Sphere
@@ -358,9 +359,26 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -6690509069300428993}
+  - {fileID: -350382169160046703}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-350382169160046703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332929926009971373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &7601446233768381233
 GameObject:
   m_ObjectHideFlags: 0

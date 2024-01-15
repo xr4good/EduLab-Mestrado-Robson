@@ -12,14 +12,6 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     [SerializeField] private int roomSize;
     
     public GameObject painel;
-
-    /*
-    public Toggle check;
-    public Toggle distancia;
-    public Toggle posicaoInicial;
-    public Toggle sequencia;
-    public Toggle corpo;*/
-
     public Slider slider;
 
     //Callback function for when first connection is estabilish
@@ -31,31 +23,18 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     public void QuickStart() //Paired to the Quick Start Button
     {
-
-        /*
-        if(check.isOn)
-        {
-            SetGameConfig.PERTO = distancia.isOn;
-            SetGameConfig.CORPO = corpo.isOn;
-            SetGameConfig.SEQUENCIA1 = sequencia.isOn;
-            SetGameConfig.JUNTO = posicaoInicial.isOn;
-
+                
+        if(slider.value != 0)
+        {            
             quickStartButton.SetActive(false);
             quickCancelButton.SetActive(true);
-            PhotonNetwork.JoinRoom("Lab"); //First tries to join an existing room
+            PhotonNetwork.JoinRandomRoom();//First tries to join an existing room                                           
             Debug.Log("Quick Start");
         }
         else
         {
             painel.SetActive(true);
-        }*/
-
-           
-
-        PhotonNetwork.JoinRandomRoom();//First tries to join an existing room
-        //PhotonNetwork.JoinRoom("Lab"); 
-        Debug.Log("Quick Start");
-
+        }
 
     }
 
@@ -90,12 +69,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.CreateRoom("Lab" + slider.value, roomOptions); //attempting to create a new Room
             Debug.Log("RoomCreated");
-        }
-        else
-        {
-            painel.active = true;
-
-        }
+        }    
         
     }
 

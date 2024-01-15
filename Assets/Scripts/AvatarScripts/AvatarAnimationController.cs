@@ -1,7 +1,7 @@
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class AvatarAnimationController :
-MonoBehaviour
+public class AvatarAnimationController : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private InputActionReference move;
@@ -9,16 +9,22 @@ MonoBehaviour
 
     private void OnEnable()
     {
-        
+        if( photonView.IsMine)
+        {
             this.move.action.started += this.AnimateLegs;
-            this.move.action.canceled += this.StopAnimation;        
+            this.move.action.canceled += this.StopAnimation;
+        }       
+                   
         
     }
     private void OnDisable()
     {
-        
+        if ( photonView.IsMine)
+        {
             this.move.action.started -= this.AnimateLegs;
             this.move.action.canceled -= this.StopAnimation;
+        }
+            
         
     }
     private void AnimateLegs(InputAction.CallbackContext obj)
