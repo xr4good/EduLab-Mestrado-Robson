@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,30 +8,34 @@ using UnityEngine.UI;
 public class SetConversation : MonoBehaviour
 {
     [SerializeField] GameObject painelPai;
-
-    [SerializeField] List<GameObject> dicas;
+   
     [SerializeField] GameObject pedido;
     public List<GameObject> TextosAtivos;
+    public string numeroBancada;
 
     int countDicas;
+    bool isWaiting = false;
 
 
     public void FazerPedido()
     {
-        IncluirTexto(dicas[countDicas]);
+        if (!isWaiting)
+        {
+            IncluirTexto();
+        }        
 
     }
-     void IncluirTexto(GameObject novo)
+     void IncluirTexto()
     {
         if (TextosAtivos.Count < 4)
         {
             //instancia o pedido de dica
-            GameObject Umpedido = Instantiate(pedido, painelPai.transform);
+            GameObject Umpedido = PhotonNetwork.Instantiate("MyTexts/Pedido", painelPai.transform.position, painelPai.transform.rotation);
             TextosAtivos.Add(Umpedido);
 
 
             //instancia uma nova dica
-            StartCoroutine(InstanciarDica(novo));
+            StartCoroutine(InstanciarDica());
         }
         else
         {
@@ -40,7 +45,7 @@ public class SetConversation : MonoBehaviour
             TextosAtivos.RemoveAt(0);
 
             //instancia o pedido de dica
-            GameObject Umpedido = Instantiate(pedido, painelPai.transform);            
+            GameObject Umpedido = PhotonNetwork.Instantiate("MyTexts/Pedido", painelPai.transform.position, painelPai.transform.rotation);
             TextosAtivos.Add(Umpedido);
 
 
@@ -48,25 +53,26 @@ public class SetConversation : MonoBehaviour
             GameObject second = TextosAtivos[0];
             second.SetActive(false);
             TextosAtivos.RemoveAt(0);
-            StartCoroutine(InstanciarDica(novo));
+            isWaiting = true;
+            StartCoroutine(InstanciarDica());
 
             
         }
     }
 
-    IEnumerator InstanciarDica(GameObject novo)
+    IEnumerator InstanciarDica()
     {
         
         yield return new WaitForSeconds(3);
-                
 
-        GameObject Umadica = Instantiate(novo, painelPai.transform);
+        GameObject Umadica = PhotonNetwork.Instantiate("MyTexts/Seq" + numeroBancada + "/Dica" + countDicas, painelPai.transform.position, painelPai.transform.rotation);
         TextosAtivos.Add(Umadica);
         countDicas++;
-        if(countDicas == dicas.Count)
+        if(countDicas == 8)
         {
             countDicas = 0;
         }
+        isWaiting = false;
        
 
 
