@@ -94,7 +94,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     IEnumerator CriarEsferas()
     {
         yield return new WaitForSeconds(2);
-        Debug.Log(GameObject.FindGameObjectsWithTag("Sphere").Length);
+        
         if (GameObject.FindGameObjectsWithTag("Sphere").Length == 0){
             startSphere1.CreateSpheres();
             if (!SetGameConfig.JUNTO)

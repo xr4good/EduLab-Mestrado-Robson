@@ -98,7 +98,7 @@ public GameObject testButton;
         optionText3.GetComponent<TextMeshPro>().text = questions[actualQuestion].answers[2].title;
         optionText4.GetComponent<TextMeshPro>().text = questions[actualQuestion].answers[3].title;
     }
-    public void checkAnswer(string answer){
+    /*public void checkAnswer(string answer){
         if(answer.Equals(correctAnswer())){
             error.GetComponent<TextMeshPro>().text = ""; 
            statementSender.logQuestionAnswers(questions[actualQuestion].title, getAnswerText(answer), true); // acerto
@@ -123,6 +123,6 @@ public GameObject testButton;
             statementSender.logQuestionAnswers(questions[actualQuestion].title, getAnswerText(answer), false); // falha
 
         }
-    }
+    }*/
 
 }

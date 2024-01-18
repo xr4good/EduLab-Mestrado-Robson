@@ -11,22 +11,24 @@ using Newtonsoft.Json.Linq;
 public class StatementSender : MonoBehaviour
 {
     private RemoteLRS lrs;
-    static Boolean isSlideCompleted = false;
+    //static Boolean isSlideCompleted = false;
 
     // Use this for initialization
     void Start()
     {
 
         lrs = new RemoteLRS(
-        "https://cloud.scorm.com/lrs/LD5NS5NPR8/",
-        "CmPj0q1QM3JirJhlzag",
-        "lZ84G8BnGzpEhYLIu8Q"
+        "http://localhost:8080/xapi",    
+        "2e63a65026105efa0879986eddee3ca845e40bc66ae5f904bebe714d644a57ca",
+        "978fbdf23ba9fbafbceb5d7385b5fe688d31af3c610f11b1d690e78dafb9a9b3"
         );
 
     }
 
+
+
     public async void logQuestionAnswers(string question, string answer, bool isCorrect) {
-        Agent actor = getActor(UserLoginData.email);
+        Agent actor = getActorByEmail("player"+SetGameConfig.PLAYER.ToString()+"@testeusuario.com");
 
         //Build out Verb details
         TinCan.Verb verb = getVerb(LogVerb.Answered.url, LogVerb.Answered.descriptionEnUS);
@@ -42,7 +44,7 @@ public class StatementSender : MonoBehaviour
         StartCoroutine(SaveStatement(actor, verb, activity, result));
     }
 
-    public async void logQuizFinished() {
+    /*public async void logQuizFinished() {
 
         Agent actor = getActor(UserLoginData.email);
 
@@ -52,16 +54,12 @@ public class StatementSender : MonoBehaviour
         //Build out Activity details
         Activity activity = getActivity(LogCategory.Assessment.url, LogCategory.Assessment.descriptionEnUS);
 
-        Result result = getResult(true, 
-                                  true, 
-                                  100);
+        Result result = getResult();
 
         StartCoroutine(SaveStatement(actor, verb, activity, result));
-    }
+    }*/
 
-
-
-    public async void logPassSlide() {
+    /*public async void logPassSlide() {
         Agent actor = getActor(UserLoginData.email);
 
         //Build out Verb details
@@ -83,7 +81,7 @@ public class StatementSender : MonoBehaviour
             print(isSlideCompleted);
             StartCoroutine(SaveStatement(actor, verbCompleted, activity, resultCompleted));
         }
-    }
+    }*/
 
     IEnumerator SaveStatement(Agent actor,
                               TinCan.Verb verb, 
@@ -96,9 +94,13 @@ public class StatementSender : MonoBehaviour
         statement.verb = verb;
         statement.target = activity;
         statement.result = result;
+        
 
         //Send the statement
      StatementLRSResponse lrsResponse = lrs.SaveStatement(statement);
+
+        //Debug.Log(lrsResponse.httpException.ToString());
+
         if (lrsResponse.success) //Success
         {
             Debug.Log("Save statement: " + lrsResponse.content.id);
@@ -110,7 +112,15 @@ public class StatementSender : MonoBehaviour
         yield break;
     }
 
-    Agent getActor(string email) {
+    Agent getActorByName(string actorName)
+    {
+        Agent actor = new Agent();
+        actor.name = actorName;
+        actor.openid = actorName;
+        return actor;
+    }
+
+    Agent getActorByEmail(string email) {
         Agent actor = new Agent();
         actor.mbox = "mailto:" + email;
         actor.name = email.Split('@')[0];

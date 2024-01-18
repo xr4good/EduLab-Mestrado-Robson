@@ -19,4 +19,8 @@ public class LogCategory
     public static Category SlideDeck   { get { return new Category("http://id.tincanapi.com/activitytype/slide-deck", "slide-deck", "documento de slides"); } }
     public static Category Question { get { return new Category("http://activitystrea.ms/schema/1.0/question", "question", "pergunta"); }}
     public static Category Assessment { get { return new Category("http://adlnet.gov/expapi/activities/assessment", "assessment", "teste"); }}
+
+    public static Category Sphere { get { return new Category("https://xapi.percipio.com/xapi/activity-type/channel", "sphere", "esfera"); } }
+
+    public static Category Tutor { get { return new Category("http://adlnet.gov/expapi/activities/assessment", "tutor", "professor"); } }
 }

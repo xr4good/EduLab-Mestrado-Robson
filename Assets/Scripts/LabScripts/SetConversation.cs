@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SetConversation : MonoBehaviour
 {
     [SerializeField] GameObject painelPai;
+    public StatementSender statementSender;
    
     [SerializeField] GameObject pedido;
     public List<GameObject> TextosAtivos;
@@ -21,7 +22,8 @@ public class SetConversation : MonoBehaviour
     {
         if (!isWaiting)
         {
-            IncluirTexto();
+            IncluirTexto();            
+            statementSender.logQuestionAnswers("Interacted with Tutor","Corpóreo",true);
         }        
 
     }
