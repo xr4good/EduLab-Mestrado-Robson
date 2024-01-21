@@ -20,6 +20,8 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 
+    
+
     public override void OnJoinedRoom()
     {
         
@@ -27,11 +29,10 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
         int n = int.Parse(name.Substring(name.Length - 1, 1));
         Debug.Log("Joined Room "+ n);
 
-        setgameconfig(n);
-       
+        setgameconfig(n);       
         StartGame();
         joined = true;
-        ButtonEntrar.SetActive(true);
+        //ButtonEntrar.SetActive(true);
 
     }
 

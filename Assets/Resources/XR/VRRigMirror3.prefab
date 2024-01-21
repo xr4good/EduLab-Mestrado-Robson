@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1697686373333905298}
   m_Layer: 0
   m_Name: VRRigMirror3
-  m_TagString: Player3
+  m_TagString: Tutor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

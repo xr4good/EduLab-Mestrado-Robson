@@ -10,7 +10,8 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject quickStartButton;
     [SerializeField] private GameObject quickCancelButton;
     [SerializeField] private int roomSize;
-    
+    [SerializeField] private int multiplayerSceneIndex;
+
     public GameObject painel;
     public Slider slider;
 
@@ -36,6 +37,16 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
             painel.SetActive(true);
         }
 
+    }
+
+    public override void OnJoinedRoom()
+    {
+        string name = PhotonNetwork.CurrentRoom.Name;
+        int n = int.Parse(name.Substring(name.Length - 1, 1));
+        Debug.Log("Joined Room " + n);
+
+        setgameconfig(n);
+        StartGame();
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -79,5 +90,105 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
     }
 
-    
+    public void StartGame()
+    {
+        Debug.Log("Player " + SetGameConfig.PLAYER + " Corpo " + SetGameConfig.CORPO);
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            if (SetGameConfig.PLAYER == "65" && SetGameConfig.CORPO)
+            {
+                Debug.Log("Starting tutor game");
+                PhotonNetwork.LoadLevel(multiplayerSceneIndex);
+            }
+            else if (SetGameConfig.PLAYER != "65")
+            {
+                Debug.Log("Starting Game");
+                PhotonNetwork.LoadLevel(multiplayerSceneIndex);
+
+            }
+            else
+            {
+                Debug.Log("Not bodied tutor allowed");
+            }
+        }
+    }
+
+    private void setgameconfig(int n)
+    {
+        Debug.Log("SetGameConfig " + n);
+
+        switch (n)
+        {
+            case 1:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case 2:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            case 3:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case 4:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            case 5:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case 6:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            case 7:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case 8:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
+    }
+
 }

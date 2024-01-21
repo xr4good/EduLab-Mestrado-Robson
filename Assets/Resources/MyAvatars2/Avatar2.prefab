@@ -276,7 +276,7 @@ MonoBehaviour:
   turnSmoothness: 5
   IKHead: {fileID: 7199601910722801201}
   headBodyOffset: {x: 0, y: -1.65, z: 0}
-  player: Player2
+  tag: Player2
   height: -6.26
 --- !u!114 &661612614937777147
 MonoBehaviour:
@@ -478,7 +478,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130675964393310767}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

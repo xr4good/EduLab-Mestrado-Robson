@@ -13,6 +13,9 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     public GameObject Help1;
     public GameObject Help2;
     public GameObject HelpLonge;
+    public GameObject ButtonTutor;
+    public GameObject dicas1;
+    public GameObject dicas2;
 
     public GameObject Bancada2;
 
@@ -30,6 +33,21 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
             
             if (SetGameConfig.CORPO) //se o tutor for corpóreo
             {
+                if(SetGameConfig.PLAYER == "65")
+                {
+                    ButtonTutor.SetActive(true);
+
+                        if (SetGameConfig.SEQUENCIA1)
+                        {
+                            dicas1.SetActive(true);
+
+                        }
+                        else
+                        {
+                            dicas2.SetActive(true);
+                        }
+                    
+                }
                 if (SetGameConfig.PERTO)
                 {
                     Help1.SetActive(true);

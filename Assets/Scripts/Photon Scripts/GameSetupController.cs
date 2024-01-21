@@ -23,9 +23,6 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private int n;
 
-    [SerializeField] private GameObject dicas1;
-    [SerializeField] private GameObject dicas2;
-
 
 
     // Start is called before the first frame update
@@ -60,7 +57,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private void CreatePlayer()
     {
-        Debug.Log("Player" + SetGameConfig.PLAYER);
+       
         if(SetGameConfig.PLAYER != "65")
         {
             if (GameObject.FindGameObjectsWithTag("Player1").Length == 0)
@@ -86,23 +83,9 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         }
         else
         {
-            if (SetGameConfig.CORPO)
-            {
-                InstanciarTutor();
-                if (SetGameConfig.SEQUENCIA1)
-                {
-                    dicas1.SetActive(true);
-
-                }
-                else
-                {
-                    dicas2.SetActive(true);
-                }
-            }
+            InstanciarTutor();
             
-        }        
-        
-
+        }       
         
     }
 
@@ -171,17 +154,6 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
         GameObject avatar = PhotonNetwork.Instantiate ("Tutor", ActiveVR.transform.position, Quaternion.identity);
                 
-        
-
-
-        //troca o layer dos componentes que serão invisíveis para a camera
-        //NotSeeHead notSeeHead = avatar.GetComponent<NotSeeHead>();
-        //notSeeHead.IgnoreLayer = XR.GetComponent<ActiveAvatar>().player;
-        //notSeeHead.changeLayer();
-
-        //Trocando o que a câmera pode ver       
-        //Camera camera = mainCamera.GetComponent<Camera>();
-        //camera.cullingMask &= ~(1 << LayerMask.NameToLayer(notSeeHead.IgnoreLayer));
 
 
         //Informa qual o avatar ativo para o XR
