@@ -25,9 +25,26 @@ public class StatementSender : MonoBehaviour
 
     }
 
+    public async void SendStament(string question, string answer, bool isCorrect, bool isComplete)
+    {
+        Agent actor = getActorByEmail("player" + SetGameConfig.PLAYER.ToString() + "@testeusuario.com");
+
+        //Build out Verb details
+        TinCan.Verb verb = getVerb(LogVerb.Answered.url, LogVerb.Answered.descriptionEnUS);
+
+        //Build out Activity details
+        string extension = @"{'" + LogCategory.Question.url + "': {question: '" + question + "', answer: '" + answer + "'}}";
+        Activity activity = getActivity(LogCategory.Question.url, LogCategory.Question.descriptionEnUS, extension);
+
+        Result result = getResult(isComplete,
+                                  isCorrect,
+                                  isCorrect ? 100 : 0);
+
+        StartCoroutine(SaveStatement(actor, verb, activity, result));
+    }
 
 
-    public async void logQuestionAnswers(string question, string answer, bool isCorrect) {
+    /*public async void logQuestionAnswers(string question, string answer, bool isCorrect) {
         Agent actor = getActorByEmail("player"+SetGameConfig.PLAYER.ToString()+"@testeusuario.com");
 
         //Build out Verb details
@@ -42,7 +59,7 @@ public class StatementSender : MonoBehaviour
                                   isCorrect ? 100 : 0);
 
         StartCoroutine(SaveStatement(actor, verb, activity, result));
-    }
+    }*/
 
     /*public async void logQuizFinished() {
 

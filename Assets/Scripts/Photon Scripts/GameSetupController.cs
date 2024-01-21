@@ -23,12 +23,16 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private int n;
 
+    [SerializeField] private GameObject dicas1;
+    [SerializeField] private GameObject dicas2;
+
 
 
     // Start is called before the first frame update
     
     void Start()
     {
+        
         CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
         
         AtivateTeleportationArea(); //ativa as áreas de teleporte
@@ -38,18 +42,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     IEnumerator CreateVrMirror (Transform cameraOffSet,Transform mainCamera)
     {
         yield return new WaitForSeconds(2);
-        if (GameObject.FindGameObjectsWithTag("Player1").Length == 0)
-        {
-            n = 1;
-        }
-        else if (GameObject.FindGameObjectsWithTag("Player2").Length == 0)
-        {
-            n = 2;
-        }
-        else
-        {
-            n = 3;
-        }
+        
 
         UnityEngine.Debug.Log("Creating Online Player " + n);
         ActiveVR.GetComponent<ActiveAvatar>().player = "Player" + n;
@@ -67,18 +60,50 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private void CreatePlayer()
     {
+        Debug.Log("Player" + SetGameConfig.PLAYER);
+        if(SetGameConfig.PLAYER != "65")
+        {
+            if (GameObject.FindGameObjectsWithTag("Player1").Length == 0)
+            {
+                n = 1;
+            }
+            else if (GameObject.FindGameObjectsWithTag("Player2").Length == 0)
+            {
+                n = 2;
+            }
 
-        //Instanciate XROrigin            
-        ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
+            //Instanciate XROrigin            
+            ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
 
 
-        //ativa o áudio
-        Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
-        Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
-        mainCamera.GetComponent<AudioListener>().enabled = true;
+            //ativa o áudio
+            Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
+            Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
+            mainCamera.GetComponent<AudioListener>().enabled = true;
 
-        //Aguarda 2 segundos e cria VRRig Mirror
-        StartCoroutine(CreateVrMirror(cameraOffSet ,mainCamera));
+            //Aguarda 2 segundos e cria VRRig Mirror
+            StartCoroutine(CreateVrMirror(cameraOffSet, mainCamera));
+        }
+        else
+        {
+            if (SetGameConfig.CORPO)
+            {
+                InstanciarTutor();
+                if (SetGameConfig.SEQUENCIA1)
+                {
+                    dicas1.SetActive(true);
+
+                }
+                else
+                {
+                    dicas2.SetActive(true);
+                }
+            }
+            
+        }        
+        
+
+        
     }
 
     private void AtivateTeleportationArea()
@@ -114,6 +139,67 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             case 3: return pos3;
         }
         return pos1;
+    }
+
+    private void InstanciarTutor()
+    {
+        n = 3;
+
+        //Instanciate XROrigin            
+        ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
+
+
+        //ativa o áudio
+        Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
+        Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
+        mainCamera.GetComponent<AudioListener>().enabled = true;
+                
+        //Aguarda 2 segundos e cria VRRig Mirror
+        UnityEngine.Debug.Log("Creating Tutor");
+        ActiveVR.GetComponent<ActiveAvatar>().player = "Tutor";
+        player = "Tutor";
+
+        //Instanciate VR Rig Mirror
+        Mirror = PhotonNetwork.Instantiate(Path.Combine("XR", "VRRigMirror" + n), pos(n), Quaternion.identity);
+        VRMirror vRMirror = Mirror.GetComponent<VRMirror>();
+        Mirror.tag = "Tutor";
+
+
+        vRMirror.cameraTransform.originTransform = mainCamera.transform;
+        vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
+        vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
+
+        GameObject avatar = PhotonNetwork.Instantiate ("Tutor", ActiveVR.transform.position, Quaternion.identity);
+                
+        
+
+
+        //troca o layer dos componentes que serão invisíveis para a camera
+        //NotSeeHead notSeeHead = avatar.GetComponent<NotSeeHead>();
+        //notSeeHead.IgnoreLayer = XR.GetComponent<ActiveAvatar>().player;
+        //notSeeHead.changeLayer();
+
+        //Trocando o que a câmera pode ver       
+        //Camera camera = mainCamera.GetComponent<Camera>();
+        //camera.cullingMask &= ~(1 << LayerMask.NameToLayer(notSeeHead.IgnoreLayer));
+
+
+        //Informa qual o avatar ativo para o XR
+        ActiveVR.GetComponent<ActiveAvatar>().avatar = avatar;
+        avatar.GetComponent<AnimateOnInput>().ativeAvatar = ActiveVR.GetComponent<ActiveAvatar>();
+        avatar.GetComponent<AvatarAnimationController>().enabled = true;
+
+        PhotonAnimatorView photonAnimatorView = avatar.GetComponent<PhotonAnimatorView>();
+        photonAnimatorView.SetLayerSynchronized(0, PhotonAnimatorView.SynchronizeType.Discrete);
+        photonAnimatorView.SetLayerSynchronized(1, PhotonAnimatorView.SynchronizeType.Discrete);
+        photonAnimatorView.SetLayerSynchronized(2, PhotonAnimatorView.SynchronizeType.Discrete);
+        photonAnimatorView.SetParameterSynchronized("Left Pinch", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+        photonAnimatorView.SetParameterSynchronized("Right Pinch", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+        photonAnimatorView.SetParameterSynchronized("Left Grab", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+        photonAnimatorView.SetParameterSynchronized("Right Grab", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+        photonAnimatorView.SetParameterSynchronized("isMoving", PhotonAnimatorView.ParameterType.Bool, PhotonAnimatorView.SynchronizeType.Discrete);
+        photonAnimatorView.SetParameterSynchronized("animSpeed", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+
     }
 
 }

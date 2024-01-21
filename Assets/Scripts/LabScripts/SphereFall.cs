@@ -13,5 +13,12 @@ public class SphereFall : MonoBehaviour
         {
             transform.position = posicaoInicial;
         }
+
+        if( transform.position.x > posicaoInicial.x + 0.226f ||
+            transform.position.x < posicaoInicial.x - 0.721f )
+            
+        {
+            transform.position = posicaoInicial;
+        }
     }
 }

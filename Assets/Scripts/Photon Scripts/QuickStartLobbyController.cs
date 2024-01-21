@@ -51,14 +51,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         //CreateRoom();
     }
 
-    public override void OnJoinedRoom()
-    {
-        string name = PhotonNetwork.CurrentRoom.Name;
-        int n = int.Parse(name.Substring(name.Length - 1, 1));
-        Debug.Log("Room number " + n);
-
-        setgameconfig(n);
-    }
+   
 
     void CreateRoom() //Trying to create our own Room
     {
@@ -86,78 +79,5 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
     }
 
-    private void setgameconfig(int n)
-    {
-        switch (n)
-        {
-            case 1:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = true;
-                    break;
-                }
-            case 2:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = false;
-                    break;
-                }
-            case 3:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = true;
-                    break;
-                }
-            case 4:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = false;
-                    break;
-                }
-            case 5:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = true;
-                    break;
-                }
-            case 6:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = false;
-                    break;
-                }
-            case 7:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = true;
-                    break;
-                }
-            case 8:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = false;
-                    break;
-                }
-            default:
-                {
-                    break;
-                }
-        }
-}
+    
 }

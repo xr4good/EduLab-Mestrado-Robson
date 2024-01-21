@@ -13,11 +13,12 @@ TagManager:
   - Player2
   - Player3
   - Sphere
+  - Tutor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DICA
   - Water
   - UI
   - Sky

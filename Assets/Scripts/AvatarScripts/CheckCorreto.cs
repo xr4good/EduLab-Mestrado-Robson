@@ -44,7 +44,15 @@ public class CheckCorreto : MonoBehaviour
                     trocaPonto.TrocarPontos(10, true);
 
                     //informa a LRS
-                    statementSender.logQuestionAnswers("Bola",numero.ToString(),true) ;
+                    if (sequencia.concluido)
+                    {
+                        statementSender.SendStament("Bola", numero.ToString(), true, true);
+                    }
+                    else
+                    {
+                        statementSender.SendStament("Bola", numero.ToString(), true, false);
+                    }
+                    
 
                 }
 
@@ -60,7 +68,7 @@ public class CheckCorreto : MonoBehaviour
                 trocaPonto.TrocarPontos(10, false);
 
                 //informa a LRS
-                statementSender.logQuestionAnswers("Bola", numero.ToString(), false);
+                statementSender.SendStament("Bola", numero.ToString(), false, false);
             }
         }
        

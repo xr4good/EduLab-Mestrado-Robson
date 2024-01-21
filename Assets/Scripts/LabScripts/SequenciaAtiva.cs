@@ -9,7 +9,7 @@ public class SequenciaAtiva : MonoBehaviour
     [SerializeField] private int proximo;
     public GameObject tubo;
     public Material materialConcluido;
-
+    public TimeCounter timeCounter;
     private int pos = 0;
     public bool concluido = false;
 
@@ -32,6 +32,7 @@ public class SequenciaAtiva : MonoBehaviour
             tubo.GetComponent<Renderer>().material = materialConcluido;
             concluido=true;
             proximo = 7;
+            timeCounter.StopCounter();
 
         }
     } 

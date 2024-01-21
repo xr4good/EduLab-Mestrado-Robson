@@ -62,11 +62,11 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
         Camera camera = mainCamera.GetComponent<Camera>();
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer(notSeeHead.IgnoreLayer));
+        camera.cullingMask &= ~(1 << LayerMask.NameToLayer("DICA"));
 
         //troca a proporção do avatar de acordo com a altura do usuario
         //float value = 1 * (cameraOffSet.transform.position.y / mainCamera.transform.position.y);        
-        //avatar.transform.localScale = new Vector3(value, value, value);
-        
+        //avatar.transform.localScale = new Vector3(value, value, value);        
 
 
         /*Setup the VR Target in the Avatar        
