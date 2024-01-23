@@ -35,7 +35,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         }
         else
         {
-            CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
+            StartCoroutine( CreatePlayer() ); //Create a networked player Object for each player that loads into the multiplayer
         }
         
         
@@ -44,9 +44,11 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     }
 
     
-
-    private void CreatePlayer()
+    
+    IEnumerator CreatePlayer()
     {
+        yield return new WaitForSeconds(1);
+
         Debug.Log("Player 1 found: " + GameObject.FindGameObjectsWithTag("Player1").Length);
         Debug.Log("Player 2 found: " + GameObject.FindGameObjectsWithTag("Player2").Length);
 
