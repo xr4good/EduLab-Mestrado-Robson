@@ -18,18 +18,19 @@ public class StatementSender : MonoBehaviour
     {
 
         lrs = new RemoteLRS(
-        "http://localhost:8080/xapi",    
-        "2e63a65026105efa0879986eddee3ca845e40bc66ae5f904bebe714d644a57ca",
-        "978fbdf23ba9fbafbceb5d7385b5fe688d31af3c610f11b1d690e78dafb9a9b3"
+        "http://200.239.138.28:8080/xapi",
+        "e9e46275f42b6af54f08d90c6392d2673b0e8f9aeddfee7b2818d5b77ef62551",
+        "1b02723000f4b00c5b19b9ca7f3db2831af997fd488817e68786d27651ddce75"
         );
 
     }
 
     public async void SendStament(string question, string answer, bool isCorrect, bool isComplete)
     {
-        Agent actor = getActorByEmail("player" + SetGameConfig.PLAYER.ToString() + "@testeusuario.com");
+        Agent actor = getActorByEmail("player" + SetGameConfig.PLAYER.ToString() + "@mestradorobson.com");
 
         //Build out Verb details
+                
         TinCan.Verb verb = getVerb(LogVerb.Answered.url, LogVerb.Answered.descriptionEnUS);
 
         //Build out Activity details

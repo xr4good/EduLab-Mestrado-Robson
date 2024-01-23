@@ -29,16 +29,44 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     
     void Start()
     {
+        if(SetGameConfig.PLAYER == "65")
+        {
+            CreateTutor();
+        }
+        else
+        {
+            CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
+        }
         
-        CreatePlayer(); //Create a networked player Object for each player that loads into the multiplayer
         
         AtivateTeleportationArea(); //ativa as áreas de teleporte
         StartCoroutine( CriarEsferas() ); //cria as esferas e a bancada de acordo
     }
 
-    IEnumerator CreateVrMirror (Transform cameraOffSet,Transform mainCamera)
+    
+
+    private void CreatePlayer()
     {
-        yield return new WaitForSeconds(2);
+        Debug.Log("Player 1 found: " + GameObject.FindGameObjectsWithTag("Player1").Length);
+        Debug.Log("Player 2 found: " + GameObject.FindGameObjectsWithTag("Player2").Length);
+
+        if (GameObject.FindGameObjectsWithTag("Player1").Length == 0)
+        {
+            n = 1;
+        }
+        else if (GameObject.FindGameObjectsWithTag("Player2").Length == 0)
+        {
+            n = 2;
+        }
+
+        //Instanciate XROrigin            
+        ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
+
+
+        //ativa o áudio
+        Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
+        Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
+        mainCamera.GetComponent<AudioListener>().enabled = true;
         
 
         UnityEngine.Debug.Log("Creating Online Player " + n);
@@ -49,45 +77,13 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         Mirror = PhotonNetwork.Instantiate(Path.Combine("XR", "VRRigMirror" + n), pos(n), Quaternion.identity);
         VRMirror vRMirror = Mirror.GetComponent<VRMirror>();
 
-        
+
         vRMirror.cameraTransform.originTransform = mainCamera.transform;
         vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
         vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
+
     }
-
-    private void CreatePlayer()
-    {
-       
-        if(SetGameConfig.PLAYER != "65")
-        {
-            if (GameObject.FindGameObjectsWithTag("Player1").Length == 0)
-            {
-                n = 1;
-            }
-            else if (GameObject.FindGameObjectsWithTag("Player2").Length == 0)
-            {
-                n = 2;
-            }
-
-            //Instanciate XROrigin            
-            ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
-
-
-            //ativa o áudio
-            Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
-            Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
-            mainCamera.GetComponent<AudioListener>().enabled = true;
-
-            //Aguarda 2 segundos e cria VRRig Mirror
-            StartCoroutine(CreateVrMirror(cameraOffSet, mainCamera));
-        }
-        else
-        {
-            InstanciarTutor();
-            
-        }       
-        
-    }
+   
 
     private void AtivateTeleportationArea()
     {
@@ -124,7 +120,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         return pos1;
     }
 
-    private void InstanciarTutor()
+    private void CreateTutor()
     {
         n = 3;
 

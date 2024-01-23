@@ -26,7 +26,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
 
         XR = GameObject.FindGameObjectWithTag("Player");
 
-        XR = setup.ActiveVR;
+        setup.ActiveVR = XR; //salva o vr ativo no gamesetup
 
         //instancia o avatar e recupera o seu controler
         if (XR.GetComponent<ActiveAvatar>().avatar != null)
@@ -64,16 +64,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer(notSeeHead.IgnoreLayer));
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer("DICA"));
 
-        //troca a proporção do avatar de acordo com a altura do usuario
-        //float value = 1 * (cameraOffSet.transform.position.y / mainCamera.transform.position.y);        
-        //avatar.transform.localScale = new Vector3(value, value, value);        
-
-
-        /*Setup the VR Target in the Avatar        
-        control.head.vrTarget = cameraOffSet.Find("Main Camera").transform;
-        control.leftHand.vrTarget = cameraOffSet.Find("LeftHand").transform;
-        control.rightHand.vrTarget = cameraOffSet.Find("RightHand").transform;*/
-
+      
         //Informa qual o avatar ativo para o XR
         XR.GetComponent<ActiveAvatar>().avatar = avatar;
         avatar.GetComponent<AnimateOnInput>().ativeAvatar = XR.GetComponent<ActiveAvatar>();

@@ -22,9 +22,6 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        if(PhotonNetwork.CountOfPlayers == 1)
-        {
-
             if (!SetGameConfig.JUNTO)
             {
                 Bancada2.SetActive(true);
@@ -48,6 +45,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
                         }
                     
                 }
+
                 if (SetGameConfig.PERTO)
                 {
                     Help1.SetActive(true);
@@ -58,10 +56,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
                     }
 
                 }
-                else
-                {
-                    HelpLonge.SetActive(true);
-                }
+             
 
             }
             else  // se o tutor for objeto
@@ -81,11 +76,11 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
                 }
 
             }
-        }
-    }
+     }
+}
     
         
     
 
 
-}
+
