@@ -42,7 +42,7 @@ public class AvatarController : MonoBehaviourPunCallbacks//, IPunObservable
     [SerializeField] private Transform IKHead;
 
     [SerializeField] private Vector3 headBodyOffset;
-    [SerializeField] private string tag;
+    [SerializeField] private string tague;
     [SerializeField] private float height;
 
     private GameObject Mirror;
@@ -51,7 +51,7 @@ public class AvatarController : MonoBehaviourPunCallbacks//, IPunObservable
     {
         GameObject gameSetup = GameObject.Find("GameSetup");
         
-        Mirror = GameObject.FindWithTag(tag);
+        Mirror = GameObject.FindWithTag(tague);
         if(Mirror != null)
         {
             head.vrTarget = Mirror.transform.Find("CameraMirror");

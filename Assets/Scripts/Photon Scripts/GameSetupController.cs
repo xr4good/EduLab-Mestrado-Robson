@@ -15,8 +15,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public GameObject XRPrefab;
     public GameObject ActiveVR;
     private GameObject Mirror;
-    public string player;
-    [SerializeField] List<GameObject> teleportAreas;
+    
+    public string player;  
     
     [SerializeField] StartSphere startSphere1;
     [SerializeField] StartSphere startSphere2;
@@ -39,7 +39,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         }
         
         
-        AtivateTeleportationArea(); //ativa as áreas de teleporte
+        //AtivateTeleportationArea(); //ativa as áreas de teleporte
         StartCoroutine( CriarEsferas() ); //cria as esferas e a bancada de acordo
     }
 
@@ -63,7 +63,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
         //Instanciate XROrigin            
         ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
-
+        
 
         //ativa o áudio
         Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
@@ -87,15 +87,6 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     }
    
 
-    private void AtivateTeleportationArea()
-    {
-
-        foreach(GameObject obj in teleportAreas)
-        {
-            obj.SetActive(true);
-        }
-
-    }
 
     IEnumerator CriarEsferas()
     {
@@ -128,7 +119,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
         //Instanciate XROrigin            
         ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
-
+       
 
         //ativa o áudio
         Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
