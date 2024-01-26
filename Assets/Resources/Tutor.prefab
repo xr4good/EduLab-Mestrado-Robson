@@ -1781,7 +1781,7 @@ MonoBehaviour:
   turnSmoothness: 5
   IKHead: {fileID: 7930825915446476992}
   headBodyOffset: {x: 0, y: -1.65, z: 0}
-  tag: Tutor
+  tague: Tutor
   height: -6.26
 --- !u!114 &7930825915940548718
 MonoBehaviour:

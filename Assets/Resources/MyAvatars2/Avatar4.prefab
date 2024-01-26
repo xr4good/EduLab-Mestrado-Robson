@@ -1902,8 +1902,8 @@ Transform:
   m_GameObject: {fileID: 3001281051691752352}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -2.4931774, y: -1.3285104, z: -2.3741188}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.94, y: 0.94, z: 0.94}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2620408277917732756}
   - {fileID: 657214360963932416}
@@ -2003,7 +2003,7 @@ MonoBehaviour:
   turnSmoothness: 5
   IKHead: {fileID: 1414064943982200792}
   headBodyOffset: {x: 0, y: -1.65, z: 0}
-  tag: Player2
+  tague: Player2
   height: -6.26
 --- !u!114 &1414064944927901185
 MonoBehaviour:

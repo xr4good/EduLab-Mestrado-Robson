@@ -5,12 +5,19 @@ using TinCan;
 using TinCan.LRSResponses;
 using System;
 using Newtonsoft.Json.Linq;
+using TMPro;
+using UnityEngine.UI;
+
 
 //using UnityEditor.VersionControl;
+
+
 
 public class StatementSender : MonoBehaviour
 {
     private RemoteLRS lrs;
+   
+    
     //static Boolean isSlideCompleted = false;
 
     // Use this for initialization
@@ -22,15 +29,16 @@ public class StatementSender : MonoBehaviour
         "e9e46275f42b6af54f08d90c6392d2673b0e8f9aeddfee7b2818d5b77ef62551",
         "1b02723000f4b00c5b19b9ca7f3db2831af997fd488817e68786d27651ddce75"
         );
-
+       
+        
     }
 
     public void SendStament(string question, string answer, bool isCorrect, bool isComplete)
     {
         Agent actor = getActorByEmail("player" + SetGameConfig.PLAYER.ToString() + "@mestradorobson.com");
-
+        
         //Build out Verb details
-                
+
         TinCan.Verb verb = getVerb(LogVerb.Answered.url, LogVerb.Answered.descriptionEnUS);
 
         //Build out Activity details
@@ -112,19 +120,21 @@ public class StatementSender : MonoBehaviour
         statement.verb = verb;
         statement.target = activity;
         statement.result = result;
+
+        
+        //Send the statement
+        StatementLRSResponse lrsResponse = lrs.SaveStatement(statement);
+        
+        //Debug.Log(lrsResponse.httpException.ToString());
         
 
-        //Send the statement
-     StatementLRSResponse lrsResponse = lrs.SaveStatement(statement);
-
-        //Debug.Log(lrsResponse.httpException.ToString());
-
         if (lrsResponse.success) //Success
-        {
+        {           
             Debug.Log("Save statement: " + lrsResponse.content.id);
         }
         else //Failure
         {
+            
             Debug.Log("Statement Failed: " + lrsResponse.errMsg);
         }
         yield break;

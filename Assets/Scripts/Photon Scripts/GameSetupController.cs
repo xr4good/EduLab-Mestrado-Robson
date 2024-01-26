@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEditor.XR.LegacyInputHelpers;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameSetupController : MonoBehaviourPunCallbacks
 {
@@ -15,6 +16,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public GameObject XRPrefab;
     public GameObject ActiveVR;
     private GameObject Mirror;
+   
     
     public string player;  
     
@@ -83,6 +85,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         vRMirror.cameraTransform.originTransform = mainCamera.transform;
         vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
         vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
+       
 
     }
    
