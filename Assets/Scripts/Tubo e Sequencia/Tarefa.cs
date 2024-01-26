@@ -13,7 +13,7 @@ public class Tarefa : MonoBehaviour
     private List<int> sequencia2 = new List<int>() { 2, 4, 3, 1, 1, 3, 2, 2, 4 };
 
 
-    private void Start()
+    void Awake()
     {
         tubo.sequencia.Clear();
       
