@@ -18,7 +18,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     public GameObject Bancada2;
 
     // Start is called before the first frame update
-    void Start()
+    public void StartConfig()
     {
             if (!SetGameConfig.JUNTO)
             {

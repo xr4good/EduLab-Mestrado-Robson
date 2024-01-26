@@ -16,8 +16,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public GameObject XRPrefab;
     public GameObject ActiveVR;
     private GameObject Mirror;
-   
-    
+
+    public SetObjectTutor setObjectTutor;
     public string player;  
     
     [SerializeField] StartSphere startSphere1;
@@ -47,6 +47,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         
         //AtivateTeleportationArea(); //ativa as áreas de teleporte
         StartCoroutine( CriarEsferas() ); //cria as esferas e a bancada de acordo
+        
     }
 
     
@@ -89,7 +90,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         vRMirror.cameraTransform.originTransform = mainCamera.transform;
         vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
         vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
-       
+
+        setObjectTutor.StartConfig();
 
     }
    
@@ -181,6 +183,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         {
             dicas2.SetActive(true);
         }
+
+        setObjectTutor.StartConfig();
     }
 
 }
