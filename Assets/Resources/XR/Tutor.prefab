@@ -1508,8 +1508,6 @@ GameObject:
   - component: {fileID: 4503519954703460747}
   - component: {fileID: 3837711455529760645}
   - component: {fileID: 7097883737638380599}
-  - component: {fileID: 8073581045675114434}
-  - component: {fileID: 8222111856854730997}
   - component: {fileID: 7930825915940548694}
   - component: {fileID: 7930825915940548717}
   - component: {fileID: 7930825915940548716}
@@ -1583,35 +1581,6 @@ MonoBehaviour:
     BodyType: 1
     OutfitGender: 1
     SkinTone: '#d3a5a4'
---- !u!114 &8073581045675114434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975944678551524599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8112819fa10b2549869292e920d4a6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blinkDuration: 0.1
-  blinkInterval: 3
---- !u!114 &8222111856854730997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975944678551524599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bf4ff6de4560d44d9b3b0697e00c1b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioClip: {fileID: 0}
-  AudioSource: {fileID: 7930825915940548694}
-  AudioProvider: 0
 --- !u!82 &7930825915940548694
 AudioSource:
   m_ObjectHideFlags: 0
