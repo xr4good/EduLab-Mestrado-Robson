@@ -29,7 +29,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         {            
             quickStartButton.SetActive(false);
             quickCancelButton.SetActive(true);
-            PhotonNetwork.JoinRoom("Lab"+slider.value.ToString());//First tries to join an existing room                                           
+            CreateRoom();                                        
             Debug.Log("Quick Start");
         }
         else
@@ -47,7 +47,10 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         Debug.Log("Joined Room " + name);
 
         setgameconfig(n);
-        StartGame();
+        if(PhotonNetwork.CurrentRoom != null)
+        {
+            StartGame();
+        }        
     }
      
 
@@ -64,30 +67,11 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     {
         Debug.Log("Creating Room");
         //int RandomRoomNumber = Random.Range(0, 2);
-        RoomOptions roomOptions = new RoomOptions() { IsVisible= true, IsOpen=true, MaxPlayers = (byte)roomSize};
-        if(slider.value != 0 )
-        {
-            PhotonNetwork.CreateRoom("Lab" + slider.value, roomOptions); //attempting to create a new Room
-            Debug.Log("RoomCreated");
-        }    
+        RoomOptions roomOptions = new RoomOptions() { IsVisible= false, IsOpen=true, MaxPlayers = (byte)roomSize};
+        PhotonNetwork.JoinOrCreateRoom("Lab" + slider.value, roomOptions, TypedLobby.Default); //attempting to create a new Room
+        Debug.Log("Joined or Created Room");          
         
     }
-
-    public override void OnCreateRoomFailed(short returnCode, string message)
-    {
-        Debug.Log("Failed to create room... trying again");
-
-        try
-        {
-            PhotonNetwork.JoinRoom("Lab" + slider.value.ToString());//First tries to join an existing room   
-        }
-        finally
-        {
-            CreateRoom();
-        }
-        
-    }
-
 
 
     public void QuickCancel() //Paired to cancel button
