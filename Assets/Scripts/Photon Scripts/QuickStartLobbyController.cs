@@ -29,7 +29,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         {            
             quickStartButton.SetActive(false);
             quickCancelButton.SetActive(true);
-            PhotonNetwork.JoinRandomRoom();//First tries to join an existing room                                           
+            PhotonNetwork.JoinRoom("Lab"+slider.value.ToString());//First tries to join an existing room                                           
             Debug.Log("Quick Start");
         }
         else
@@ -39,27 +39,23 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     }
 
+
     public override void OnJoinedRoom()
     {
         string name = PhotonNetwork.CurrentRoom.Name;
         int n = int.Parse(name.Substring(name.Length - 1, 1));
-        Debug.Log("Joined Room " + n);
+        Debug.Log("Joined Room " + name);
 
         setgameconfig(n);
         StartGame();
     }
-
-    public override void OnJoinRandomFailed(short returnCode, string message)
-    {
-        Debug.Log("Failed to join the random Room");
-        CreateRoom();
-    }
+     
 
 
     public override void OnJoinRoomFailed(short returnCode, string message) //
     {
         Debug.Log("Failed to join the especifed Room");
-        //CreateRoom();
+        CreateRoom();
     }
 
    
@@ -80,8 +76,19 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
         Debug.Log("Failed to create room... trying again");
-        CreateRoom();
+
+        try
+        {
+            PhotonNetwork.JoinRoom("Lab" + slider.value.ToString());//First tries to join an existing room   
+        }
+        finally
+        {
+            CreateRoom();
+        }
+        
     }
+
+
 
     public void QuickCancel() //Paired to cancel button
     {
