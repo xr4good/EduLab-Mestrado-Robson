@@ -17,8 +17,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public GameObject ActiveVR;
     private GameObject Mirror;
 
-    public SetObjectTutor setObjectTutor;
-    public string player;  
+   public string player;  
     
     [SerializeField] StartSphere startSphere1;
     [SerializeField] StartSphere startSphere2;
@@ -91,7 +90,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
         vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
 
-        setObjectTutor.StartConfig();
+        
 
     }
    
@@ -183,8 +182,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         {
             dicas2.SetActive(true);
         }
-
-        setObjectTutor.StartConfig();
+                
     }
 
 }

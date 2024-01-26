@@ -2352,7 +2352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5690965810904823119}
   - component: {fileID: 5690965810904823216}
-  - component: {fileID: 3412060480595182210}
   m_Layer: 0
   m_Name: IkHead
   m_TagString: Untagged
@@ -2426,22 +2425,6 @@ MonoBehaviour:
       z: 1
     m_MaintainPositionOffset: 0
     m_MaintainRotationOffset: 0
---- !u!114 &3412060480595182210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5690965810904823118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &5690965811026786296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,7 +2435,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5690965811026786297}
   - component: {fileID: 5690965811026786298}
-  - component: {fileID: 2921960874202486629}
   m_Layer: 0
   m_Name: IKRigthArm
   m_TagString: Untagged
@@ -2501,22 +2483,6 @@ MonoBehaviour:
     m_HintWeight: 1
     m_MaintainTargetPositionOffset: 0
     m_MaintainTargetRotationOffset: 0
---- !u!114 &2921960874202486629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5690965811026786296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &5690965811111313675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2524,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5690965811566500347}
   - component: {fileID: 5690965811566500348}
-  - component: {fileID: 2982100970176234560}
   m_Layer: 0
   m_Name: 'IKLeftArm '
   m_TagString: Untagged
@@ -2607,22 +2572,6 @@ MonoBehaviour:
     m_HintWeight: 1
     m_MaintainTargetPositionOffset: 0
     m_MaintainTargetRotationOffset: 0
---- !u!114 &2982100970176234560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5690965811566500346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &5690965811912779879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3981,9 +3930,9 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: -283175748630959067}
   - {fileID: 6943178093232854151}
-  - {fileID: 2982100970176234560}
-  - {fileID: 2921960874202486629}
-  - {fileID: 3412060480595182210}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

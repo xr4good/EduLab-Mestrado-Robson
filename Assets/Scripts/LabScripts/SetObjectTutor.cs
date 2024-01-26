@@ -1,28 +1,26 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
 public class SetObjectTutor : MonoBehaviourPunCallbacks
 {
 
-    public GameObject LaptopBancada1;
-    public GameObject LaptopBancada2;
-    public GameObject LaptopLonge;
-    public GameObject Help1;
-    public GameObject Help2;
-    public GameObject HelpLonge;
-    
-
-    public GameObject Bancada2;
+    public GameObject Bancada1Transform;
+    public GameObject Bancada2Transform;
+    private GameObject Bancada1;
+    private GameObject Bancada2;
 
     // Start is called before the first frame update
-    public void StartConfig()
+     void Start()
     {
-            if (!SetGameConfig.JUNTO)
+       Bancada1 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
+        if (!SetGameConfig.JUNTO)
             {
-                Bancada2.SetActive(true);
+            Bancada2 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
+                //Bancada2.SetActive(true);
             }
 
             
@@ -31,11 +29,13 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
                 
                 if (SetGameConfig.PERTO)
                 {
-                    Help1.SetActive(true);
+                GameObject Help1 = Bancada1.transform.Find("Help").gameObject;
+                Help1.SetActive(true);
 
                     if (!SetGameConfig.JUNTO)
                     {
-                        Help2.SetActive(true);                        
+                    GameObject Help2 = Bancada2.transform.Find("Help").gameObject;
+                    Help2.SetActive(true);                        
                     }
 
                 }
@@ -46,16 +46,14 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
             {
                 if (SetGameConfig.PERTO)   // se o tutor estiver perto
                 {
-                    LaptopBancada1.SetActive(true);
+                GameObject LaptopBancada1 = Bancada1.transform.Find("laptop").gameObject;
+                LaptopBancada1.SetActive(true);
 
                     if (!SetGameConfig.JUNTO)       //se estiver trabalhando em dupla
-                    {                     
-                        LaptopBancada2.SetActive(true);                       
+                    {
+                    GameObject LaptopBancada2 = Bancada2.transform.Find("laptop").gameObject;
+                    LaptopBancada2.SetActive(true);                       
                     }
-                }
-                else  //se o tutor estiver longe
-                {
-                    LaptopLonge.SetActive(true);
                 }
 
             }
