@@ -13,7 +13,7 @@ public class ballPosition
 
     public void InstaciateSphere()
     {
-        PhotonNetwork.Instantiate(Path.Combine(pasta, "Sphere " + numero), posicaoInicial.posicaoInicial, Quaternion.identity);
+        PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial.posicaoInicial, Quaternion.identity);
     }
 
 

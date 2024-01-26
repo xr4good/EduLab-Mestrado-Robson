@@ -10,16 +10,33 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
     public GameObject Bancada1Transform;
     public GameObject Bancada2Transform;
+    public List<GameObject> Interações;
+    public GameObject Sair;
+
     private GameObject Bancada1;
     private GameObject Bancada2;
 
     // Start is called before the first frame update
     void Awake()
     {
-        CarregarObjetos();
+        CarregarObjetosSala();
+        CarregarObjetosLab();
     }
 
-    void CarregarObjetos()
+    public void InstanciaSaída()
+    {
+        PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", Sair.name), Sair.transform.position, Sair.transform.rotation);
+    }
+    void CarregarObjetosSala()
+    {
+        foreach(GameObject obj in Interações)
+        {
+            PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", obj.name), obj.transform.position, obj.transform.rotation);
+        }
+        
+    }
+
+    void CarregarObjetosLab()
     {
         
         Bancada1 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);

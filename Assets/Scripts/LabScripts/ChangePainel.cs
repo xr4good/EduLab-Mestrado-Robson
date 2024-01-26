@@ -10,7 +10,12 @@ public class ChangePainel : MonoBehaviour
 
     public GameObject botaoProximo;
     public GameObject botaoAnterior;
-    public GameObject botaoSair;
+    SetObjectTutor setObject;
+
+    private void Awake()
+    {
+        setObject = GameObject.FindObjectOfType<SetObjectTutor>();
+    }
 
     public void Proximo()
     {
@@ -22,7 +27,7 @@ public class ChangePainel : MonoBehaviour
         {
             botaoProximo.SetActive(false);
             botaoAnterior.SetActive(true);
-            botaoSair.SetActive(true);
+            setObject.InstanciaSaída();
         }
         else
         {
