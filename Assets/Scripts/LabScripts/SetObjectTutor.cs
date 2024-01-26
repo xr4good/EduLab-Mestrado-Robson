@@ -14,50 +14,57 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     private GameObject Bancada2;
 
     // Start is called before the first frame update
-     void Start()
+    void Awake()
     {
-       Bancada1 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
-        if (!SetGameConfig.JUNTO)
-            {
-            Bancada2 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
-                //Bancada2.SetActive(true);
-            }
+        CarregarObjetos();
+    }
 
-            
-            if (SetGameConfig.CORPO) //se o tutor for corpóreo
+    void CarregarObjetos()
+    {
+        
+        Bancada1 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
+        if (!SetGameConfig.JUNTO)
+        {
+            Bancada2 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
+            //Bancada2.SetActive(true);
+        }
+
+
+        if (SetGameConfig.CORPO) //se o tutor for corpóreo
+        {
+
+            if (SetGameConfig.PERTO)
             {
-                
-                if (SetGameConfig.PERTO)
-                {
                 GameObject Help1 = Bancada1.transform.Find("Help").gameObject;
                 Help1.SetActive(true);
 
-                    if (!SetGameConfig.JUNTO)
-                    {
+                if (!SetGameConfig.JUNTO)
+                {
                     GameObject Help2 = Bancada2.transform.Find("Help").gameObject;
-                    Help2.SetActive(true);                        
-                    }
-
+                    Help2.SetActive(true);
                 }
-             
 
             }
-            else  // se o tutor for objeto
+
+
+        }
+        else  // se o tutor for objeto
+        {
+            if (SetGameConfig.PERTO)   // se o tutor estiver perto
             {
-                if (SetGameConfig.PERTO)   // se o tutor estiver perto
-                {
                 GameObject LaptopBancada1 = Bancada1.transform.Find("laptop").gameObject;
                 LaptopBancada1.SetActive(true);
 
-                    if (!SetGameConfig.JUNTO)       //se estiver trabalhando em dupla
-                    {
+                if (!SetGameConfig.JUNTO)       //se estiver trabalhando em dupla
+                {
                     GameObject LaptopBancada2 = Bancada2.transform.Find("laptop").gameObject;
-                    LaptopBancada2.SetActive(true);                       
-                    }
+                    LaptopBancada2.SetActive(true);
                 }
-
             }
-     }
+
+        
+    }
+}
 }
     
         

@@ -32,7 +32,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     // Start is called before the first frame update
 
-    void Start()
+    void Awake()
     {
         if(SetGameConfig.PLAYER == "65")
         {
