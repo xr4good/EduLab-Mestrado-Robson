@@ -144,7 +144,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
         vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
 
-        GameObject avatar = PhotonNetwork.Instantiate ("Tutor", ActiveVR.transform.position, Quaternion.identity);
+        GameObject avatar = PhotonNetwork.Instantiate (Path.Combine("XR", "Tutor"), ActiveVR.transform.position, Quaternion.identity);
                 
 
 
