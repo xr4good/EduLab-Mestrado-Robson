@@ -25,15 +25,19 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private int n;
 
+    public GameObject ButtonTutor;
+    public GameObject dicas1;
+    public GameObject dicas2;
+
 
 
     // Start is called before the first frame update
-    
+
     void Start()
     {
         if(SetGameConfig.PLAYER == "65")
         {
-            CreateTutor();
+            StartCoroutine(CreateTutor());
         }
         else
         {
@@ -116,8 +120,9 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         return pos1;
     }
 
-    private void CreateTutor()
+    IEnumerator CreateTutor()
     {
+        yield return new WaitForSeconds(1);
         n = 3;
 
         //Instanciate XROrigin            
@@ -164,6 +169,18 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         photonAnimatorView.SetParameterSynchronized("isMoving", PhotonAnimatorView.ParameterType.Bool, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("animSpeed", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
 
+
+        ButtonTutor.SetActive(true);
+
+        if (SetGameConfig.SEQUENCIA1)
+        {
+            dicas1.SetActive(true);
+
+        }
+        else
+        {
+            dicas2.SetActive(true);
+        }
     }
 
 }
