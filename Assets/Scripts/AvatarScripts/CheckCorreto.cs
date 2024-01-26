@@ -10,13 +10,13 @@ public class CheckCorreto : MonoBehaviour
     public SequenciaAtiva sequencia;
     [SerializeField] ParticleSystem smoke;
     public TrocaPonto trocaPonto;
-    public StatementSender statementSender;
+    private StatementSender statementSender;
 
 
     private void Start()
     {
         smoke.Stop();
-        
+        statementSender = GameObject.FindObjectOfType<StatementSender>();
     }
 
 

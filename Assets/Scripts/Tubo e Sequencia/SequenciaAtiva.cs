@@ -9,11 +9,15 @@ public class SequenciaAtiva : MonoBehaviour
     [SerializeField] private int proximo;
     public GameObject tubo;
     public Material materialConcluido;
-    public TimeCounter timeCounter;
+    private TimeCounter timeCounter;
     private int pos = 0;
     public bool concluido = false;
 
-    public List<GameObject> tuboList = new List<GameObject>(); 
+    public List<GameObject> tuboList = new List<GameObject>();
+    private void Start()
+    {
+        timeCounter = GameObject.FindObjectOfType<TimeCounter>();
+    }
 
     public int getProximo()
     {
