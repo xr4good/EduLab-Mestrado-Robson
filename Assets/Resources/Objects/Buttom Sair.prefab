@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 776382326228945366}
   - component: {fileID: -3216150928939487442}
   - component: {fileID: -708790280315605074}
+  - component: {fileID: -8694264649543345313}
   m_Layer: 0
   m_Name: Buttom Sair
   m_TagString: Untagged
@@ -538,21 +539,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -8694264649543345313}
         m_TargetAssemblyTypeName: MoveToLab, Assembly-CSharp
-        m_MethodName: LoadScene1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TimeCounter, Assembly-CSharp
-        m_MethodName: StartCounter
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -659,7 +648,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -708790280315605074}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -679,6 +669,21 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-8694264649543345313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452361001503227394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241870364271c2d45bd608dee35f255a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posicao1: {x: -23.413, y: -7.81, z: 0.348}
+  posicao2junto: {x: -23.413, y: -7.81, z: 1.949}
+  posicao2separado: {x: -19.561, y: -7.81, z: 0.348}
 --- !u!1 &8705232892536060298
 GameObject:
   m_ObjectHideFlags: 0
