@@ -10,11 +10,16 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
     public GameObject Bancada1Transform;
     public GameObject Bancada2Transform;
+    private GameObject Help1;
+    private GameObject Help2;
+    private GameObject laptop1;
+    private GameObject laptop2;
+
     public List<GameObject> Interações;
     public GameObject Sair;
 
-    private GameObject Bancada1;
-    private GameObject Bancada2;
+   
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -39,11 +44,10 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     void CarregarObjetosLab()
     {
         
-        Bancada1 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
+         PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
         if (!SetGameConfig.JUNTO)
         {
-            Bancada2 = PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
-            //Bancada2.SetActive(true);
+            PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
         }
 
 
@@ -52,13 +56,11 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
             if (SetGameConfig.PERTO)
             {
-                GameObject Help1 = Bancada1.transform.Find("Help").gameObject;
-                Help1.SetActive(true);
-
+                PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Help"), Help1.transform.position, Help1.transform.rotation);
+               
                 if (!SetGameConfig.JUNTO)
                 {
-                    GameObject Help2 = Bancada2.transform.Find("Help").gameObject;
-                    Help2.SetActive(true);
+                    PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Help"), Help2.transform.position, Help2.transform.rotation);
                 }
 
             }
@@ -69,13 +71,11 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
         {
             if (SetGameConfig.PERTO)   // se o tutor estiver perto
             {
-                GameObject LaptopBancada1 = Bancada1.transform.Find("laptop").gameObject;
-                LaptopBancada1.SetActive(true);
+                PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "laptop"), laptop1.transform.position, laptop1.transform.rotation);
 
                 if (!SetGameConfig.JUNTO)       //se estiver trabalhando em dupla
                 {
-                    GameObject LaptopBancada2 = Bancada2.transform.Find("laptop").gameObject;
-                    LaptopBancada2.SetActive(true);
+                    PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "laptop"), laptop2.transform.position, laptop2.transform.rotation); ;
                 }
             }
 
