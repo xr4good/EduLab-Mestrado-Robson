@@ -1,13 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.XR.CoreUtils;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Realtime;
-using UnityEngine.UIElements;
 using System.IO;
-using UnityEditor.XR.LegacyInputHelpers;
-using ReadyPlayerMe.Core.WebView;
+
 
 public class LoadAvatar : MonoBehaviourPunCallbacks
 {
@@ -18,6 +13,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
     private GameObject avatar;
     //public VRTargetsPosition positions;
     //public int nplayer;
+    
 
    
 

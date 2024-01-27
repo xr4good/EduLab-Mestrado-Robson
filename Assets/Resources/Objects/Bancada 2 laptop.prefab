@@ -5612,7 +5612,6 @@ MonoBehaviour:
   - {fileID: 5915281668697616264, guid: ba531581308e8f0439a8a984bfa45d95, type: 3}
   pedido: {fileID: 3250145199537444385, guid: 0c4b4af7c438ae24d9732853c171cda6, type: 3}
   TextosAtivos: []
-  statementSender: {fileID: 0}
 --- !u!114 &974960789184250851
 MonoBehaviour:
   m_ObjectHideFlags: 0
