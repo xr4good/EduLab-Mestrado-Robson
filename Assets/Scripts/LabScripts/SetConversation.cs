@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class SetConversation : MonoBehaviour
+public class SetConversation : MonoBehaviourPunCallbacks
 {
     [SerializeField] GameObject painelPai;
 
@@ -20,10 +20,28 @@ public class SetConversation : MonoBehaviour
     int totalDicas;
     bool isWaiting = false;
 
-    public StatementSender statementSender;
+    StatementSender statementSender;
 
+    private void Start()
+    {
+        statementSender = GameObject.FindObjectOfType<StatementSender>();
+    }
 
     public void FazerPedido()
+    {
+        this.photonView.RPC("InstanciarFazerPedido", RpcTarget.All);
+        if (SetGameConfig.SEQUENCIA1)
+        {
+            statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia1", true, false);
+        }
+        else
+        {
+            statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia2", true, false);
+        }
+    }
+
+    [PunRPC]
+    void InstanciarFazerPedido()
     {
         if (!isWaiting)
         {
@@ -31,13 +49,13 @@ public class SetConversation : MonoBehaviour
             {
                 IncluirTexto(dicas1[countDicas]);
                 totalDicas = dicas1.Count;
-                statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia1", true, false);
+                
             }
             else
             {
                 IncluirTexto(dicas2[countDicas]);
                 totalDicas = dicas2.Count;
-                statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia2", true, false);
+                
             }            
             
         }        

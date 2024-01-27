@@ -55,9 +55,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(1);
 
-        Debug.Log("Player 1 found: " + GameObject.FindGameObjectsWithTag("Player1").Length);
-        Debug.Log("Player 2 found: " + GameObject.FindGameObjectsWithTag("Player2").Length);
-
+   
         if (GameObject.FindGameObjectsWithTag("Player1").Length == 0)
         {
             n = 1;

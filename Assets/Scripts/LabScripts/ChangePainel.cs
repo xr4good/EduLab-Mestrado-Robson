@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ChangePainel : MonoBehaviour
+public class ChangePainel : MonoBehaviourPunCallbacks
 {
     public List<GameObject> paineis;
     public int pos = 0;
@@ -19,6 +20,14 @@ public class ChangePainel : MonoBehaviour
 
     public void Proximo()
     {
+
+        this.photonView.RPC("UpdateProximo", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void UpdateProximo()
+    {
+    
         paineis[pos].SetActive(false);
         pos++;
         paineis[pos].SetActive(true);
@@ -36,7 +45,8 @@ public class ChangePainel : MonoBehaviour
         }                
 
     }
- 
+
+    [PunRPC]
     public void Anterior()
     {
         

@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class CheckCorreto : MonoBehaviour
+public class CheckCorreto : MonoBehaviourPunCallbacks
 {
     
     public List<GameObject> bolaPrefabs; 
@@ -60,7 +61,7 @@ public class CheckCorreto : MonoBehaviour
             else
             {
                 // ativa animação, destroi o objeto e cria uma nova esfera no lugar de origem
-                smoke.Play();
+                this.photonView.RPC("PlaySmoke", RpcTarget.All);
                 Destroy(other.gameObject);
                 Instantiate(bolaPrefabs[numero - 1], posicaoInicial, Quaternion.identity);
                 
@@ -73,6 +74,12 @@ public class CheckCorreto : MonoBehaviour
         }
        
 
+    }
+
+    [PunRPC]
+    void PlaySmoke()
+    {
+        smoke.Play();
     }
 
 }

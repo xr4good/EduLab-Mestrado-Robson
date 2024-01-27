@@ -2041,7 +2041,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8409762332615185903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,17 +2079,6 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -2853318752573378188}
-  - {fileID: 3335795380532772036}
-  - {fileID: 2124225574398087073}
-  - {fileID: 4031272974417613327}
-  - {fileID: 3163145464794461072}
-  - {fileID: 3572697534536458861}
-  - {fileID: 1014935585812844136}
-  - {fileID: 2445369727081482837}
-  - {fileID: 2823253077200755572}
-  - {fileID: 8444791648561900690}
-  - {fileID: 6404861383030476013}
-  - {fileID: 2956516671518884529}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2119,6 +2108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8409762332620165387}
   - component: {fileID: 8409762332620165380}
+  - component: {fileID: 4963649080967189432}
   m_Layer: 0
   m_Name: Paineis
   m_TagString: Untagged
@@ -2184,6 +2174,39 @@ MonoBehaviour:
   pos: 0
   botaoProximo: {fileID: 1005408132141185869}
   botaoAnterior: {fileID: 1005408132165617962}
+--- !u!114 &4963649080967189432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409762332620165386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 3335795380532772036}
+  - {fileID: 2124225574398087073}
+  - {fileID: 4031272974417613327}
+  - {fileID: 3163145464794461072}
+  - {fileID: 3572697534536458861}
+  - {fileID: 1014935585812844136}
+  - {fileID: 2445369727081482837}
+  - {fileID: 2823253077200755572}
+  - {fileID: 8444791648561900690}
+  - {fileID: 6404861383030476013}
+  - {fileID: 2956516671518884529}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8409762332704375422
 GameObject:
   m_ObjectHideFlags: 0

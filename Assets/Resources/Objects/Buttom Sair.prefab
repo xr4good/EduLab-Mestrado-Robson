@@ -684,6 +684,7 @@ MonoBehaviour:
   posicao1: {x: -23.413, y: -7.81, z: 0.348}
   posicao2junto: {x: -23.413, y: -7.81, z: 1.949}
   posicao2separado: {x: -19.561, y: -7.81, z: 0.348}
+  first: 1
 --- !u!1 &8705232892536060298
 GameObject:
   m_ObjectHideFlags: 0
