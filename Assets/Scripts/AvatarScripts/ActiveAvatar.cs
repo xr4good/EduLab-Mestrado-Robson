@@ -7,6 +7,7 @@ public class ActiveAvatar : MonoBehaviour
     public GameObject avatar;
     public string player;
     [SerializeField] ActiveModel activeModel;
+    public int numeroAvatar;
 
     private void Update()
     {      

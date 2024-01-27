@@ -12,21 +12,21 @@ using ReadyPlayerMe.Core.WebView;
 public class LoadAvatar : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
-    [SerializeField] private int numeroAvatar;
+    
     [SerializeField] private GameSetupController setup;   
     private GameObject XR;
-    private GameObject avatar;    
+    private GameObject avatar;
     //public VRTargetsPosition positions;
     //public int nplayer;
 
+   
 
-    IEnumerator trocarAvatar()
+
+    IEnumerator trocarAvatar(int numeroAvatar)
     {
         yield return new WaitForSeconds(2);
-
-        XR = GameObject.FindGameObjectWithTag("Player");
-
-        setup.ActiveVR = XR; //salva o vr ativo no gamesetup
+       
+        XR = setup.ActiveVR;
 
         //instancia o avatar e recupera o seu controler
         if (XR.GetComponent<ActiveAvatar>().avatar != null)
@@ -44,12 +44,9 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         {
             avatar = PhotonNetwork.Instantiate(Path.Combine("MyAvatars2", "Avatar" + numeroAvatar), XR.transform.position, Quaternion.identity);
         }
-        else
-        {
+        
 
-        }
-
-        AvatarController control = avatar.GetComponent<AvatarController>();
+        //AvatarController control = avatar.GetComponent<AvatarController>();
 
 
         //troca o layer dos componentes que serão invisíveis para a camera
@@ -58,8 +55,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         notSeeHead.changeLayer();
 
         //Trocando o que a câmera pode ver       
-        Transform cameraOffSet = XR.transform.Find("CameraOffset");
-        Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
+        Transform mainCamera = XR.transform.Find("CameraOffset").transform.Find("Main Camera");      
         Camera camera = mainCamera.GetComponent<Camera>();
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer(notSeeHead.IgnoreLayer));
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer("DICA"));
@@ -67,6 +63,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
       
         //Informa qual o avatar ativo para o XR
         XR.GetComponent<ActiveAvatar>().avatar = avatar;
+        XR.GetComponent<ActiveAvatar>().numeroAvatar = numeroAvatar;
         avatar.GetComponent<AnimateOnInput>().ativeAvatar = XR.GetComponent<ActiveAvatar>();
         avatar.GetComponent<AvatarAnimationController>().enabled = true;
 
@@ -82,9 +79,9 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         photonAnimatorView.SetParameterSynchronized("animSpeed", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
     }
 
-    public void AvatarChange()
+    public void ChangeAvatar(int numeroAvatar)
     {
-        StartCoroutine(trocarAvatar());
+        StartCoroutine(trocarAvatar(numeroAvatar));
 
     }
 

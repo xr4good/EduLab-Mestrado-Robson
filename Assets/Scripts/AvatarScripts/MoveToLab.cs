@@ -12,8 +12,12 @@ public class MoveToLab : MonoBehaviourPunCallbacks
     
     [SerializeField]private bool first = true;
 
-    
+    LoadAvatar loadAvatar;
 
+    private void Start()
+    {
+        loadAvatar = GameObject.FindObjectOfType<LoadAvatar>();
+    }
     [PunRPC]
     void ChangeFirst(bool isFirst)
     {
@@ -30,14 +34,17 @@ public class MoveToLab : MonoBehaviourPunCallbacks
     IEnumerator aoPressionar()
     {
         yield return new WaitForSeconds(2);
+
         GameObject XR = GameObject.FindGameObjectWithTag("Player");
-        ActiveAvatar activeAvatar = XR.GetComponent<ActiveAvatar>();
-        GameObject Mirror = GameObject.FindGameObjectWithTag(activeAvatar.player);
+        int n = XR.GetComponent<ActiveAvatar>().numeroAvatar;
+              
+        
         
         if ( first)
         {           
             XR.transform.position = posicao1;
-            Mirror.transform.position= posicao1;
+            loadAvatar.ChangeAvatar(n);
+          
             this.photonView.RPC("ChangeFirst", RpcTarget.All, false);
             TimeCounter time = GameObject.FindObjectOfType<TimeCounter>();
             time.StartCounter();
@@ -47,12 +54,12 @@ public class MoveToLab : MonoBehaviourPunCallbacks
             if (SetGameConfig.JUNTO)
             {
                 XR.transform.position = posicao2junto;
-                Mirror.transform.position = posicao2junto;
+                loadAvatar.ChangeAvatar(n);
             }
             else
             {
                 XR.transform.position = posicao2separado;
-                Mirror.transform.position = posicao2separado;
+                loadAvatar.ChangeAvatar(n);
             }
             
         }       
