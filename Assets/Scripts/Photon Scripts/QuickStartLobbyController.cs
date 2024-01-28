@@ -119,10 +119,26 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
                     SetGameConfig.JUNTO = true;
                     break;
                 }
-            case 2:
+            case 5:
                 {
                     SetGameConfig.PERTO = true;
                     SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            case 2:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
+                    SetGameConfig.SEQUENCIA1 = true;
+                    SetGameConfig.JUNTO = true;
+                    break;
+                }
+            case6:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = false;
                     SetGameConfig.SEQUENCIA1 = true;
                     SetGameConfig.JUNTO = false;
                     break;
@@ -130,36 +146,20 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
             case 3:
                 {
                     SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = true;
-                    break;
-                }
-            case 4:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = false;
-                    break;
-                }
-            case 5:
-                {
-                    SetGameConfig.PERTO = true;
                     SetGameConfig.CORPO = true;
                     SetGameConfig.SEQUENCIA1 = false;
                     SetGameConfig.JUNTO = true;
-                    break;
-                }
-            case 6:
-                {
-                    SetGameConfig.PERTO = true;
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = false;
                     break;
                 }
             case 7:
+                {
+                    SetGameConfig.PERTO = true;
+                    SetGameConfig.CORPO = true;
+                    SetGameConfig.SEQUENCIA1 = false;
+                    SetGameConfig.JUNTO = false;
+                    break;
+                }
+            case 4:
                 {
                     SetGameConfig.PERTO = true;
                     SetGameConfig.CORPO = false;
