@@ -48,7 +48,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
         if (SetGameConfig.CORPO) //se o tutor for corpóreo
         {
 
-            PhotonNetwork.Instantiate(Path.Combine("XR", "Tutor"), pos, Quaternion.identity);
+            PhotonNetwork.InstantiateRoomObject(Path.Combine("XR", "Tutor"), pos, Quaternion.identity);
 
             PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1 Help"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
                
