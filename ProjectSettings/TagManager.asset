@@ -15,6 +15,7 @@ TagManager:
   - Sphere
   - Tutor
   - Log
+  - Lamp
   layers:
   - Default
   - TransparentFX

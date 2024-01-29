@@ -596,6 +596,7 @@ MonoBehaviour:
   avatar: {fileID: 0}
   player: 
   activeModel: {fileID: -4495615254988999012}
+  numeroAvatar: 0
 --- !u!114 &-4495615254988999012
 MonoBehaviour:
   m_ObjectHideFlags: 0
