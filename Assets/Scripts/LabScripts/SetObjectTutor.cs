@@ -18,7 +18,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         CarregarObjetosSala();
         CarregarObjetosLab();  

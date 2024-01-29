@@ -19,21 +19,19 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     private List<int> sequencia2 = new List<int>() { 2, 4, 3, 1, 1, 3, 2, 2, 4 };
 
     public List<GameObject> tuboList = new List<GameObject>();
-    private void Awake()
+    private void Start()
     {
-        timeCounter = GameObject.FindObjectOfType<TimeCounter>();
-        if (photonView.IsMine)
-        {
-            this.photonView.RPC("trocarSequencia", RpcTarget.All);
-        }
+        timeCounter = GameObject.FindObjectOfType<TimeCounter>();        
+        this.photonView.RPC("trocarSequencia", RpcTarget.All);
+        
     }
          
     
 
     [PunRPC]
-    IEnumerator trocarSequencia()
+    void trocarSequencia()
     {
-        yield return new WaitForSeconds(1);
+        //yield return new WaitForSeconds(1);
         if (SetGameConfig.SEQUENCIA1)
         {
             this.sequencia = sequencia1;
