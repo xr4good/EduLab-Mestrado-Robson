@@ -16,14 +16,16 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     public List<GameObject> Interações;
     public GameObject Sair;
 
-   
-    
+
+    private List<int> sequencia1 = new List<int>() { 1, 2, 4, 2, 3, 2, 4, 3, 1 };
+    private List<int> sequencia2 = new List<int>() { 2, 4, 3, 1, 1, 3, 2, 2, 4 };
 
     // Start is called before the first frame update
     void Awake()
     {
         CarregarObjetosSala();
         CarregarObjetosLab();
+
     }
 
     public void InstanciaSaída()
@@ -41,10 +43,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
     void CarregarObjetosLab()
     {
-        
          
-        
-
         if (SetGameConfig.CORPO) //se o tutor for corpóreo
         {
 
@@ -63,19 +62,40 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
         }
         else  // se o tutor for objeto
         {
-            
                 PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1 laptop"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
 
                 if (!SetGameConfig.JUNTO)
                 {
                     PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2 laptop"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
-                }
-
-         
-
+                }       
 
         }
-}
+
+        foreach (SequenciaAtiva tubo in GameObject.FindObjectsOfType<SequenciaAtiva>())
+        {
+            this.photonView.RPC("trocarSequencia", RpcTarget.All, tubo);
+        }
+         
+    }
+
+    [PunRPC]
+    void trocarSequencia(SequenciaAtiva tubo)
+    {
+        tubo.sequencia.Clear();
+
+
+        if (SetGameConfig.SEQUENCIA1)
+        {
+            tubo.sequencia = sequencia1;
+        }
+        else
+        {
+            tubo.sequencia = sequencia2;
+        }
+
+        tubo.updateProximo();
+
+    }
 }
     
         

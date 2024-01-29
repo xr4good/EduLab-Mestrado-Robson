@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tarefa : MonoBehaviour
+public class Tarefa : MonoBehaviourPunCallbacks
 {
     public SequenciaAtiva tubo;
      
@@ -11,8 +11,13 @@ public class Tarefa : MonoBehaviour
     private List<int> sequencia1 = new List<int>() { 1, 2, 4, 2, 3, 2, 4, 3, 1 };
     private List<int> sequencia2 = new List<int>() { 2, 4, 3, 1, 1, 3, 2, 2, 4 };
 
+    public void inserirSequencia()
+    {
+        this.photonView.RPC("trocarSequencia", RpcTarget.All);
+    }
 
-    void Awake()
+    [PunRPC]
+    void trocarSequencia()
     {
         tubo.sequencia.Clear();
       
@@ -26,8 +31,7 @@ public class Tarefa : MonoBehaviour
             tubo.sequencia = sequencia2;     
         }
 
-        tubo.updateProximo();
-      
+        tubo.updateProximo();      
 
     }
 

@@ -12,7 +12,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
     [SerializeField] ParticleSystem smoke;
     public TrocaPonto trocaPonto;
     private StatementSender statementSender;
-
+    
 
     private void Start()
     {

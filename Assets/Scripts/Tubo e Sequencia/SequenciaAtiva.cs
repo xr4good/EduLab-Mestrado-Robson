@@ -58,4 +58,6 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
         painelFinal.SetActive(true);
     }
 
+
+
 }
