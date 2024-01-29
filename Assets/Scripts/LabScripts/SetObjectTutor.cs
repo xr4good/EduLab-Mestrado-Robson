@@ -10,6 +10,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
     public GameObject Bancada1Transform;
     public GameObject Bancada2Transform;
+    public Vector3 pos;
   
 
     public List<GameObject> Interações;
@@ -47,8 +48,9 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
         if (SetGameConfig.CORPO) //se o tutor for corpóreo
         {
 
-            
-                PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1 Help"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
+            PhotonNetwork.Instantiate(Path.Combine("XR", "Tutor"), pos, Quaternion.identity);
+
+            PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1 Help"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
                
                 if (!SetGameConfig.JUNTO)
                 {

@@ -45,22 +45,23 @@ public class AcenderLampada : MonoBehaviourPunCallbacks
 
     public void Apagar()
     {
-        foreach (GameObject lamp in GameObject.FindGameObjectsWithTag("Lamp"))
-        {
-            this.photonView.RPC("ApagarLuz", RpcTarget.All, lamp);
-        }
-        
+                 this.photonView.RPC("ApagarLuz", RpcTarget.All);
     }
 
     [PunRPC]
-    void ApagarLuz(GameObject obj)
+    void ApagarLuz()
     {
-        if (isAceso)
-        {            
-            obj.transform.GetComponent<MeshRenderer>().material = lampadaApagada;
-            obj.GetComponent<AcenderLampada>().luz.SetActive(false);
-            obj.GetComponent<AcenderLampada>().isAceso = false;
+        foreach ( GameObject obj in GameObject.FindGameObjectsWithTag("Lamp"))
+        {
+
+            if (isAceso)
+            {
+                obj.transform.GetComponent<MeshRenderer>().material = lampadaApagada;
+                obj.GetComponent<AcenderLampada>().luz.SetActive(false);
+                obj.GetComponent<AcenderLampada>().isAceso = false;
+            }
         }
+        
     }
 
 }

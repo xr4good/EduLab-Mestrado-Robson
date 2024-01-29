@@ -3685,7 +3685,6 @@ GameObject:
   - component: {fileID: 8021248501694608451}
   - component: {fileID: 8026213609532049556}
   - component: {fileID: 8203653067322255785}
-  - component: {fileID: -6315746116901481671}
   m_Layer: 0
   m_Name: Avatar0
   m_TagString: Untagged
@@ -4199,24 +4198,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-6315746116901481671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8019301001775906908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd7fea91fe63f4e1b884ef1e16a975c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playDelayConfig:
-    Low: 200
-    High: 200
-    Max: 1000
-    SpeedUpPerc: 5
-  restartOnDeviceChange: 1
 --- !u!1 &8042338186785914920
 GameObject:
   m_ObjectHideFlags: 0

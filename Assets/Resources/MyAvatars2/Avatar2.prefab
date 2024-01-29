@@ -55,7 +55,6 @@ GameObject:
   - component: {fileID: 1558594002780421398}
   - component: {fileID: 6065538472453944056}
   - component: {fileID: 5692424530441359274}
-  - component: {fileID: -396479135154411612}
   m_Layer: 0
   m_Name: Avatar2
   m_TagString: Untagged
@@ -567,24 +566,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-396479135154411612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130675964393310767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd7fea91fe63f4e1b884ef1e16a975c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playDelayConfig:
-    Low: 200
-    High: 200
-    Max: 1000
-    SpeedUpPerc: 5
-  restartOnDeviceChange: 1
 --- !u!1 &189785866430954152
 GameObject:
   m_ObjectHideFlags: 0
