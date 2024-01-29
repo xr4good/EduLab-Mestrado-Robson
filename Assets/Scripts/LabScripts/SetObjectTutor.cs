@@ -47,8 +47,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
         if (SetGameConfig.CORPO) //se o tutor for corpóreo
         {
 
-            if (SetGameConfig.PERTO)
-            {
+            
                 PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1 Help"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
                
                 if (!SetGameConfig.JUNTO)
@@ -56,14 +55,13 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
                     PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2 Help"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
                 }
 
-            }
+           
 
 
         }
         else  // se o tutor for objeto
         {
-            if (SetGameConfig.PERTO)
-            {
+            
                 PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1 laptop"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
 
                 if (!SetGameConfig.JUNTO)
@@ -71,7 +69,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
                     PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2 laptop"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
                 }
 
-            }
+         
 
 
         }

@@ -68,7 +68,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
         {
             case 1:
                 {
-                    SetGameConfig.PERTO = true;
+                   
                     SetGameConfig.CORPO = true;
                     SetGameConfig.SEQUENCIA1 = true;
                     SetGameConfig.JUNTO = true;
@@ -76,7 +76,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
                 }
             case 2:
                 {
-                    SetGameConfig.PERTO = true;
+                
                     SetGameConfig.CORPO = true;
                     SetGameConfig.SEQUENCIA1 = true;
                     SetGameConfig.JUNTO = false;
@@ -84,7 +84,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
                 }
             case 3:
                 {
-                    SetGameConfig.PERTO = true;
+               
                     SetGameConfig.CORPO = false;
                     SetGameConfig.SEQUENCIA1 = true;
                     SetGameConfig.JUNTO = true;
@@ -92,7 +92,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
                 }
             case 4:
                 {
-                    SetGameConfig.PERTO = true;
+                    
                     SetGameConfig.CORPO = false;
                     SetGameConfig.SEQUENCIA1 = true;
                     SetGameConfig.JUNTO = false;
@@ -100,7 +100,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
                 }
             case 5:
                 {
-                    SetGameConfig.PERTO = true;
+               
                     SetGameConfig.CORPO = true;
                     SetGameConfig.SEQUENCIA1 = false;
                     SetGameConfig.JUNTO = true;
@@ -108,7 +108,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
                 }
             case 6:
                 {
-                    SetGameConfig.PERTO = true;
+              
                     SetGameConfig.CORPO = true;
                     SetGameConfig.SEQUENCIA1 = false;
                     SetGameConfig.JUNTO = false;
@@ -116,7 +116,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
                 }
             case 7:
                 {
-                    SetGameConfig.PERTO = true;
+                   
                     SetGameConfig.CORPO = false;
                     SetGameConfig.SEQUENCIA1 = false;
                     SetGameConfig.JUNTO = true;
@@ -124,7 +124,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
                 }
             case 8:
                 {
-                    SetGameConfig.PERTO = true;
+                 
                     SetGameConfig.CORPO = false;
                     SetGameConfig.SEQUENCIA1 = false;
                     SetGameConfig.JUNTO = false;
