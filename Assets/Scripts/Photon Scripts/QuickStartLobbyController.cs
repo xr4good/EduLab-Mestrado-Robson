@@ -37,7 +37,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         {            
             quickStartButton.SetActive(false);
             quickCancelButton.SetActive(true);
-            CreateRoom();                                        
+            CreateRoom();            
             Debug.Log("Quick Start");
         }
         else
@@ -54,7 +54,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         int n = int.Parse(name.Substring(name.Length - 1, 1));
         Debug.Log("Joined Room " + name);
 
-        setgameconfig(n);
+        
         if(PhotonNetwork.CurrentRoom != null)
         {
             StartGame();
@@ -104,81 +104,6 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         }
     }
 
-    private void setgameconfig(int n)
-    {
-        Debug.Log("SetGameConfig " + n);
-
-        switch (n)
-        {
-            case 1:
-                {
-                    
-                    gameDefinitions.CORPO = true;
-                    gameDefinitions.SEQUENCIA1 = true;
-                    gameDefinitions.JUNTO = true;
-                    break;
-                }
-            case 2:
-                {
-
-                    gameDefinitions.CORPO = true;
-                    gameDefinitions.SEQUENCIA1 = true;
-                    gameDefinitions.JUNTO = false;
-                    break;
-                }
-            case 3:
-                {
-
-                    gameDefinitions.CORPO = false;
-                    gameDefinitions.SEQUENCIA1 = true;
-                    gameDefinitions.JUNTO = true;
-                    break;
-                }
-            case 4:
-                {
-
-                    gameDefinitions.CORPO = false;
-                    gameDefinitions.SEQUENCIA1 = true;
-                    gameDefinitions.JUNTO = false;
-                    break;
-                }
-            case 5:
-                {
-
-                    gameDefinitions.CORPO = true;
-                    gameDefinitions.SEQUENCIA1 = false;
-                    gameDefinitions.JUNTO = true;
-                    break;
-                }
-            case 6:
-                {
-
-                    gameDefinitions.CORPO = true;
-                    gameDefinitions.SEQUENCIA1 = false;
-                    gameDefinitions.JUNTO = false;
-                    break;
-                }
-            case 7:
-                {
-
-                    gameDefinitions.CORPO = false;
-                    gameDefinitions.SEQUENCIA1 = false;
-                    gameDefinitions.JUNTO = true;
-                    break;
-                }
-            case 8:
-                {
-
-                    gameDefinitions.CORPO = false;
-                    gameDefinitions.SEQUENCIA1 = false;
-                    gameDefinitions.JUNTO = false;
-                    break;
-                }
-            default:
-                {
-                    break;
-                }
-        }
-    }
+   
 
 }
