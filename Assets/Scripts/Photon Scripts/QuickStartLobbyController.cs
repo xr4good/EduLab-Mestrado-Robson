@@ -76,7 +76,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         Debug.Log("Creating Room");
         //int RandomRoomNumber = Random.Range(0, 2);
         RoomOptions roomOptions = new RoomOptions() { IsVisible= false, IsOpen=true, MaxPlayers = (byte)roomSize};
-        PhotonNetwork.JoinOrCreateRoom("Lab" + slider.value, roomOptions, TypedLobby.Default); //attempting to create a new Room
+        PhotonNetwork.JoinOrCreateRoom("Lab" + gameDefinitions.ROOM, roomOptions, TypedLobby.Default); //attempting to create a new Room
         Debug.Log("Joined or Created Room");       
         
     }

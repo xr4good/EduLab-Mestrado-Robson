@@ -1047,9 +1047,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Quando tiver  terminado de escolher escolher o seu corpo, voc\xEA pode
-    continuar com ele mesmo, vamos usar ele na nossa tarefa.\n\nCom um corpo voc\xEA
-    j\xE1 pode ouvir e falar com outros participantes, n\xE3o fique tim\xEDdo(a),
-    solte sua voz!\n\n\n\t\t\t\t<\t>"
+    continuar com ele mesmo, vamos usar ele na nossa tarefa.\n\n\xC9 poss\xEDvel
+    fazer 2 sinais com as m\xE3os: Um de apontar com o dedo indicador, apertando
+    o gatilho onde est\xE1 o seu indicador. O outro \xE9 um sinal de ok, apertando
+    o bot\xE3o onde est\xE1 seu dedo do meio.\n\n\t\t\t\t<\t>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1186,8 +1187,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Al\xE9m de apertar bot\xF5es, voc\xEA pode pegar objetos e solt\xE1-los
     ou jog\xE1-los.\n\nPara fazer isso voc\xEA vai apertar o bot\xE3o onde est\xE1
-    apoiado o seu dedo do meio. Sua m\xE3o tamb\xE9m vai mudar de forma.\n\nVoc\xEA
-    pode usar este gesto e o do dedo indicador para se comunicar, caso queira.\n\n\t\t\t<\t>"
+    apoiado o seu dedo do meio. Sua m\xE3o tamb\xE9m vai mudar de forma.\n\nEssa
+    \xE9 uma tarefa muito importante neste experimento, voc\xEA precisar\xE1 aprender
+    a fazer isso antes de seguir em frente, ent\xE3o leve o tempo que precisar.\n\n\t\t\t<\t>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1322,8 +1324,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ol\xE1, seja bem vindo(a) \xE0 Sala de Ambienta\xE7\xE3o!\n\nNesse painel
-    vou te passar algumas informa\xE7\xF5es sobre como utilizar a realidade virtual.
+  m_text: "Ol\xE1, sejam bem vindo(a)s \xE0 Sala de Ambienta\xE7\xE3o!\n\nNesse painel
+    vou passar algumas informa\xE7\xF5es sobre como utilizar a realidade virtual.
     \nPara come\xE7ar, aperte esse bot\xE3o aqui em baixo,  como faz com sua m\xE3o
     de verdade, aproximando esse controle branco do bot\xE3o. Ao se aproximar ele
     vai mudar de cor para indicar que voc\xEA est\xE1 perto. E para apertar \xE9
@@ -1462,10 +1464,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "J\xE1 viu que n\xE3o \xE9 dificil, segurar n\xE9, agora que tal tentar
-    colocar aquela bolinha cinza no cilindro amarelo?\n\nSe conseguir voc\xEA j\xE1
-    est\xE1 pronto para come\xE7ar!\n\nA\xED \xE9 s\xF3 apertar o bot\xE3o sair ali
-    a esquerda, mas s\xF3 aperte quando os dois estiverm prontos, ok?\n"
+  m_text: "J\xE1 viu que n\xE3o \xE9 dificil segurar n\xE9, agora que tal ent\xE3o
+    tentar colocar aquela bolinha cinza no cilindro amarelo? A l\xF3gica \xE9 a mesma,
+    aproximar e segurar.\n\nSe conseguir voc\xEA j\xE1 est\xE1 pronto para come\xE7ar!\n\nA\xED
+    \xE9 s\xF3 apertar o bot\xE3o sair ali a esquerda, mas s\xF3 aperte quando os
+    dois estiverm prontos, ok?\n\nAs instru\xE7\xF5es da tarefa estar\xE3o num quatro
+    branco na pr\xF3xima sala, boa sorte!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2275,9 +2279,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Para voc\xEA se movimentar, voc\xEA pode usar o seu pr\xF3prio corpo,
     e andar por a\xED, ou pode usar os controles. \n\nNa sua m\xE3o esquerda, tem
-    um comando, na altura do seu polegar, que se voc\xEA mexer fazer pequenos ajustes
-    para frente e para tras, sem precisar sair do lugar na vida real. \n\nPara diminuir
-    o cansa\xE7o utilize-o pouco.\nExperimente!\n\t\t\t\t<\t>"
+    um comando, na altura do seu polegar, que se voc\xEA mexer far\xE1 pequenos ajustes
+    em sua posi\xE7\xE3o, para frente e para tras, sem precisar sair do lugar na
+    vida real. \n\nPara diminuir o cansa\xE7o utilize-o pouco. Experimente!\n\t\t\t\t<\t>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2600,10 +2604,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Caso queira retornar, voc\xEA pode apertar o bot\xE3o < quantas vezes
-    quiser.\n\n\nNesta sala h\xE1 mais bot\xF5es como esse, e a forma de interagir
-    com eles \xE9 a mesma.\n\nQue tal conhecer um pouco o que voc\xEA pode fazer?\n\n\t\t\t\t     
-    <   >"
+  m_text: "Caso queira retornar, voc\xEA pode apertar o bot\xE3o < para retornar, 
+    quantas vezes quiser.\n\n\nNesta sala h\xE1 mais bot\xF5es como esse, e a forma
+    de interagir com eles \xE9 a mesma.\n\nQue tal conhecer um pouco o que voc\xEA
+    pode fazer?\n\n\t\t\t\t      <   >"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2738,11 +2742,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vamos aprender a segurar e soltar objetos?\nEssa \xE9 uma tarefa muito
-    importante neste experimento, voc\xEA precisar\xE1 aprender a fazer isso antes
-    de seguir em frente, ent\xE3o leve o tempo que precisar.\n\nPrimeiro, aproxime
-    a m\xE3o da pir\xE2mide, quando a cor mudar, aperte o bot\xE3o do seu dedo do
-    meio para segurar, e para soltar \xE9 s\xF3 soltar o bot\xE3o.\nQuando estiver
+  m_text: "Vamos tentar com um objeto grande, aquela piramide cinza em cima da mesa.\n\nPrimeiro,
+    aproxime a m\xE3o da pir\xE2mide, sem precisar apertar o bot\xE3o. quando a cor
+    mudar, aperte o bot\xE3o do seu dedo do meio, e segure-o para segurar o objeto,
+    e para soltar \xE9 s\xF3 soltar o bot\xE3o. Tente segur\xE1-la!\n\nQuando estiver
     craque, vamos em frente!\n\n\t\t\t\t\t<\t>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

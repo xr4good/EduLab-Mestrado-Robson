@@ -43,6 +43,7 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
         {
             this.sequencia = sequencia2;
         }
+        updateProximo();
 
     }
 

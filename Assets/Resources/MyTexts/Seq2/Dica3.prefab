@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6051131172412303706}
   - component: {fileID: 6663145385047097028}
   - component: {fileID: 6781124912303415502}
-  - component: {fileID: 6555403788109708531}
-  - component: {fileID: -2631887953485566438}
+  - component: {fileID: -6753891526928298761}
+  - component: {fileID: 4011058859133353720}
   m_Layer: 0
   m_Name: Dica3
   m_TagString: Untagged
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "a segunda bola e a \xFAltima s\xE3o da mesma cor"
+  m_text: "as tr\xEAs primeiras cores s\xE3o diferentes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6555403788109708531
+--- !u!114 &-6753891526928298761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &-2631887953485566438
+--- !u!114 &4011058859133353720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
