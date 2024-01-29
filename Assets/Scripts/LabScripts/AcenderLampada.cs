@@ -7,9 +7,6 @@ public class AcenderLampada : MonoBehaviourPunCallbacks
 {
     public Material lampadaApagada;
     public Material lampadaAcesa;
-
-    private bool isAceso = false;
-
     StatementSender statementSender;
 
     void Start()

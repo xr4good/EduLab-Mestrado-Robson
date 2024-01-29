@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2096019070598200245}
   - component: {fileID: 2096019070598200246}
   - component: {fileID: 2096019070598200247}
-  - component: {fileID: 2096019070598200250}
   - component: {fileID: 2096019070598200249}
   - component: {fileID: 2096019070598200248}
   - component: {fileID: 2785145516338815416}
@@ -120,19 +119,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &2096019070598200250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096019070598200240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8e0200afd25b340934c5eedc58b694, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numeroDaBola: 4
 --- !u!114 &2096019070598200249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posicaoInicial: {x: -21.632, y: -6.866722, z: 0.16}
+  numeroDaBola: 4
 --- !u!114 &2785145516338815416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +308,7 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 0.01
-    InterpolateOption: 1
+    InterpolateOption: 3
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
     ExtrapolateOption: 1
@@ -358,7 +345,6 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2785145516338815416}
-  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

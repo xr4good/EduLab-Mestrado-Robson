@@ -26,7 +26,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
     {
         if (other.gameObject.tag.Equals("Sphere"))
         {
-            int numero = other.GetComponent<NumeroBola>().numeroDaBola;
+            int numero = other.GetComponent<SphereFall>().numeroDaBola;
             Vector3 posicaoInicial = other.GetComponent<SphereFall>().posicaoInicial;
             if (numero == sequencia.getProximo())
             {

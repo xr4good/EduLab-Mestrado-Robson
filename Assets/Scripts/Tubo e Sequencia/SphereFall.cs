@@ -5,6 +5,7 @@ using UnityEngine;
 public class SphereFall : MonoBehaviour
 {
     public Vector3 posicaoInicial;
+    public int numeroDaBola;
 
     // Update is called once per frame
     void Update()

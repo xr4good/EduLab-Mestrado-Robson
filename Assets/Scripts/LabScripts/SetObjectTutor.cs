@@ -15,16 +15,13 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
     public List<GameObject> Interações;
     public GameObject Sair;
-
-
-    private List<int> sequencia1 = new List<int>() { 1, 2, 4, 2, 3, 2, 4, 3, 1 };
-    private List<int> sequencia2 = new List<int>() { 2, 4, 3, 1, 1, 3, 2, 2, 4 };
+    
 
     // Start is called before the first frame update
     void Awake()
     {
         CarregarObjetosSala();
-        CarregarObjetosLab();
+        CarregarObjetosLab();  
 
     }
 
@@ -71,31 +68,8 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
         }
 
-        foreach (SequenciaAtiva tubo in GameObject.FindObjectsOfType<SequenciaAtiva>())
-        {
-            this.photonView.RPC("trocarSequencia", RpcTarget.All, tubo);
-        }
-         
     }
 
-    [PunRPC]
-    void trocarSequencia(SequenciaAtiva tubo)
-    {
-        tubo.sequencia.Clear();
-
-
-        if (SetGameConfig.SEQUENCIA1)
-        {
-            tubo.sequencia = sequencia1;
-        }
-        else
-        {
-            tubo.sequencia = sequencia2;
-        }
-
-        tubo.updateProximo();
-
-    }
 }
     
         

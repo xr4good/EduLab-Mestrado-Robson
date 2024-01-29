@@ -25,7 +25,7 @@ public class StartSphere : MonoBehaviourPunCallbacks
     [SerializeField] public ballPosition sphere3;
     [SerializeField] public ballPosition sphere4;
 
-    
+
     public void CreateSpheres()
     {
         sphere1.InstaciateSphere();
@@ -33,6 +33,6 @@ public class StartSphere : MonoBehaviourPunCallbacks
         sphere3.InstaciateSphere();
         sphere4.InstaciateSphere();
     }
+ 
 }
-
   

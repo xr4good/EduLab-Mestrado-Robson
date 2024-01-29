@@ -15,16 +15,41 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     public bool concluido = false;
     public GameObject painelFinal;
 
+    private List<int> sequencia1 = new List<int>() { 1, 2, 4, 2, 3, 2, 4, 3, 1 };
+    private List<int> sequencia2 = new List<int>() { 2, 4, 3, 1, 1, 3, 2, 2, 4 };
+
     public List<GameObject> tuboList = new List<GameObject>();
-    private void Start()
+    private void Awake()
     {
         timeCounter = GameObject.FindObjectOfType<TimeCounter>();
+        if (photonView.IsMine)
+        {
+            this.photonView.RPC("trocarSequencia", RpcTarget.All);
+        }
+    }
+         
+    
+
+    [PunRPC]
+    void trocarSequencia()
+    {      
+
+        if (SetGameConfig.SEQUENCIA1)
+        {
+            this.sequencia = sequencia1;
+        }
+        else
+        {
+            this.sequencia = sequencia2;
+        }
+
     }
 
     public int getProximo()
     {
         return proximo;
     }
+
 
     public void updateProximo()
     {
@@ -47,7 +72,6 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
             proximo = 7;
             timeCounter.StopCounter();
             this.photonView.RPC("ChamarPainelFinal", RpcTarget.All);
-
 
         }
     }
