@@ -13,10 +13,12 @@ public class MoveToLab : MonoBehaviourPunCallbacks
     [SerializeField]private bool first = true;
 
     LoadAvatar loadAvatar;
+    GameDefinitions gameDefinitions;
 
     private void Start()
     {
         loadAvatar = GameObject.FindObjectOfType<LoadAvatar>();
+        gameDefinitions = FindObjectOfType<GameDefinitions>();
     }
     [PunRPC]
     void ChangeFirst(bool isFirst)
@@ -51,7 +53,7 @@ public class MoveToLab : MonoBehaviourPunCallbacks
         }
         else
         {            
-            if (SetGameConfig.JUNTO)
+            if (gameDefinitions.JUNTO)
             {
                 XR.transform.position = posicao2junto;
                 loadAvatar.ChangeAvatar(n);

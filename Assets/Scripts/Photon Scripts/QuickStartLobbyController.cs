@@ -12,8 +12,16 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     [SerializeField] private int roomSize;
     [SerializeField] private int multiplayerSceneIndex;
 
+    GameDefinitions gameDefinitions;
+
     public GameObject painel;
     public Slider slider;
+
+    private void Start()
+    {
+        gameDefinitions = GameObject.FindObjectOfType<GameDefinitions>();
+    }
+
 
     //Callback function for when first connection is estabilish
     public override void OnConnectedToMaster()
@@ -69,7 +77,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         //int RandomRoomNumber = Random.Range(0, 2);
         RoomOptions roomOptions = new RoomOptions() { IsVisible= false, IsOpen=true, MaxPlayers = (byte)roomSize};
         PhotonNetwork.JoinOrCreateRoom("Lab" + slider.value, roomOptions, TypedLobby.Default); //attempting to create a new Room
-        Debug.Log("Joined or Created Room");          
+        Debug.Log("Joined or Created Room");       
         
     }
 
@@ -83,25 +91,16 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
-        Debug.Log("Player " + SetGameConfig.PLAYER + " Corpo " + SetGameConfig.CORPO);
-
+       
         if (PhotonNetwork.IsMasterClient)
         {
-            if (SetGameConfig.PLAYER == "65" && SetGameConfig.CORPO)
-            {
-                Debug.Log("Starting tutor game");
-                PhotonNetwork.LoadLevel(multiplayerSceneIndex);
-            }
-            else if (SetGameConfig.PLAYER != "65")
+            
             {
                 Debug.Log("Starting Game");
                 PhotonNetwork.LoadLevel(multiplayerSceneIndex);
 
             }
-            else
-            {
-                Debug.Log("Not bodied tutor allowed");
-            }
+         
         }
     }
 
@@ -114,65 +113,65 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
             case 1:
                 {
                     
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = true;
+                    gameDefinitions.CORPO = true;
+                    gameDefinitions.SEQUENCIA1 = true;
+                    gameDefinitions.JUNTO = true;
                     break;
                 }
             case 2:
                 {
-                    
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = false;
+
+                    gameDefinitions.CORPO = true;
+                    gameDefinitions.SEQUENCIA1 = true;
+                    gameDefinitions.JUNTO = false;
                     break;
                 }
             case 3:
                 {
-                    
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = true;
+
+                    gameDefinitions.CORPO = false;
+                    gameDefinitions.SEQUENCIA1 = true;
+                    gameDefinitions.JUNTO = true;
                     break;
                 }
             case 4:
                 {
-                    
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = true;
-                    SetGameConfig.JUNTO = false;
+
+                    gameDefinitions.CORPO = false;
+                    gameDefinitions.SEQUENCIA1 = true;
+                    gameDefinitions.JUNTO = false;
                     break;
                 }
             case 5:
                 {
-                   
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = true;
+
+                    gameDefinitions.CORPO = true;
+                    gameDefinitions.SEQUENCIA1 = false;
+                    gameDefinitions.JUNTO = true;
                     break;
                 }
             case 6:
                 {
-                   
-                    SetGameConfig.CORPO = true;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = false;
+
+                    gameDefinitions.CORPO = true;
+                    gameDefinitions.SEQUENCIA1 = false;
+                    gameDefinitions.JUNTO = false;
                     break;
                 }
             case 7:
                 {
-                  
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = true;
+
+                    gameDefinitions.CORPO = false;
+                    gameDefinitions.SEQUENCIA1 = false;
+                    gameDefinitions.JUNTO = true;
                     break;
                 }
             case 8:
                 {
-                   
-                    SetGameConfig.CORPO = false;
-                    SetGameConfig.SEQUENCIA1 = false;
-                    SetGameConfig.JUNTO = false;
+
+                    gameDefinitions.CORPO = false;
+                    gameDefinitions.SEQUENCIA1 = false;
+                    gameDefinitions.JUNTO = false;
                     break;
                 }
             default:

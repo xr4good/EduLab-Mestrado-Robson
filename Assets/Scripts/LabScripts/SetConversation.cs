@@ -21,16 +21,18 @@ public class SetConversation : MonoBehaviourPunCallbacks
     bool isWaiting = false;
 
     StatementSender statementSender;
+    GameDefinitions gameDefinitions;
 
     private void Start()
     {
         statementSender = GameObject.FindObjectOfType<StatementSender>();
+        gameDefinitions = FindObjectOfType<GameDefinitions>();
     }
 
     public void FazerPedido()
     {
         this.photonView.RPC("InstanciarFazerPedido", RpcTarget.All);
-        if (SetGameConfig.SEQUENCIA1)
+        if (gameDefinitions.SEQUENCIA1)
         {
             statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia1", true, false);
         }
@@ -45,7 +47,7 @@ public class SetConversation : MonoBehaviourPunCallbacks
     {
         if (!isWaiting)
         {
-            if (SetGameConfig.SEQUENCIA1)
+            if (gameDefinitions.SEQUENCIA1)
             {
                 IncluirTexto(dicas1[countDicas]);
                 totalDicas = dicas1.Count;

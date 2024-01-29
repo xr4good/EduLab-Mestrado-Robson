@@ -19,8 +19,11 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     private List<int> sequencia2 = new List<int>() { 2, 4, 3, 1, 1, 3, 2, 2, 4 };
 
     public List<GameObject> tuboList = new List<GameObject>();
+
+    GameDefinitions gameDefinitions;
     private void Start()
     {
+        gameDefinitions = FindObjectOfType<GameDefinitions>();
         timeCounter = GameObject.FindObjectOfType<TimeCounter>();        
         this.photonView.RPC("trocarSequencia", RpcTarget.All);
         
@@ -32,7 +35,7 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     void trocarSequencia()
     {
         //yield return new WaitForSeconds(1);
-        if (SetGameConfig.SEQUENCIA1)
+        if (gameDefinitions.SEQUENCIA1)
         {
             this.sequencia = sequencia1;
         }

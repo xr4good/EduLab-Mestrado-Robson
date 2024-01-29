@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posicaoInicial: {x: 4.374, y: -2.874, z: 2.048}
+  numeroDaBola: 0
 --- !u!114 &-5199103551381341524
 MonoBehaviour:
   m_ObjectHideFlags: 0

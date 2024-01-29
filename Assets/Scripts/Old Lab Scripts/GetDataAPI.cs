@@ -230,7 +230,7 @@ public class GetDataAPI : MonoBehaviour
     {
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(i);
         yield return request.SendWebRequest();
-        if (request.isNetworkError || request.isHttpError)
+        /*if (request.isNetworkError || request.isHttpError)
         {
             success = false;
             textInfoData.text = "Erro ao buscar dados";
@@ -250,7 +250,7 @@ public class GetDataAPI : MonoBehaviour
             {
                 openLab();
             }
-        }
+        }*/
     }
 
     public void openLab()

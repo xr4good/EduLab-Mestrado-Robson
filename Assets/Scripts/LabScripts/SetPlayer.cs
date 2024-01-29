@@ -7,14 +7,19 @@ public class SetPlayer : MonoBehaviour
 {
     public Slider sliderPlayer;
     public Slider sliderRoom;
+    GameDefinitions gameDefinitions;
+    private void Start()
+    {
+        gameDefinitions = FindObjectOfType<GameDefinitions>();
+    }
 
     public void ChangePlayer()
     {
-        SetGameConfig.PLAYER = sliderPlayer.value.ToString();
+        gameDefinitions.PLAYER = sliderPlayer.value.ToString();
     }
 
     public void ChangeRoom()
     {
-        SetGameConfig.ROOM = sliderRoom.value.ToString();
+        gameDefinitions.ROOM = sliderRoom.value;
     }
 }

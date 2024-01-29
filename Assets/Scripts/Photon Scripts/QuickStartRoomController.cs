@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class QuickStartRoomController : MonoBehaviourPunCallbacks
 {
+    /*
     [SerializeField] private int multiplayerSceneIndex; //Number for the build index to the multiplay scene
     public bool joined = false;
     [SerializeField] private GameObject ButtonEntrar;
@@ -60,7 +61,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
         }
     }
 
-    private void setgameconfig(int n)
+  private void setgameconfig(int n)
     {
         Debug.Log("SetGameConfig " + n);
 
@@ -136,4 +137,5 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
                 }
         }
     }
+       */
 }

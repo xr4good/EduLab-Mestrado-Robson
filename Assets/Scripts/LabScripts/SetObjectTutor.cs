@@ -15,14 +15,17 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
     public List<GameObject> Interações;
     public GameObject Sair;
-    
+
+    GameDefinitions gameDefinitions;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        gameDefinitions = FindObjectOfType<GameDefinitions>();
         CarregarObjetosSala();
-        CarregarObjetosLab();  
-
+        CarregarObjetosLab();
+        
     }
 
     public void InstanciaSaída()
@@ -41,14 +44,14 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     void CarregarObjetosLab()
     {
          
-        if (SetGameConfig.CORPO) //se o tutor for corpóreo
+        if (gameDefinitions.CORPO) //se o tutor for corpóreo
         {
 
             PhotonNetwork.InstantiateRoomObject(Path.Combine("XR", "Tutor"), pos, Quaternion.identity);
 
             PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1 Help"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
                
-                if (!SetGameConfig.JUNTO)
+                if (!gameDefinitions.JUNTO)
                 {
                     PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2 Help"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
                 }
@@ -61,7 +64,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
         {
                 PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 1 laptop"), Bancada1Transform.transform.position, Bancada1Transform.transform.rotation);
 
-                if (!SetGameConfig.JUNTO)
+                if (!gameDefinitions.JUNTO)
                 {
                     PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", "Bancada 2 laptop"), Bancada2Transform.transform.position, Bancada2Transform.transform.rotation);
                 }       

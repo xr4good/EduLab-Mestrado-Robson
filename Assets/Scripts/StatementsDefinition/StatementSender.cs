@@ -16,14 +16,14 @@ using UnityEngine.UI;
 public class StatementSender : MonoBehaviour
 {
     private RemoteLRS lrs;
-   
-    
+
+    GameDefinitions gameDefinitions;
     //static Boolean isSlideCompleted = false;
 
     // Use this for initialization
     void Start()
     {
-
+        gameDefinitions = FindObjectOfType<GameDefinitions>();
         lrs = new RemoteLRS(
         "http://200.239.138.28:8080/xapi",
         "e9e46275f42b6af54f08d90c6392d2673b0e8f9aeddfee7b2818d5b77ef62551",
@@ -35,7 +35,7 @@ public class StatementSender : MonoBehaviour
 
     public void SendStament(string question, string answer, bool isCorrect, bool isComplete)
     {
-        Agent actor = getActorByEmail("player" + SetGameConfig.PLAYER.ToString() + "@mestradorobson.com");
+        Agent actor = getActorByEmail("player" + gameDefinitions.PLAYER.ToString() + "@mestradorobson.com");
         
         //Build out Verb details
 

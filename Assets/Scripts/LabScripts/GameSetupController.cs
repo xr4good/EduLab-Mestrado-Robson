@@ -28,28 +28,24 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public GameObject dicas1;
     public GameObject dicas2;
 
+    GameDefinitions gameDefinitions;
+
+    private void Start()
+    {
+        gameDefinitions = FindObjectOfType<GameDefinitions>();        
+    }
 
 
     // Start is called before the first frame update
 
     void Awake()
     {
-        if(SetGameConfig.PLAYER == "65")
-        {
-            StartCoroutine(CreateTutor());
-        }
-        else
-        {
-            StartCoroutine( CreatePlayer() ); //Create a networked player Object for each player that loads into the multiplayer
-        }
         
-        
-        //AtivateTeleportationArea(); //ativa as áreas de teleporte
+        StartCoroutine( CreatePlayer() ); //Create a networked player Object for each player that loads into the multiplayer    
         StartCoroutine( CriarEsferas() ); //cria as esferas e a bancada de acordo
         
     }
-
-    
+       
     
     IEnumerator CreatePlayer()
     {
@@ -92,15 +88,13 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     }
    
-
-
     IEnumerator CriarEsferas()
     {
         yield return new WaitForSeconds(2);
         
         if (GameObject.FindGameObjectsWithTag("Sphere").Length == 0){
             startSphere1.CreateSpheres();
-            if (!SetGameConfig.JUNTO)
+            if (!gameDefinitions.JUNTO)
             {
                 startSphere2.CreateSpheres();
             }
@@ -119,7 +113,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         return pos1;
     }
 
-    IEnumerator CreateTutor()
+    /*IEnumerator CreateTutor()
     {
         yield return new WaitForSeconds(1);
         n = 3;
@@ -181,6 +175,6 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             dicas2.SetActive(true);
         }
                 
-    }
+    }*/
 
 }

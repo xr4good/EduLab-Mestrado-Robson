@@ -11,6 +11,12 @@ public class AudioDicas : MonoBehaviourPunCallbacks
     int numeroDica = 0;
     public float volume = 0.8f;
 
+    GameDefinitions gameDefinitions;
+
+    private void Start()
+    {
+        gameDefinitions = FindObjectOfType<GameDefinitions>();
+    }
     public void FalarDica()
     {
         this.photonView.RPC("SoltarDica", RpcTarget.All);
@@ -21,7 +27,7 @@ public class AudioDicas : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(3);
 
-        if (SetGameConfig.SEQUENCIA1)
+        if (gameDefinitions.SEQUENCIA1)
         {
             AudioSource.PlayClipAtPoint(dicas1[numeroDica], audioSource.transform.position);
             //audioSource.PlayOneShot(dicas1[numeroDica], volume);
