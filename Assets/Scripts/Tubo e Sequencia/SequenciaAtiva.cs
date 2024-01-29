@@ -31,9 +31,9 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     
 
     [PunRPC]
-    void trocarSequencia()
-    {      
-
+    IEnumerator trocarSequencia()
+    {
+        yield return new WaitForSeconds(1);
         if (SetGameConfig.SEQUENCIA1)
         {
             this.sequencia = sequencia1;
