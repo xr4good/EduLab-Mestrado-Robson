@@ -7,7 +7,7 @@ public class AcenderLampada : MonoBehaviourPunCallbacks
 {
     public Material lampadaApagada;
     public Material lampadaAcesa;
-    public GameObject luz;
+
     private bool isAceso = false;
 
     StatementSender statementSender;
@@ -32,36 +32,12 @@ public class AcenderLampada : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-     void AcenderLuz()
+     IEnumerator AcenderLuz()
     {
-        if (!isAceso)        
-        {
             transform.GetComponent<MeshRenderer>().material = lampadaAcesa;
-            luz.SetActive(true);
-            isAceso=true;
-
-        }
+            yield return new WaitForSeconds(5);
+             transform.GetComponent<MeshRenderer>().material = lampadaApagada;
     }
 
-    public void Apagar()
-    {
-                 this.photonView.RPC("ApagarLuz", RpcTarget.All);
-    }
-
-    [PunRPC]
-    void ApagarLuz()
-    {
-        foreach ( GameObject obj in GameObject.FindGameObjectsWithTag("Lamp"))
-        {
-
-            if (isAceso)
-            {
-                obj.transform.GetComponent<MeshRenderer>().material = lampadaApagada;
-                obj.GetComponent<AcenderLampada>().luz.SetActive(false);
-                obj.GetComponent<AcenderLampada>().isAceso = false;
-            }
-        }
-        
-    }
 
 }

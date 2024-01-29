@@ -1516,9 +1516,7 @@ GameObject:
   - component: {fileID: 7930825915940548689}
   - component: {fileID: 7930825915940548695}
   - component: {fileID: 7930825915940548697}
-  - component: {fileID: 7930825915940548696}
   - component: {fileID: 7930825915940548699}
-  - component: {fileID: 7930825915940548698}
   - component: {fileID: 775883911}
   - component: {fileID: 5896497094195600871}
   m_Layer: 0
@@ -1592,7 +1590,7 @@ AudioSource:
   m_GameObject: {fileID: 5975944678551524599}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 9fe19d09593c70740a2e49f08f68081c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1886,20 +1884,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126494ae2a10a34499272ed97a6c9f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7930825915940548696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975944678551524599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98785f4d3c3e93c4dbb4d415e19a93ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  animator: {fileID: 3837711455529760645}
 --- !u!114 &7930825915940548699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1925,74 +1909,6 @@ MonoBehaviour:
     LayerIndex: 1
   - SynchronizeType: 1
     LayerIndex: 2
---- !u!114 &7930825915940548698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975944678551524599}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61a144f4019577a4684e3c370e321322, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationInputs:
-  - animationPropertyName: Right Pinch
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: 29f7ee15-1182-4cc4-818d-1f67058acddd
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  - animationPropertyName: Right Grab
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: 6d4c3b4a-aa9b-4cd5-a89a-272f4a68bd2b
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  - animationPropertyName: Left Pinch
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: 3196d9e8-63cf-4fd8-a7fb-e737b3a48853
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  - animationPropertyName: Left Grab
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: 1fc6fd0a-00ec-43cc-8c43-b4e3abaf38b8
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  animator: {fileID: 3837711455529760645}
-  self: {fileID: 5975944678551524599}
-  ativeAvatar: {fileID: 0}
 --- !u!114 &775883911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2019,25 +1935,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 775883911}
-  dicas1:
-  - {fileID: 8300000, guid: 4cc95cb17a240e440a442b721fcce8c6, type: 3}
-  - {fileID: 8300000, guid: 3a5bc386403be964caede1705c161406, type: 3}
-  - {fileID: 8300000, guid: 30a09f9cb74641f408855fb838cab488, type: 3}
-  - {fileID: 8300000, guid: 4bbdebaf10451124f83b76ae679e0369, type: 3}
-  - {fileID: 8300000, guid: 28c07d38e0afc3643960fe66c5cabc6f, type: 3}
-  - {fileID: 8300000, guid: 6bd95f9336e2cee489eb8e3a2466c65d, type: 3}
-  - {fileID: 8300000, guid: 8086f41272d213e499a8e66e45885f78, type: 3}
-  - {fileID: 8300000, guid: 1a6dcda55fea6e140a6557264323a97c, type: 3}
-  dicas2:
-  - {fileID: 8300000, guid: cc01cc41c5bc973429b6b8581b0c88d6, type: 3}
-  - {fileID: 8300000, guid: 496f7d6bf4fafaa4c86dfddd21c7a203, type: 3}
-  - {fileID: 8300000, guid: cd304c62928d30b4cb8c7bc376c32aba, type: 3}
-  - {fileID: 8300000, guid: 0e722caf55632ba4e88b175a98dcd490, type: 3}
-  - {fileID: 8300000, guid: e4b84fe2cad462a43b169f48275d67f4, type: 3}
-  - {fileID: 8300000, guid: c1be8f5e1789e4c419e9541174404923, type: 3}
-  - {fileID: 8300000, guid: 6897ebafcf3bafa4fa06012576efa939, type: 3}
-  - {fileID: 8300000, guid: 57d24efa1fe36394986ec2ba15519f28, type: 3}
-  audioSource: {fileID: 7930825915940548694}
 --- !u!1 &6007645530334997279
 GameObject:
   m_ObjectHideFlags: 0

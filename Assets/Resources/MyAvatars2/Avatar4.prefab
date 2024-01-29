@@ -1883,7 +1883,6 @@ GameObject:
   - component: {fileID: -5360712947483406996}
   - component: {fileID: 2268097513313212505}
   - component: {fileID: -8133797974072301241}
-  - component: {fileID: 1468464977814011063}
   - component: {fileID: 8341789132660428317}
   m_Layer: 0
   m_Name: Avatar4
@@ -2287,18 +2286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   animator: {fileID: 8994574345861155214}
---- !u!114 &1468464977814011063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3001281051691752352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126494ae2a10a34499272ed97a6c9f5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &8341789132660428317
 AudioSource:
   m_ObjectHideFlags: 0

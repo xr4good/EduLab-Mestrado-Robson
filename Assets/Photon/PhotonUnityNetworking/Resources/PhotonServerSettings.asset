@@ -54,6 +54,7 @@ MonoBehaviour:
   - InstanciarFazerPedido
   - AnimateTalk
   - Dica
+  - SoltarDica
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
