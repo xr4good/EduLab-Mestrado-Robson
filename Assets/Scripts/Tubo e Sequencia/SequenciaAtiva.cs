@@ -63,8 +63,9 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     {
         if (pos < sequencia.Count)
         {
-            proximo = sequencia.ElementAt(pos);
             pos++;
+            proximo = sequencia.ElementAt(pos);
+            
 
         }
         else
