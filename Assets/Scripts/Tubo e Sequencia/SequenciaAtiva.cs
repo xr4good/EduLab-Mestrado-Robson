@@ -61,11 +61,10 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     [PunRPC]
     void updateProximoGeral()
     {
+        pos++;
         if (pos < sequencia.Count)
-        {
-            pos++;
-            proximo = sequencia.ElementAt(pos);
-            
+        {            
+            proximo = sequencia.ElementAt(pos);          
 
         }
         else
