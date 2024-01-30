@@ -1511,7 +1511,6 @@ GameObject:
   - component: {fileID: 7930825915940548694}
   - component: {fileID: 7930825915940548717}
   - component: {fileID: 7930825915940548716}
-  - component: {fileID: 7930825915940548719}
   - component: {fileID: 7930825915940548718}
   - component: {fileID: 7930825915940548689}
   - component: {fileID: 7930825915940548695}
@@ -1717,41 +1716,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &7930825915940548719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975944678551524599}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de5d68442e8338488d622ec14902799, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  head:
-    vrTarget: {fileID: 0}
-    IKTarget: {fileID: 7930825915446476992}
-    trackingPositionOffset: {x: 0, y: 0, z: -0.17}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
-    correction: {fileID: 0}
-  leftHand:
-    vrTarget: {fileID: 0}
-    IKTarget: {fileID: 7930825917031587150}
-    trackingPositionOffset: {x: -0.04, y: -0.03, z: -0.14}
-    trackingRotationOffset: {x: 0, y: 90, z: 90}
-    correction: {fileID: 0}
-  rightHand:
-    vrTarget: {fileID: 0}
-    IKTarget: {fileID: 7930825917112350895}
-    trackingPositionOffset: {x: 0.04, y: -0.03, z: -0.14}
-    trackingRotationOffset: {x: 0, y: -90, z: -90}
-    correction: {fileID: 0}
-  turnSmoothness: 5
-  IKHead: {fileID: 7930825915446476992}
-  headBodyOffset: {x: 0, y: -1.65, z: 0}
-  tague: Tutor
-  height: -6.26
 --- !u!114 &7930825915940548718
 MonoBehaviour:
   m_ObjectHideFlags: 0

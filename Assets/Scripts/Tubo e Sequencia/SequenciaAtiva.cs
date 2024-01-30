@@ -43,7 +43,7 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
         {
             this.sequencia = sequencia2;
         }
-        updateProximo();
+        proximo = sequencia.ElementAt(pos);
 
     }
 
@@ -71,7 +71,7 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
         {
             tubo.GetComponent<Renderer>().material = materialConcluido;
             concluido=true;
-            proximo = 7;
+            proximo = 13;
             timeCounter.StopCounter();
             this.photonView.RPC("ChamarPainelFinal", RpcTarget.All);
 
