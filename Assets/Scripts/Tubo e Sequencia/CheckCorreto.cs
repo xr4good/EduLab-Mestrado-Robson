@@ -1,18 +1,17 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class CheckCorreto : MonoBehaviourPunCallbacks
 {
-    
-    public List<GameObject> bolaPrefabs; 
     public SequenciaAtiva sequencia;
     [SerializeField] ParticleSystem smoke;
     public TrocaPonto trocaPonto;
     private StatementSender statementSender;
-    
+    public string pasta;
 
     private void Start()
     {
@@ -34,7 +33,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                 if (!other.GetComponent<XRGrabInteractable>().isSelected)
                 {
                     //cria uma nova esfera no lugar inicial e atualiza a sequencia de bolas
-                    Instantiate(bolaPrefabs[numero - 1], posicaoInicial, Quaternion.identity);
+                    PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
                     sequencia.tuboList.Add(other.gameObject);
                     sequencia.updateProximo();
 
@@ -63,8 +62,8 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                 // ativa animação, destroi o objeto e cria uma nova esfera no lugar de origem
                 this.photonView.RPC("PlaySmoke", RpcTarget.All);
                 Destroy(other.gameObject);
-                Instantiate(bolaPrefabs[numero - 1], posicaoInicial, Quaternion.identity);
-                
+                PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
+
                 //atualiza o quadro de pontos
                 trocaPonto.TrocarPontos(10, false);
 

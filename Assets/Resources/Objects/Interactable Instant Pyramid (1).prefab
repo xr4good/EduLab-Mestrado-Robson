@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4578344884382702129}
   - component: {fileID: 7386656462913402826}
   - component: {fileID: 3039567045952134426}
+  - component: {fileID: -3244694505387397152}
   m_Layer: 0
   m_Name: Interactable Instant Pyramid (1)
   m_TagString: Untagged
@@ -169,7 +170,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -3244694505387397152}
+        m_TargetAssemblyTypeName: ChangeOwnerShip, Assembly-CSharp
+        m_MethodName: Takeover
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -271,7 +284,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 3039567045952134426}
@@ -317,6 +330,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-3244694505387397152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150633726746606671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292c832a12b05c54dba57201e2d9f0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2178010930648612577
 PrefabInstance:
   m_ObjectHideFlags: 0

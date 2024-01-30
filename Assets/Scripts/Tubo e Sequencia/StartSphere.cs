@@ -10,6 +10,7 @@ public class ballPosition
     public SphereFall  posicaoInicial;
     public string pasta;
     public string numero;
+    
 
     public void InstaciateSphere()
     {

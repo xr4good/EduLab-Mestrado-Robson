@@ -6794,6 +6794,10 @@ PrefabInstance:
       value: Tubo
       objectReference: {fileID: 0}
     - target: {fileID: 1325471598502628589, guid: 367d403a3ee20de4f942d0bd024f085e, type: 3}
+      propertyPath: pasta
+      value: MyBalls1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325471598502628589, guid: 367d403a3ee20de4f942d0bd024f085e, type: 3}
       propertyPath: trocaPonto
       value: 
       objectReference: {fileID: 6349069125612886359}

@@ -1010,14 +1010,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e14fc741894b54c8979f16dc6fb314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bolaPrefabs:
-  - {fileID: 775598379233719220, guid: c8712b45275892543a250a3265bfd6a5, type: 3}
-  - {fileID: 4465091613089503390, guid: 1d31f77f5fc19844f85a132fc7fa603d, type: 3}
-  - {fileID: 2332929926009971373, guid: 2939ce2928cafa045bdf949a5150c596, type: 3}
-  - {fileID: 2096019070598200240, guid: 4a8853de7e1b3914496741d941c3bbfe, type: 3}
   sequencia: {fileID: 9197973124063202370}
   smoke: {fileID: 4664400612349298907}
   trocaPonto: {fileID: 207615715475028364}
+  pasta: MyBalls2
 --- !u!114 &2869815983908948695
 MonoBehaviour:
   m_ObjectHideFlags: 0
