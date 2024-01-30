@@ -24,6 +24,8 @@ public class TutorAnimatorController : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(2);
         this.animator.SetBool("isTalking", false);
+        Quaternion zero = Quaternion.Euler(0, 0, 0);
+        transform.rotation = zero;
        
     }
 }
