@@ -25,6 +25,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
     {
         if (other.gameObject.tag.Equals("Sphere"))
         {
+            other.isTrigger = false;
             int numero = other.GetComponent<SphereFall>().numeroDaBola;
             Vector3 posicaoInicial = other.GetComponent<SphereFall>().posicaoInicial;
             if (numero == sequencia.getProximo())
@@ -60,8 +61,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
             {
                 // ativa animação, destroi o objeto e cria uma nova esfera no lugar de origem
                 this.photonView.RPC("PlaySmoke", RpcTarget.All);
-                
-                PhotonNetwork.Destroy(other.gameObject);
+                this.photonView.RPC("DestroyObject", RpcTarget.All, other);
                 PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
 
                 //atualiza o quadro de pontos
@@ -79,6 +79,12 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
     void PlaySmoke()
     {
         smoke.Play();
+    }
+
+    [PunRPC]
+    void DestroyObject(GameObject obj)
+    {
+        Destroy(obj);
     }
 
 }
