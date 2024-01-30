@@ -2641,6 +2641,18 @@ PrefabInstance:
       propertyPath: m_Text
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5415220178589859097, guid: 657321a07c3561043af55547ec4b0ed7, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415220178589859097, guid: 657321a07c3561043af55547ec4b0ed7, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415220178589859097, guid: 657321a07c3561043af55547ec4b0ed7, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8969571751951368413, guid: 657321a07c3561043af55547ec4b0ed7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

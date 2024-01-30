@@ -42,7 +42,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
+  m_TransitionDuration: 0.18
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 0
@@ -58,7 +58,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Talking
-  m_Speed: 1.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1871714333616702098}
@@ -71,7 +71,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -4219169448145958940, guid: f622d4f9872fffa4082c768988bced01, type: 3}
+  m_Motion: {fileID: 7400000, guid: f64c3335e9bb1b34aa13dcc8a11dea9e, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -229,7 +229,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7275950592563483810, guid: 47e12e914eed72a449a50c42234b7a93, type: 3}
+  m_Motion: {fileID: 7400000, guid: aa634cad1bdf54b41bf3ff57dd763a83, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
