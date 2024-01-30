@@ -18,7 +18,7 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     private List<int> sequencia1 = new List<int>() { 1, 2, 4, 2, 3, 2, 4, 3, 1 };
     private List<int> sequencia2 = new List<int>() { 2, 4, 3, 1, 1, 3, 2, 2, 4 };
 
-    public List<GameObject> tuboList = new List<GameObject>();
+    
 
     GameDefinitions gameDefinitions;
     private void Start()
@@ -55,15 +55,15 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
 
     public void updateProximo()
     {
-        this.photonView.RPC("updateProximoGeral", RpcTarget.All, sequencia.ElementAt(pos));
+        this.photonView.RPC("updateProximoGeral", RpcTarget.All);
     }
 
     [PunRPC]
-    void updateProximoGeral(int prox)
+    void updateProximoGeral()
     {
         if (pos < sequencia.Count)
         {
-            proximo = prox;
+            proximo = sequencia.ElementAt(pos);
             pos++;
 
         }

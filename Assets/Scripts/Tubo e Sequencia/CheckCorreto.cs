@@ -27,48 +27,50 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
         {
             int numero = other.GetComponent<SphereFall>().numeroDaBola;
             Vector3 posicaoInicial = other.GetComponent<SphereFall>().posicaoInicial;
-
             if (numero == sequencia.getProximo())
-            {               
-                        //cria uma nova esfera no lugar inicial e atualiza a sequencia de bolas
-                        PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
-                        sequencia.tuboList.Add(other.gameObject);
-                        sequencia.updateProximo();
+            {
 
-                        //tira a possibilidade de segurar a bolinha inserida no tubo
-                        other.GetComponent<XRGrabInteractable>().enabled = false;
-
-                        //atualiza o quadro de pontos
-                        trocaPonto.TrocarPontos(10, true);
-
-                        //informa a LRS
-                        if (sequencia.concluido)
-                        {
-                            statementSender.SendStament("Bola", numero.ToString(), true, true);
-                        }
-                        else
-                        {
-                            statementSender.SendStament("Bola", numero.ToString(), true, false);
-                        }
-
-                }
-                else
+                if (!other.GetComponent<XRGrabInteractable>().isSelected)
                 {
-                    // ativa animação, destroi o objeto e cria uma nova esfera no lugar de origem
-                    this.photonView.RPC("PlaySmoke", RpcTarget.All);
-                    Destroy(other.gameObject);
-                    PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
+                    //cria uma nova esfera no lugar inicial e atualiza a sequencia de bolas
+                    PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);                    
+                    sequencia.updateProximo();
+
+                    //tira a possibilidade de segurar a bolinha inserida no tubo
+                    other.GetComponent<XRGrabInteractable>().enabled = false;
 
                     //atualiza o quadro de pontos
-                    trocaPonto.TrocarPontos(10, false);
+                    trocaPonto.TrocarPontos(10, true);
 
                     //informa a LRS
-                    statementSender.SendStament("Bola", numero.ToString(), false, false);
-                }
-            
-        }
+                    if (sequencia.concluido)
+                    {
+                        statementSender.SendStament("Bola", numero.ToString(), true, true);
+                    }
+                    else
+                    {
+                        statementSender.SendStament("Bola", numero.ToString(), true, false);
+                    }
+                    
 
+                }
+
+            }
+            else
+            {
+                // ativa animação, destroi o objeto e cria uma nova esfera no lugar de origem
+                this.photonView.RPC("PlaySmoke", RpcTarget.All);
                 
+                PhotonNetwork.Destroy(other.gameObject);
+                PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
+
+                //atualiza o quadro de pontos
+                trocaPonto.TrocarPontos(10, false);
+
+                //informa a LRS
+                statementSender.SendStament("Bola", numero.ToString(), false, false);
+            }
+        }
        
 
     }
