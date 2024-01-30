@@ -27,12 +27,9 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
         {
             int numero = other.GetComponent<SphereFall>().numeroDaBola;
             Vector3 posicaoInicial = other.GetComponent<SphereFall>().posicaoInicial;
+
             if (numero == sequencia.getProximo())
-            {
-                if (other.GetComponent<PhotonView>().IsMine)
-                {
-                    if (!other.GetComponent<XRGrabInteractable>().isSelected)
-                    {
+            {               
                         //cria uma nova esfera no lugar inicial e atualiza a sequencia de bolas
                         PhotonNetwork.InstantiateRoomObject(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
                         sequencia.tuboList.Add(other.gameObject);
@@ -54,9 +51,6 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                             statementSender.SendStament("Bola", numero.ToString(), true, false);
                         }
 
-
-                    }
-
                 }
                 else
                 {
@@ -71,7 +65,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                     //informa a LRS
                     statementSender.SendStament("Bola", numero.ToString(), false, false);
                 }
-            }
+            
         }
 
                 

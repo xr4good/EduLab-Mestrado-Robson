@@ -55,15 +55,15 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
 
     public void updateProximo()
     {
-        this.photonView.RPC("updateProximoGeral", RpcTarget.All);
+        this.photonView.RPC("updateProximoGeral", RpcTarget.All, sequencia.ElementAt(pos));
     }
 
     [PunRPC]
-    void updateProximoGeral()
+    void updateProximoGeral(int prox)
     {
         if (pos < sequencia.Count)
         {
-            proximo = sequencia.ElementAt(pos);
+            proximo = prox;
             pos++;
 
         }
