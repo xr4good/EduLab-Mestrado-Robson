@@ -29,7 +29,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
             Vector3 posicaoInicial = other.GetComponent<SphereFall>().posicaoInicial;
             if (numero == sequencia.getProximo())
             {
-                if (photonView.IsMine)
+                if (other.GetComponent<PhotonView>().IsMine)
                 {
                     if (!other.GetComponent<XRGrabInteractable>().isSelected)
                     {
