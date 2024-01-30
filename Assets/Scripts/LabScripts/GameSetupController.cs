@@ -32,7 +32,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        gameDefinitions = FindObjectOfType<GameDefinitions>();        
+        gameDefinitions = FindObjectOfType<GameDefinitions>();
+        
     }
 
 
