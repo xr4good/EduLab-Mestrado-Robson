@@ -74,10 +74,26 @@ public class SetPlayer : MonoBehaviour
                     gameDefinitions.JUNTO = true;
                     break;
                 }
-            case 2:
+            case 5:
                 {
 
                     gameDefinitions.CORPO = true;
+                    gameDefinitions.SEQUENCIA1 = true;
+                    gameDefinitions.JUNTO = false;
+                    break;
+                }
+            case 2:
+                {
+
+                    gameDefinitions.CORPO = false;
+                    gameDefinitions.SEQUENCIA1 = true;
+                    gameDefinitions.JUNTO = true;
+                    break;
+                }
+            case 6:
+                {
+
+                    gameDefinitions.CORPO = false;
                     gameDefinitions.SEQUENCIA1 = true;
                     gameDefinitions.JUNTO = false;
                     break;
@@ -85,36 +101,20 @@ public class SetPlayer : MonoBehaviour
             case 3:
                 {
 
-                    gameDefinitions.CORPO = false;
-                    gameDefinitions.SEQUENCIA1 = true;
-                    gameDefinitions.JUNTO = true;
-                    break;
-                }
-            case 4:
-                {
-
-                    gameDefinitions.CORPO = false;
-                    gameDefinitions.SEQUENCIA1 = true;
-                    gameDefinitions.JUNTO = false;
-                    break;
-                }
-            case 5:
-                {
-
                     gameDefinitions.CORPO = true;
                     gameDefinitions.SEQUENCIA1 = false;
                     gameDefinitions.JUNTO = true;
-                    break;
-                }
-            case 6:
-                {
-
-                    gameDefinitions.CORPO = true;
-                    gameDefinitions.SEQUENCIA1 = false;
-                    gameDefinitions.JUNTO = false;
                     break;
                 }
             case 7:
+                {
+
+                    gameDefinitions.CORPO = true;
+                    gameDefinitions.SEQUENCIA1 = false;
+                    gameDefinitions.JUNTO = false;
+                    break;
+                }
+            case 4:
                 {
 
                     gameDefinitions.CORPO = false;
