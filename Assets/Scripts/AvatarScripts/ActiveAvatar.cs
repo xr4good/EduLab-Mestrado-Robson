@@ -9,12 +9,4 @@ public class ActiveAvatar : MonoBehaviour
     [SerializeField] ActiveModel activeModel;
     public int numeroAvatar;
 
-    private void Update()
-    {      
-        if (avatar != null)
-        {
-            activeModel.desativarModel();
-        }
-    }
-
 }

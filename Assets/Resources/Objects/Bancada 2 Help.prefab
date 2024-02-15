@@ -1014,6 +1014,7 @@ MonoBehaviour:
   smoke: {fileID: 4664400612349298907}
   trocaPonto: {fileID: 207615715475028364}
   pasta: MyBalls2
+  correto: 0
 --- !u!114 &2869815983908948695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2555,7 +2556,6 @@ MonoBehaviour:
   materialConcluido: {fileID: 2100000, guid: b69f2537575599b43b927c0718257ca5, type: 2}
   concluido: 0
   painelFinal: {fileID: 6110272469877154082}
-  tuboList: []
 --- !u!114 &1511152321294648196
 MonoBehaviour:
   m_ObjectHideFlags: 0

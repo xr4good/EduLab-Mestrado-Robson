@@ -392,13 +392,13 @@ MonoBehaviour:
   leftHand:
     vrTarget: {fileID: 0}
     IKTarget: {fileID: 901893905566354335}
-    trackingPositionOffset: {x: -0.04, y: -0.03, z: -0.14}
+    trackingPositionOffset: {x: -0.01, y: -0.03, z: -0.2}
     trackingRotationOffset: {x: 0, y: 90, z: 90}
     correction: {fileID: 0}
   rightHand:
     vrTarget: {fileID: 0}
     IKTarget: {fileID: 901893907047984433}
-    trackingPositionOffset: {x: 0.04, y: -0.03, z: -0.14}
+    trackingPositionOffset: {x: 0.01, y: -0.03, z: -0.2}
     trackingRotationOffset: {x: 0, y: -90, z: -90}
     correction: {fileID: 0}
   turnSmoothness: 5

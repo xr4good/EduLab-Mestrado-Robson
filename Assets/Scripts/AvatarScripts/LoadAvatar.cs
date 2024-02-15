@@ -73,6 +73,9 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         photonAnimatorView.SetParameterSynchronized("Right Grab", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("isMoving", PhotonAnimatorView.ParameterType.Bool, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("animSpeed", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+
+        //remove o controle do avatar
+        //XR.AddComponent<ActiveModel>().desativarModel();
     }
 
     public void ChangeAvatar(int numeroAvatar)
