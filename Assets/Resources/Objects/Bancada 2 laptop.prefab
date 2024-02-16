@@ -5420,7 +5420,6 @@ MonoBehaviour:
   materialConcluido: {fileID: 2100000, guid: b69f2537575599b43b927c0718257ca5, type: 2}
   concluido: 0
   painelFinal: {fileID: 8067071901255752415}
-  tuboList: []
 --- !u!114 &8583356075779010270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10221,6 +10220,7 @@ GameObject:
   - component: {fileID: 81272366838890983}
   - component: {fileID: 3021009929020251876}
   - component: {fileID: 5110499933266552415}
+  - component: {fileID: 6648737827183593738}
   m_Layer: 7
   m_Name: laptop
   m_TagString: Untagged
@@ -10296,6 +10296,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6648737827183593738
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531107192289907237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: dbb5a17f680d69543b2e1f7813b4456b, type: 3}
 --- !u!1 &8543567634673204715
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,6 +10623,7 @@ MonoBehaviour:
   smoke: {fileID: 4201423407406789995}
   trocaPonto: {fileID: 5391990063684544844}
   pasta: MyBalls2
+  correto: 0
 --- !u!114 &4072343815580709335
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -63,6 +63,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         avatar.GetComponent<AnimateOnInput>().ativeAvatar = XR.GetComponent<ActiveAvatar>();
         avatar.GetComponent<AvatarAnimationController>().enabled = true;
 
+        /*
         PhotonAnimatorView photonAnimatorView = avatar.GetComponent<PhotonAnimatorView>();
         photonAnimatorView.SetLayerSynchronized(0, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetLayerSynchronized(1, PhotonAnimatorView.SynchronizeType.Discrete);
@@ -73,9 +74,10 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         photonAnimatorView.SetParameterSynchronized("Right Grab", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("isMoving", PhotonAnimatorView.ParameterType.Bool, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("animSpeed", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+        */
 
         //remove o controle do avatar
-        //XR.AddComponent<ActiveModel>().desativarModel();
+        XR.GetComponent<ActiveModel>().desativarModel();
     }
 
     public void ChangeAvatar(int numeroAvatar)

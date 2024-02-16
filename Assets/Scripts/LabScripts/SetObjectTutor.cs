@@ -23,7 +23,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     void Start()
     {
         gameDefinitions = FindObjectOfType<GameDefinitions>();
-        CarregarObjetosSala();
+        //CarregarObjetosSala();
         CarregarObjetosLab();
         
     }
@@ -32,6 +32,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", Sair.name), Sair.transform.position, Sair.transform.rotation);
     }
+
     void CarregarObjetosSala()
     {
         foreach(GameObject obj in Interações)

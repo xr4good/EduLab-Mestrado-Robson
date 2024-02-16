@@ -6,11 +6,12 @@ public class SphereFall : MonoBehaviour
 {
     public Vector3 posicaoInicial;
     public int numeroDaBola;
+    public float yMaximo = -7.3f;
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < -7.3)
+        if(transform.position.y < yMaximo)
         {
             transform.position = posicaoInicial;
         }

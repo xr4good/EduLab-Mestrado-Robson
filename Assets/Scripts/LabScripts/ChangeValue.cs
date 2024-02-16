@@ -18,8 +18,11 @@ public class ChangeValue : MonoBehaviour
     {
         if(slider.value < 64 )
         {
-            int value = (int)slider.value++;
+            int value = (int)slider.value;
+            value++;
+            slider.value = value;
             text.text = value.ToString();
+           
         }
         
     }
@@ -28,7 +31,9 @@ public class ChangeValue : MonoBehaviour
     {
         if(slider.value > 0)
         {
-            int value = (int)slider.value--;
+            int value = (int)slider.value;
+            value--;
+            slider.value = value;
             text.text = value.ToString();
         }
         

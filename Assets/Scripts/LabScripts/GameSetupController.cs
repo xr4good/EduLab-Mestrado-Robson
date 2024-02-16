@@ -24,9 +24,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private int n;
 
-    public GameObject ButtonTutor;
-    public GameObject dicas1;
-    public GameObject dicas2;
+  
 
     GameDefinitions gameDefinitions;
 

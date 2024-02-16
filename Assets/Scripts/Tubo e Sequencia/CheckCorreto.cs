@@ -24,9 +24,9 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PhotonView>().IsMine)
+        if (other.gameObject.tag.Equals("Sphere"))
         {
-            if (other.gameObject.tag.Equals("Sphere"))
+            if (other.GetComponent<PhotonView>().IsMine)
             {
                 other.isTrigger = false;
                 int numero = other.GetComponent<SphereFall>().numeroDaBola;
