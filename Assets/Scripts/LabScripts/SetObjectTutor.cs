@@ -13,7 +13,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     public Vector3 pos;
   
 
-    public List<GameObject> Interações;
+    public List<GameObject> Interações;   
     public GameObject Sair;
 
     GameDefinitions gameDefinitions;
@@ -23,7 +23,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     void Start()
     {
         gameDefinitions = FindObjectOfType<GameDefinitions>();
-        //CarregarObjetosSala();
+        CarregarObjetosSala();
         CarregarObjetosLab();
         
     }

@@ -18,7 +18,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
    
 
 
-    IEnumerator trocarAvatar(int numeroAvatar)
+    IEnumerator trocarAvatar(int numeroAvatar, float height )
     {
         yield return new WaitForSeconds(2);
        
@@ -41,7 +41,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
             avatar = PhotonNetwork.Instantiate(Path.Combine("MyAvatars2", "Avatar" + numeroAvatar), XR.transform.position, Quaternion.identity);
         }
         
-
+        avatar.GetComponent<AvatarController>().height = height;
         //AvatarController control = avatar.GetComponent<AvatarController>();
 
 
@@ -82,8 +82,13 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
 
     public void ChangeAvatar(int numeroAvatar)
     {
-        StartCoroutine(trocarAvatar(numeroAvatar));
+        StartCoroutine(trocarAvatar(numeroAvatar, -9.45f));
 
+    }
+
+    public void ChangeAvatarTeste(int numeroAvatar)
+    {
+        StartCoroutine(trocarAvatar(numeroAvatar, -6.265f));
     }
 
 }
