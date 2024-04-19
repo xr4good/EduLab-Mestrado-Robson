@@ -19,8 +19,7 @@ public class VRMirror : MonoBehaviourPunCallbacks
             cameraTransform.MirrorTransform();
             leftHandTransform.MirrorTransform();
             rightHandTransform.MirrorTransform();
-        }
-        
+        }        
 
     }
 }

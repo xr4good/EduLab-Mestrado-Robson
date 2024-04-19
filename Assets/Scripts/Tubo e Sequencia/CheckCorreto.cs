@@ -68,7 +68,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                     PhotonNetwork.Instantiate(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
 
                     //atualiza o quadro de pontos
-                    trocaPonto.TrocarPontos(10, false);
+                    trocaPonto.TrocarPontos(5, false);
 
                     //informa a LRS
                     statementSender.SendStament("Bola", numero.ToString(), false, false);
