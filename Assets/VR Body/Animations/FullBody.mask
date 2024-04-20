@@ -7,5 +7,91 @@ AvatarMask:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FullBody
-  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-  m_Elements: []
+  m_Mask: 00000000010000000100000001000000010000000100000001000000010000000100000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: ExampleModel02
+    m_Weight: 1
+  - m_Path: ExampleModel02_Hands
+    m_Weight: 1
+  - m_Path: ExampleRig02
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L/B-finger_01.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L/B-finger_01.L/B-finger_02.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L/B-finger_01.L/B-finger_02.L/B-finger_03.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L/B-indexFinger_01.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L/B-indexFinger_01.L/B-indexFinger_02.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L/B-indexFinger_01.L/B-indexFinger_02.L/B-indexFinger_03.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L/B-thumb_01.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.L/B-shoulder.L/B-elbow.L/B-hand.L/B-thumb_01.L/B-thumb_02.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R/B-finger_01.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R/B-finger_01.R/B-finger_02.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R/B-finger_01.R/B-finger_02.R/B-finger_03.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R/B-indexFinger_01.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R/B-indexFinger_01.R/B-indexFinger_02.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R/B-indexFinger_01.R/B-indexFinger_02.R/B-indexFinger_03.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R/B-thumb_01.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-clavicle.R/B-shoulder.R/B-elbow.R/B-hand.R/B-thumb_01.R/B-thumb_02.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-neck
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-spine_01/B-spine_02/B-spine_03/B-neck/B-head
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-upperLeg.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-upperLeg.L/B-lowerLeg.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-upperLeg.L/B-lowerLeg.L/B-ankle.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-upperLeg.L/B-lowerLeg.L/B-ankle.L/B-ball.L
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-upperLeg.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-upperLeg.R/B-lowerLeg.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-upperLeg.R/B-lowerLeg.R/B-ankle.R
+    m_Weight: 1
+  - m_Path: ExampleRig02/Root/B-hips/B-upperLeg.R/B-lowerLeg.R/B-ankle.R/B-ball.R
+    m_Weight: 1
