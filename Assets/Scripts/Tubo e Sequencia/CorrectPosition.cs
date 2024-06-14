@@ -18,12 +18,10 @@ public class CorrectPosition : MonoBehaviour
         
         Material aux = other.GetComponent<MeshRenderer>().material;
         other.GetComponent<MeshRenderer>().material = branco;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
+        other.GetComponent<MeshRenderer>().material = aux;           
+        yield return new WaitForSeconds(0.5f);
         other.GetComponent<MeshRenderer>().material = aux;
-        yield return new WaitForSeconds(0.2f);
-        other.GetComponent<MeshRenderer>().material = branco;
-        yield return new WaitForSeconds(0.2f);
-        other.GetComponent<MeshRenderer>().material = aux;
-        
+
     }
 }
