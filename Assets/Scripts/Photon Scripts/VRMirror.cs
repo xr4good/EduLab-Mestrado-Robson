@@ -11,6 +11,7 @@ public class VRMirror : MonoBehaviourPunCallbacks
     public MapTransformMirror leftHandTransform;
     public MapTransformMirror rightHandTransform;
 
+
     // Update is called once per frame
     void LateUpdate()
     {
@@ -19,7 +20,8 @@ public class VRMirror : MonoBehaviourPunCallbacks
             cameraTransform.MirrorTransform();
             leftHandTransform.MirrorTransform();
             rightHandTransform.MirrorTransform();
-        }
+           
+        }        
         
 
     }
@@ -36,4 +38,6 @@ public class MapTransformMirror
         mirrorTransform.position = originTransform.position;
         mirrorTransform.rotation = originTransform.rotation;
     }
+
+ 
 }

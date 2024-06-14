@@ -13,7 +13,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     public Vector3 pos;
   
 
-    public List<GameObject> Interações;
+    public List<GameObject> Interações;   
     public GameObject Sair;
 
     GameDefinitions gameDefinitions;
@@ -32,6 +32,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.InstantiateRoomObject(Path.Combine("Objects", Sair.name), Sair.transform.position, Sair.transform.rotation);
     }
+
     void CarregarObjetosSala()
     {
         foreach(GameObject obj in Interações)

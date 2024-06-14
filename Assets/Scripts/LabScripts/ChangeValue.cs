@@ -13,4 +13,29 @@ public class ChangeValue : MonoBehaviour
     {
         text.text = slider.value.ToString();
     }
+
+    public void AumentaValor()
+    {
+        if(slider.value < 64 )
+        {
+            int value = (int)slider.value;
+            value++;
+            slider.value = value;
+            text.text = value.ToString();
+           
+        }
+        
+    }
+
+    public void DiminuiValor()
+    {
+        if(slider.value > 0)
+        {
+            int value = (int)slider.value;
+            value--;
+            slider.value = value;
+            text.text = value.ToString();
+        }
+        
+    }
 }

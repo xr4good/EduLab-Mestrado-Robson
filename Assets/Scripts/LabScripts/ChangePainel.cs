@@ -36,7 +36,7 @@ public class ChangePainel : MonoBehaviourPunCallbacks
         {
             botaoProximo.SetActive(false);
             botaoAnterior.SetActive(true);
-            setObject.InstanciaSaída();
+            //setObject.InstanciaSaída();
         }
         else
         {

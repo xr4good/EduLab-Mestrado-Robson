@@ -43,7 +43,7 @@ public class AvatarController : MonoBehaviourPunCallbacks//, IPunObservable
 
     [SerializeField] private Vector3 headBodyOffset;
     [SerializeField] private string tague;
-    [SerializeField] private float height;
+    public float height;
 
     private GameObject Mirror;
 

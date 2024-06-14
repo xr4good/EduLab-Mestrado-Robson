@@ -24,9 +24,9 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PhotonView>().IsMine)
+        if (other.gameObject.tag.Equals("Sphere"))
         {
-            if (other.gameObject.tag.Equals("Sphere"))
+            if (other.GetComponent<PhotonView>().IsMine)
             {
                 other.isTrigger = false;
                 int numero = other.GetComponent<SphereFall>().numeroDaBola;
@@ -68,7 +68,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                     PhotonNetwork.Instantiate(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
 
                     //atualiza o quadro de pontos
-                    trocaPonto.TrocarPontos(10, false);
+                    trocaPonto.TrocarPontos(2, false);
 
                     //informa a LRS
                     statementSender.SendStament("Bola", numero.ToString(), false, false);

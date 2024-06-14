@@ -34,8 +34,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820072804336915523}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.374, y: -2.874, z: 2.048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.893406, y: -9.959098, z: 0.81907016}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -334,13 +334,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820072804336915523}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 933abfc0ee3349c40897365dfac98758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posicaoInicial: {x: 4.374, y: -2.874, z: 2.048}
+  posicaoInicial: {x: -14.894491, y: -9.961231, z: 0.8119563}
   numeroDaBola: 0
+  yMaximo: -10.3
 --- !u!114 &-5199103551381341524
 MonoBehaviour:
   m_ObjectHideFlags: 0

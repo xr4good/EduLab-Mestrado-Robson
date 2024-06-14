@@ -185,7 +185,6 @@ GameObject:
   - component: {fileID: 3024723184303418025}
   - component: {fileID: 4271627753946600644}
   - component: {fileID: -4555076429853271860}
-  - component: {fileID: 3835183541152725332}
   m_Layer: 0
   m_Name: Avatar5
   m_TagString: Untagged
@@ -392,13 +391,13 @@ MonoBehaviour:
   leftHand:
     vrTarget: {fileID: 0}
     IKTarget: {fileID: 901893905566354335}
-    trackingPositionOffset: {x: -0.04, y: -0.03, z: -0.14}
+    trackingPositionOffset: {x: -0.01, y: -0.03, z: -0.2}
     trackingRotationOffset: {x: 0, y: 90, z: 90}
     correction: {fileID: 0}
   rightHand:
     vrTarget: {fileID: 0}
     IKTarget: {fileID: 901893907047984433}
-    trackingPositionOffset: {x: 0.04, y: -0.03, z: -0.14}
+    trackingPositionOffset: {x: 0.01, y: -0.03, z: -0.2}
     trackingRotationOffset: {x: 0, y: -90, z: -90}
     correction: {fileID: 0}
   turnSmoothness: 5
@@ -559,6 +558,12 @@ MonoBehaviour:
   - Type: 1
     SynchronizeType: 0
     Name: Right Grab
+  - Type: 4
+    SynchronizeType: 0
+    Name: isMoving
+  - Type: 1
+    SynchronizeType: 0
+    Name: animSpeed
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -676,24 +681,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3835183541152725332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577838362902234577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd7fea91fe63f4e1b884ef1e16a975c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playDelayConfig:
-    Low: 200
-    High: 200
-    Max: 1000
-    SpeedUpPerc: 5
-  restartOnDeviceChange: 1
 --- !u!1 &799710815970315181
 GameObject:
   m_ObjectHideFlags: 0

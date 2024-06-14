@@ -27,11 +27,11 @@ public class TutorAnimatorController : MonoBehaviourPunCallbacks
         
        
     }
-
+    /*
     private void LateUpdate()
     {
         Quaternion zero = Quaternion.Euler(0, 0, 0);
         transform.rotation = zero;
-    }
+    }*/
 }
 

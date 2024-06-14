@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AvatarFall : MonoBehaviour
 {   
-    public float posiCair;
+  
     MoveToLab move;
     // Start is called before the first frame update
     private void Start()
@@ -15,9 +15,14 @@ public class AvatarFall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < posiCair)
+        if (transform.position.x > 12.26 ||
+            transform.position.x < -1.49 ||
+            transform.position.z > 4.2 ||
+            transform.position.z < -3.3 )
         {            
             move.LoadScene();
         } 
+        
     }
 }
+                                   

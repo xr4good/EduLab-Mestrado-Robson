@@ -13,8 +13,10 @@ public class ActiveModel : MonoBehaviour
    public void desativarModel()
     {       
         foreach (var controller in controllers)
-        {        
+        {
             controller.hideControllerModel = true;
+            controller.modelPrefab = null;
+            controller.model = null;    
             
         }
     }

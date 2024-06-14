@@ -18,7 +18,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
    
 
 
-    IEnumerator trocarAvatar(int numeroAvatar)
+    IEnumerator trocarAvatar(int numeroAvatar, float height )
     {
         yield return new WaitForSeconds(2);
        
@@ -41,7 +41,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
             avatar = PhotonNetwork.Instantiate(Path.Combine("MyAvatars2", "Avatar" + numeroAvatar), XR.transform.position, Quaternion.identity);
         }
         
-
+        avatar.GetComponent<AvatarController>().height = height;
         //AvatarController control = avatar.GetComponent<AvatarController>();
 
 
@@ -63,6 +63,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         avatar.GetComponent<AnimateOnInput>().ativeAvatar = XR.GetComponent<ActiveAvatar>();
         avatar.GetComponent<AvatarAnimationController>().enabled = true;
 
+        /*
         PhotonAnimatorView photonAnimatorView = avatar.GetComponent<PhotonAnimatorView>();
         photonAnimatorView.SetLayerSynchronized(0, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetLayerSynchronized(1, PhotonAnimatorView.SynchronizeType.Discrete);
@@ -73,12 +74,21 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         photonAnimatorView.SetParameterSynchronized("Right Grab", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("isMoving", PhotonAnimatorView.ParameterType.Bool, PhotonAnimatorView.SynchronizeType.Discrete);
         photonAnimatorView.SetParameterSynchronized("animSpeed", PhotonAnimatorView.ParameterType.Float, PhotonAnimatorView.SynchronizeType.Discrete);
+        */
+
+        //remove o controle do avatar
+        XR.GetComponent<ActiveModel>().desativarModel();
     }
 
     public void ChangeAvatar(int numeroAvatar)
     {
-        StartCoroutine(trocarAvatar(numeroAvatar));
+        StartCoroutine(trocarAvatar(numeroAvatar, -9.45f));
 
+    }
+
+    public void ChangeAvatarTeste(int numeroAvatar)
+    {
+        StartCoroutine(trocarAvatar(numeroAvatar, -6.265f));
     }
 
 }

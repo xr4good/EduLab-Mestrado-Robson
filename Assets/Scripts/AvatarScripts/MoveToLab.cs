@@ -45,7 +45,7 @@ public class MoveToLab : MonoBehaviourPunCallbacks
         if ( first)
         {           
             XR.transform.position = posicao1;
-            loadAvatar.ChangeAvatar(n);
+            loadAvatar.ChangeAvatarTeste(n);
           
             this.photonView.RPC("ChangeFirst", RpcTarget.All, false);
             TimeCounter time = GameObject.FindObjectOfType<TimeCounter>();
@@ -56,12 +56,12 @@ public class MoveToLab : MonoBehaviourPunCallbacks
             if (gameDefinitions.JUNTO)
             {
                 XR.transform.position = posicao2junto;
-                loadAvatar.ChangeAvatar(n);
+                loadAvatar.ChangeAvatarTeste(n);
             }
             else
             {
                 XR.transform.position = posicao2separado;
-                loadAvatar.ChangeAvatar(n);
+                loadAvatar.ChangeAvatarTeste(n);
             }
             
         }       

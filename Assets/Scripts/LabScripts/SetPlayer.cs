@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class SetPlayer : MonoBehaviour
 {
-    public Slider sliderPlayer;
-    public Slider sliderRoom;
+    public Slider sliderPlayer; 
     GameDefinitions gameDefinitions;
     private void Start()
     {

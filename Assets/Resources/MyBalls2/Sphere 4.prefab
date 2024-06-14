@@ -247,7 +247,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 3522877815379684321}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -305,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicaoInicial: {x: -18.339, y: -6.865, z: 0.146}
   numeroDaBola: 4
+  yMaximo: -7.3
 --- !u!114 &-5786598985202848304
 MonoBehaviour:
   m_ObjectHideFlags: 0
