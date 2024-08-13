@@ -5,17 +5,17 @@ using UnityEngine;
 public class CallTutorAnimator : MonoBehaviour
 {
     private SetTutorTalk setTutorTalk;
-    private AudioDicas audio;
+    private AudioDicas audioD;
 
     void Start()
     {
         setTutorTalk = GameObject.FindObjectOfType<SetTutorTalk>();
-        audio = GameObject.FindObjectOfType<AudioDicas>();
+        audioD = GameObject.FindObjectOfType<AudioDicas>();
     }
 
     public void animarFala()
     {
         setTutorTalk.ResponderDica();
-        audio.FalarDica();
+        audioD.FalarDica();
     }
 }

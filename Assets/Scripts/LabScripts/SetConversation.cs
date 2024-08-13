@@ -31,15 +31,20 @@ public class SetConversation : MonoBehaviourPunCallbacks
 
     public void FazerPedido()
     {
+        if (!isWaiting)
+        {
+            if (gameDefinitions.SEQUENCIA1)
+            {
+                statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia1", true, false);
+            }
+            else
+            {
+                statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia2", true, false);
+            }
+        }
         this.photonView.RPC("InstanciarFazerPedido", RpcTarget.All);
-        if (gameDefinitions.SEQUENCIA1)
-        {
-            statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia1", true, false);
-        }
-        else
-        {
-            statementSender.SendStament("Solicitou Dica / Objeto", "Sequencia2", true, false);
-        }
+        
+        
     }
 
     [PunRPC]
@@ -58,7 +63,7 @@ public class SetConversation : MonoBehaviourPunCallbacks
                 IncluirTexto(dicas2[countDicas]);
                 totalDicas = dicas2.Count;
                 
-            }            
+            }           
             
         }        
         

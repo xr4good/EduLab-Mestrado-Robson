@@ -9,7 +9,7 @@ public class Cameracontroller : MonoBehaviour
     public Sprite eyehud;
     public Sprite camhud;
     public GameObject hudindicator;
-    public Camera camera;
+    public Camera cameraM;
     public GameObject esfera;
     //public SteamVR_Input_Sources handTypeR;
     private bool isActive = false;
@@ -21,14 +21,14 @@ public class Cameracontroller : MonoBehaviour
             hudindicator.GetComponent<Image>().sprite = eyehud;
             esfera.SetActive(false);
             isActive = false;
-            camera.enabled = false;
+            cameraM.enabled = false;
         }
         else
         {
             hudindicator.GetComponent<Image>().sprite = camhud;
             isActive = true;
             esfera.SetActive(true);
-            camera.enabled = true;
+            cameraM.enabled = true;
         }
     }
     private void Update()

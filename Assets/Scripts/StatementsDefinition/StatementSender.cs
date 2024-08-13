@@ -7,6 +7,7 @@ using System;
 using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine.UI;
+using System.IO;
 
 
 //using UnityEditor.VersionControl;
@@ -15,7 +16,7 @@ using UnityEngine.UI;
 
 public class StatementSender : MonoBehaviour
 {
-    private RemoteLRS lrs;
+    //private RemoteLRS lrs;
 
     GameDefinitions gameDefinitions;
     //static Boolean isSlideCompleted = false;
@@ -24,17 +25,24 @@ public class StatementSender : MonoBehaviour
     void Start()
     {
         gameDefinitions = FindObjectOfType<GameDefinitions>();
-        lrs = new RemoteLRS(
+       /* lrs = new RemoteLRS(
         "http://200.239.138.28:8080/xapi",
         "e9e46275f42b6af54f08d90c6392d2673b0e8f9aeddfee7b2818d5b77ef62551",
         "1b02723000f4b00c5b19b9ca7f3db2831af997fd488817e68786d27651ddce75"
-        );
+        );*/
        
         
     }
 
     public void SendStament(string question, string answer, bool isCorrect, bool isComplete)
     {
+        Debug.Log("call");
+        using (StreamWriter sw = new StreamWriter(Application.dataPath + "/Logs/Player" + gameDefinitions.PLAYER.ToString() + ".txt", true))
+        {
+            sw.WriteLine( "Player" + gameDefinitions.PLAYER.ToString() + ";" + question + ";" + answer + ";" + isCorrect + ";" + isComplete) ;
+        }
+        /*
+
         Agent actor = getActorByEmail("player" + gameDefinitions.PLAYER.ToString() + "@mestradorobson.com");
         
         //Build out Verb details
@@ -49,7 +57,7 @@ public class StatementSender : MonoBehaviour
                                   isCorrect,
                                   isCorrect ? 100 : 0);
 
-        StartCoroutine(SaveStatement(actor, verb, activity, result));
+        StartCoroutine(SaveStatement(actor, verb, activity, result));*/
     }
 
 
@@ -68,9 +76,9 @@ public class StatementSender : MonoBehaviour
                                   isCorrect ? 100 : 0);
 
         StartCoroutine(SaveStatement(actor, verb, activity, result));
-    }*/
+    }
 
-    /*public async void logQuizFinished() {
+    public async void logQuizFinished() {
 
         Agent actor = getActor(UserLoginData.email);
 
@@ -83,7 +91,7 @@ public class StatementSender : MonoBehaviour
         Result result = getResult();
 
         StartCoroutine(SaveStatement(actor, verb, activity, result));
-    }*/
+    }
 
     /*public async void logPassSlide() {
         Agent actor = getActor(UserLoginData.email);
@@ -107,7 +115,7 @@ public class StatementSender : MonoBehaviour
             print(isSlideCompleted);
             StartCoroutine(SaveStatement(actor, verbCompleted, activity, resultCompleted));
         }
-    }*/
+    }
 
     IEnumerator SaveStatement(Agent actor,
                               TinCan.Verb verb, 
@@ -188,7 +196,7 @@ public class StatementSender : MonoBehaviour
         result.score=score;
 
         return result;
-    }
+    }*/
 
 
 }
