@@ -7,6 +7,7 @@ public class AvatarAnimationController : MonoBehaviourPunCallbacks
     private InputActionReference move;
     [SerializeField] private Animator animator;
 
+
     private void OnEnable()
     {
         if( photonView.IsMine)

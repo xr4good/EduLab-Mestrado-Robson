@@ -37,9 +37,9 @@ public class StatementSender : MonoBehaviour
     public void SendStament(string question, string answer, bool isCorrect, bool isComplete)
     {
         Debug.Log("call");
-        using (StreamWriter sw = new StreamWriter(Application.dataPath + "/Logs/Player" + gameDefinitions.PLAYER.ToString() + ".txt", true))
+        using (StreamWriter sw = new StreamWriter(Application.dataPath + "/Logs/Player" + gameDefinitions.PLAYER + ".csv", true))
         {
-            sw.WriteLine( "Player" + gameDefinitions.PLAYER.ToString() + ";" + question + ";" + answer + ";" + isCorrect + ";" + isComplete) ;
+            sw.WriteLine("Player: ; Player" + gameDefinitions.PLAYER.ToString() + "; Question: ;" + question + "; Answer: ;" + answer + "; isCorrect: ;" + isCorrect + "; isComplete: ;" + isComplete); ;
         }
         /*
 

@@ -64,8 +64,8 @@ public class AvatarController : MonoBehaviourPunCallbacks//, IPunObservable
 
     private void LateUpdate()
     {
-            transform.position = new Vector3(IKHead.position.x, height, IKHead.position.z) + headBodyOffset;
-            //transform.position = IKHead.position + headBodyOffset;
+            //transform.position = new Vector3(IKHead.position.x, height, IKHead.position.z) + headBodyOffset;
+            transform.position = IKHead.position + headBodyOffset;
             //transform.rotation = IKHead.rotation * Quaternion.Euler(headBodyRotationOffset);
             transform.forward = Vector3.Lerp(transform.forward, Vector3.ProjectOnPlane(IKHead.forward, Vector3.up).normalized, Time.deltaTime * turnSmoothness); ;
             head.MapVRAvatar();

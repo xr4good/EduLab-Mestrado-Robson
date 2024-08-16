@@ -14,7 +14,7 @@ public class SetPlayer : MonoBehaviour
 
     public void ChangePlayer()
     {
-        gameDefinitions.PLAYER = sliderPlayer.value.ToString();
+        gameDefinitions.PLAYER = (int)sliderPlayer.value;
 
         float b = sliderPlayer.value;
 

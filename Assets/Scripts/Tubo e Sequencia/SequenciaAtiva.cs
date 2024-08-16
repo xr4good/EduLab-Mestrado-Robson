@@ -21,7 +21,7 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
     
 
     GameDefinitions gameDefinitions;
-    private void Start()
+    private void Awake()
     {
         gameDefinitions = FindObjectOfType<GameDefinitions>();
         timeCounter = GameObject.FindObjectOfType<TimeCounter>();        

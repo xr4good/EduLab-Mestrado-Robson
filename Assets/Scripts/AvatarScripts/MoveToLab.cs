@@ -28,8 +28,7 @@ public class MoveToLab : MonoBehaviourPunCallbacks
 
 
     public void LoadScene()
-    {
-        
+    {        
         StartCoroutine(aoPressionar());
     }
 

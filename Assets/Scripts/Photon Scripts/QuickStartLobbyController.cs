@@ -51,7 +51,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         string name = PhotonNetwork.CurrentRoom.Name;
-        int n = int.Parse(name.Substring(name.Length - 1, 1));
+        //int n = int.Parse(name.Substring(name.Length - 1, 1));
         Debug.Log("Joined Room " + name);
 
         

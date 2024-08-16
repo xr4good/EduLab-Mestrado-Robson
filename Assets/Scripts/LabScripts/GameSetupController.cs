@@ -51,11 +51,11 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(1);
 
    
-        if (GameObject.FindGameObjectsWithTag("Player1").Length == 0)
+        if (gameDefinitions.PLAYER % 2 != 0 )
         {
             n = 1;
         }
-        else if (GameObject.FindGameObjectsWithTag("Player2").Length == 0)
+        else
         {
             n = 2;
         }
@@ -67,6 +67,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         //ativa o áudio
         Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
         Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
+        Transform lefthand = cameraOffSet.transform.Find("LeftHand").transform;
+        Transform righthand = cameraOffSet.transform.Find("RightHand").transform;
         mainCamera.GetComponent<AudioListener>().enabled = true;
         
 
@@ -80,8 +82,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
 
         vRMirror.cameraTransform.originTransform = mainCamera.transform;
-        vRMirror.leftHandTransform.originTransform = cameraOffSet.transform.Find("LeftHand").transform;
-        vRMirror.rightHandTransform.originTransform = cameraOffSet.transform.Find("RightHand").transform;
+        vRMirror.leftHandTransform.originTransform = lefthand.transform;
+        vRMirror.rightHandTransform.originTransform = righthand.transform;
 
         
 

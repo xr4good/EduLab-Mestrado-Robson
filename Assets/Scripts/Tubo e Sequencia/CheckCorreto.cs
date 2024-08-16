@@ -49,7 +49,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                         //informa a LRS
                         if (sequencia.concluido)
                         {
-                            statementSender.SendStament("Bola", numero.ToString(), true, true);
+                            statementSender.SendStament("Colocou Bola", numero.ToString(), true, true);
                         }
                         else
                         {
