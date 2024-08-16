@@ -9,9 +9,6 @@ public class MoveToLab : MonoBehaviourPunCallbacks
     [SerializeField] Vector3 posicao2junto;
     [SerializeField] Vector3 posicao2separado;
 
-    
-    [SerializeField]private bool first = true;
-
     LoadAvatar loadAvatar;
     GameDefinitions gameDefinitions;
 
@@ -20,11 +17,7 @@ public class MoveToLab : MonoBehaviourPunCallbacks
         loadAvatar = GameObject.FindObjectOfType<LoadAvatar>();
         gameDefinitions = FindObjectOfType<GameDefinitions>();
     }
-    [PunRPC]
-    void ChangeFirst(bool isFirst)
-    {
-        first = isFirst;
-    }
+
 
 
     public void LoadScene()
@@ -41,12 +34,12 @@ public class MoveToLab : MonoBehaviourPunCallbacks
               
         
         
-        if ( first)
+        if ( gameDefinitions.PLAYER %2 != 0)
         {           
             XR.transform.position = posicao1;
             loadAvatar.ChangeAvatarTeste(n);
           
-            this.photonView.RPC("ChangeFirst", RpcTarget.All, false);
+            //this.photonView.RPC("ChangeFirst", RpcTarget.All, false);
             TimeCounter time = GameObject.FindObjectOfType<TimeCounter>();
             time.StartCounter();
         }

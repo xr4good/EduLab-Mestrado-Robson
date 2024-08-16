@@ -499,6 +499,7 @@ GameObject:
   - component: {fileID: 5873209695075893552}
   - component: {fileID: 8282744077517302514}
   - component: {fileID: 1591327347161394361}
+  - component: {fileID: 1005998223282135013}
   m_Layer: 0
   m_Name: Tutor
   m_TagString: Untagged
@@ -776,6 +777,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8282744077517302514}
+--- !u!114 &1005998223282135013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903020381969345337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2e0fcad8db3c046873e1f097b9d2b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1911401191875982317
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class SetPlayer : MonoBehaviour
     public void ChangePlayer()
     {
         gameDefinitions.PLAYER = (int)sliderPlayer.value;
+        Debug.Log((int)sliderPlayer.value);
 
         float b = sliderPlayer.value;
 
@@ -46,7 +47,7 @@ public class SetPlayer : MonoBehaviour
         {
             gameDefinitions.ROOM = 7;
         }
-        else 
+        else if(b== 7 || b == 8 || b == 15 || b == 16 || b == 37 || b == 38 || b== 45 || b== 46)
         {
             gameDefinitions.ROOM = 8;
         }
