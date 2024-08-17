@@ -18,8 +18,9 @@ public class TimeCounter : MonoBehaviour
 
     IEnumerator updatecontagem()
     {
-        yield return new WaitForSeconds(30);
-        contador += 0.5f;
+        yield return new WaitForSeconds(15);
+        contador += 0.25f;
+        Debug.LogFormat(contador.ToString());
         using (StreamWriter sw = new StreamWriter(Application.dataPath + "/Logs/TimePlayer" + gameDefinitions.PLAYER + ".csv", true))
         {
             sw.WriteLine(contador);
