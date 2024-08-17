@@ -7963,7 +7963,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Uau, voc\xEA Arrasou!!!\nParab\xE9ns!!\n\nJ\xE1 pode retirar\no equipamento!"
+  m_text: "Parab\xE9ns, voc\xEA concluiu!!!\nAguarde o seu colega terminar\n para
+    retirar\no equipamento..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

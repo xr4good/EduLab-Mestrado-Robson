@@ -19,8 +19,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
    public string player;  
     
-    [SerializeField] StartSphere startSphere1;
-    [SerializeField] StartSphere startSphere2;
+   // [SerializeField] StartSphere startSphere1;
+   // [SerializeField] StartSphere startSphere2;
 
     private int n;
 
@@ -41,7 +41,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     {
         
         StartCoroutine( CreatePlayer() ); //Create a networked player Object for each player that loads into the multiplayer    
-        StartCoroutine( CriarEsferas() ); //cria as esferas e a bancada de acordo
+  
         
     }
        
@@ -89,19 +89,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     }
    
-    IEnumerator CriarEsferas()
-    {
-        yield return new WaitForSeconds(2);
-        
-        if (GameObject.FindGameObjectsWithTag("Sphere").Length == 0){
-            startSphere1.CreateSpheres();
-            if (!gameDefinitions.JUNTO)
-            {
-                startSphere2.CreateSpheres();
-            }
-        }       
-        
-    }
+   
       
     private Vector3 pos(int n)
     {

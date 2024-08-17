@@ -32,9 +32,13 @@ public class MapTransformMirror
     public Transform mirrorTransform;
 
     public void MirrorTransform()
-    {        
-        mirrorTransform.position = originTransform.position;
-        mirrorTransform.rotation = originTransform.rotation;
+    {
+        if(originTransform != null)
+        {
+            mirrorTransform.position = originTransform.position;
+            mirrorTransform.rotation = originTransform.rotation;
+        }
+        
     }
 
  

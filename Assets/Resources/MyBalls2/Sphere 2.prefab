@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933abfc0ee3349c40897365dfac98758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posicaoInicial: {x: -18.27, y: -6.865, z: 0.252}
+  posicaoInicial: {x: -18.27, y: -6.85, z: 0.252}
   numeroDaBola: 2
   yMaximo: -7.3
 --- !u!114 &-3662300140131697166

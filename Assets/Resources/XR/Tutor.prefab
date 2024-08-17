@@ -693,7 +693,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903020381969345337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
@@ -738,8 +738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 0
-  ShowParameterInspector: 0
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
     SynchronizeType: 2
@@ -747,9 +747,9 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
-  - SynchronizeType: 1
+  - SynchronizeType: 0
     LayerIndex: 1
-  - SynchronizeType: 1
+  - SynchronizeType: 0
     LayerIndex: 2
 --- !u!114 &8282744077517302514
 MonoBehaviour:
