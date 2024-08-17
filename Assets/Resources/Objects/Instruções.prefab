@@ -531,11 +531,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "O controle do polegar da m\xE3o direita tem duas fun\xE7\xF5es:\nSe apertar
-    para direita ou esquerda, ele vai te fazer virar para esse lado.\nSe apertar
-    para frente, em dire\xE7\xE3o ao solo vai surgir um feixe com uma indica\xE7\xE3o
-    de posi\xE7\xE3o. Ao soltar esse controle voc\xEA vai se teleportar para onde
-    o feixe estava indicando.\nQue tal experimentar esses recursos e dar uma olhada
-    no ambiente a sua volta? Volte aqui quando terminar!\n\n\t\t\t\t\t<\t>"
+    para direita ou esquerda, ele vai te fazer virar para esse lado.\nEnquanto voc\xEA
+    apertar para frente, vai aparecer  um raio de sua m\xE3o. Mire esse raio para
+    o ch\xE3o, sem soltar o controle para frente. Ao soltar esse controle voc\xEA
+    vai se teleportar para onde o feixe estava indicando.\n\nQue tal experimentar
+    esses recursos e dar uma olhada no ambiente a sua volta? Volte aqui quando terminar!\n\t\t\t\t\t<\t>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1187,8 +1187,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Al\xE9m de apertar bot\xF5es, voc\xEA pode pegar objetos e solt\xE1-los
     ou jog\xE1-los.\n\nPara fazer isso voc\xEA vai apertar o bot\xE3o onde est\xE1
-    apoiado o seu dedo do meio. Sua m\xE3o tamb\xE9m vai mudar de forma.\n\nEssa
-    \xE9 uma tarefa muito importante neste experimento, voc\xEA precisar\xE1 aprender
+    apoiado o seu dedo do meio. Sua m\xE3o tamb\xE9m vai mudar de forma.\nEssa \xE9
+    uma tarefa muito importante neste experimento, voc\xEA precisar\xE1 aprender
     a fazer isso antes de seguir em frente, ent\xE3o leve o tempo que precisar.\n\n\t\t\t<\t>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1326,10 +1326,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Ol\xE1, sejam bem vindo(a)s \xE0 Sala de Ambienta\xE7\xE3o!\n\nNesse painel
     vou passar algumas informa\xE7\xF5es sobre como utilizar a realidade virtual.
-    \nPara come\xE7ar, aperte esse bot\xE3o aqui em baixo,  como faz com sua m\xE3o
-    de verdade, aproximando esse controle branco do bot\xE3o. Ao se aproximar ele
-    vai mudar de cor para indicar que voc\xEA est\xE1 perto. E para apertar \xE9
-    s\xF3 empurrar para baixo.\n\t\t  \t\t\n\t\t\t\t\t\t>"
+    Para come\xE7ar, aperte esse bot\xE3o aqui em baixo,  como faz com sua m\xE3o
+    de verdade, \xC0 frente desse controle tem uma bolinha que vai ser seu guia do
+    ponto de toque. Aproxime essa bolinha no bot\xE3o. Ao se aproximar ele vai mudar
+    de cor para indicar que voc\xEA est\xE1 perto. E para apertar \xE9 s\xF3 empurrar
+    para baixo.\t\t  \t\t\n\t\t\t\t\t\t>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2045,7 +2046,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8409762332615185903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2277,11 +2278,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Para voc\xEA se movimentar, voc\xEA pode usar o seu pr\xF3prio corpo,
-    e andar por a\xED, ou pode usar os controles. \n\nNa sua m\xE3o esquerda, tem
-    um comando, na altura do seu polegar, que se voc\xEA mexer far\xE1 pequenos ajustes
-    em sua posi\xE7\xE3o, para frente e para tras, sem precisar sair do lugar na
-    vida real. \n\nPara diminuir o cansa\xE7o utilize-o pouco. Experimente!\n\t\t\t\t<\t>"
+  m_text: "Ao bot\xE3o de baixo da sua m\xE3o direita vai aparecer uma dica de todos
+    os bot\xF5es dos controles, se esquecer como faz algo, s\xF3 clicar. Para sumir
+    a dica \xE9 s\xF3 clicar de novo.\n\n\t\t\t\t<\t>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2872,7 +2871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8738838248188336010, guid: d9a9a7f99f63384409230c1518fde535, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014508930663254047, guid: d9a9a7f99f63384409230c1518fde535, type: 3}
       propertyPath: m_RootOrder
