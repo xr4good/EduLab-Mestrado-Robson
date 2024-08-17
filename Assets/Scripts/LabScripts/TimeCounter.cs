@@ -24,6 +24,7 @@ public class TimeCounter : MonoBehaviour
         {
             sw.WriteLine(contador);
         }
+        StartCoroutine(updatecontagem());
     }
 
     private void Start()
