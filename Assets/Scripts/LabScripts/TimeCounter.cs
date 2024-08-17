@@ -5,32 +5,24 @@ using UnityEngine;
 
 public class TimeCounter : MonoBehaviour
 {
-    private bool start = false;
-    private double contador = 0;
+    private float contador = 0;
     public StatementSender statementSender;
     GameDefinitions gameDefinitions;
 
     public void StartCounter()
     {
-        start = true;
+        StartCoroutine(updatecontagem());
     }
        
+   
 
-    public void StopCounter()
+    IEnumerator updatecontagem()
     {
-        //start=false;
-        //statementSender.SendStament("Duração da tarefa", contador.ToString(), true, true);
-    }
-
-    private void Update()
-    {
-        if (start)
+        yield return new WaitForSeconds(30);
+        contador += 0.5f;
+        using (StreamWriter sw = new StreamWriter(Application.dataPath + "/Logs/TimePlayer" + gameDefinitions.PLAYER + ".csv", true))
         {
-            contador += Time.deltaTime;
-            using (StreamWriter sw = new StreamWriter(Application.dataPath + "/Logs/TimePlayer" + gameDefinitions.PLAYER + ".csv", true))
-            {
-                sw.WriteLine(contador); ;
-            }
+            sw.WriteLine(contador);
         }
     }
 

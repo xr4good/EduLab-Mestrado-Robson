@@ -72,7 +72,7 @@ public class SequenciaAtiva : MonoBehaviourPunCallbacks
             tubo.GetComponent<Renderer>().material = materialConcluido;
             concluido=true;
             proximo = 13;
-            timeCounter.StopCounter();
+            //timeCounter.StopCounter();
             this.photonView.RPC("ChamarPainelFinal", RpcTarget.All);
 
         }

@@ -18,8 +18,7 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
     GameDefinitions gameDefinitions;
 
-     [SerializeField] StartSphere startSphere1;
-     [SerializeField] StartSphere startSphere2;
+
 
 
     // Start is called before the first frame update
@@ -75,24 +74,8 @@ public class SetObjectTutor : MonoBehaviourPunCallbacks
 
         }
 
-
-        StartCoroutine(CreateSpheres());
-
     }
 
-    IEnumerator CreateSpheres()
-    {
-        yield return new WaitForSeconds(1);
-        if (GameObject.FindGameObjectsWithTag("Sphere").Length == 0)
-        {
-            startSphere1.CreateSpheres();
-            if (!gameDefinitions.JUNTO)
-            {
-                startSphere2.CreateSpheres();
-            }
-        }
-
-    }
 
     }
     

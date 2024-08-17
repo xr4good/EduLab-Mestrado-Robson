@@ -1016,6 +1016,7 @@ MonoBehaviour:
   trocaPonto: {fileID: 207615715475028364}
   pasta: MyBalls2
   correto: 0
+  tag: Sphere2
 --- !u!114 &2869815983908948695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15385,6 +15386,7 @@ MonoBehaviour:
     posicaoInicial: {fileID: 2096019070598200248, guid: 4a8853de7e1b3914496741d941c3bbfe, type: 3}
     pasta: MyBalls2
     numero: 4
+  tag: Sphere2
 --- !u!114 &4493179602230031771
 MonoBehaviour:
   m_ObjectHideFlags: 0

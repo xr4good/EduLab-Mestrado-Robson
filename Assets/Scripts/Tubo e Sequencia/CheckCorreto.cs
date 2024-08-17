@@ -14,6 +14,8 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
     public string pasta;
     public bool correto = false;
 
+    public string tag;
+
     private void Start()
     {
         smoke.Stop();
@@ -24,7 +26,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Sphere"))
+        if (other.gameObject.tag.Equals(tag))
         {
             if (other.GetComponent<PhotonView>().IsMine)
             {

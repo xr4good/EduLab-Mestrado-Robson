@@ -11,6 +11,7 @@ public class ballPosition
     public string pasta;
     public string numero;
     
+    
 
     public void InstaciateSphere()
     {
@@ -26,6 +27,7 @@ public class StartSphere : MonoBehaviourPunCallbacks
     [SerializeField] public ballPosition sphere3;
     [SerializeField] public ballPosition sphere4;
 
+    public string tag;
 
     public void CreateSpheres()
     {
@@ -34,6 +36,18 @@ public class StartSphere : MonoBehaviourPunCallbacks
         sphere3.InstaciateSphere();
         sphere4.InstaciateSphere();
     }
- 
+
+    private void Start()
+    {
+        if(GameObject.FindGameObjectsWithTag(tag).Length == 0)
+        {
+            CreateSpheres();
+
+        } 
+        
+    }
+
 }
+
+
   

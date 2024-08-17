@@ -7908,6 +7908,7 @@ MonoBehaviour:
     posicaoInicial: {fileID: 2096019070598200248, guid: 0eb58a708d0540d47a3c63fb46b6ed3b, type: 3}
     pasta: MyBalls1
     numero: 4
+  tag: Sphere1
 --- !u!114 &7831124020585673323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8939,6 +8940,10 @@ PrefabInstance:
     - target: {fileID: 1325471597011916822, guid: 367d403a3ee20de4f942d0bd024f085e, type: 3}
       propertyPath: m_Name
       value: Tubo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325471598502628589, guid: 367d403a3ee20de4f942d0bd024f085e, type: 3}
+      propertyPath: tag
+      value: Sphere1
       objectReference: {fileID: 0}
     - target: {fileID: 1325471598502628589, guid: 367d403a3ee20de4f942d0bd024f085e, type: 3}
       propertyPath: pasta

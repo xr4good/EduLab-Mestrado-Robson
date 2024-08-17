@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 1418204462841497311}
   m_Layer: 0
   m_Name: Sphere 2
-  m_TagString: Sphere
+  m_TagString: Sphere2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

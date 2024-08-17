@@ -31,17 +31,17 @@ public class MoveToLab : MonoBehaviourPunCallbacks
 
         GameObject XR = GameObject.FindGameObjectWithTag("Player");
         int n = XR.GetComponent<ActiveAvatar>().numeroAvatar;
-              
-        
-        
+
+       
+        TimeCounter time = GameObject.FindObjectOfType<TimeCounter>();
+        time.StartCounter();
+
         if ( gameDefinitions.PLAYER %2 != 0)
         {           
             XR.transform.position = posicao1;
             loadAvatar.ChangeAvatarTeste(n);
           
-            //this.photonView.RPC("ChangeFirst", RpcTarget.All, false);
-            TimeCounter time = GameObject.FindObjectOfType<TimeCounter>();
-            time.StartCounter();
+            
         }
         else
         {            
