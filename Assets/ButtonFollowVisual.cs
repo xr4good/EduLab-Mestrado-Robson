@@ -17,7 +17,7 @@ public class ButtonFollowVisual : MonoBehaviour
     private Vector3 offset;
     private Transform pokeAttachTransform;
 
-    private XRBaseInteractable interactable;
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable interactable;
     private bool isFollowing = false;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class ButtonFollowVisual : MonoBehaviour
     {
         initialLocalPos = visualTarget.localPosition;
 
-        interactable = GetComponent<XRBaseInteractable>();
+        interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable>();
         interactable.hoverEntered.AddListener(Follow);
         interactable.hoverExited.AddListener(Reset);
         interactable.selectEntered.AddListener(Freeze);
@@ -33,9 +33,9 @@ public class ButtonFollowVisual : MonoBehaviour
 
     public void Follow(BaseInteractionEventArgs hover)
     {
-        if (hover.interactorObject is XRPokeInteractor)
+        if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
-            XRPokeInteractor interactor = (XRPokeInteractor)hover.interactorObject;
+            UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor interactor = (UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)hover.interactorObject;
 
             isFollowing = true;
 
@@ -54,7 +54,7 @@ public class ButtonFollowVisual : MonoBehaviour
 
     public void Reset(BaseInteractionEventArgs hover)
     {
-        if (hover.interactorObject is XRPokeInteractor)
+        if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
             isFollowing = false;
             freeze = false;
@@ -63,7 +63,7 @@ public class ButtonFollowVisual : MonoBehaviour
 
     public void Freeze(BaseInteractionEventArgs hover)
     {
-        if (hover.interactorObject is XRPokeInteractor)
+        if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
             freeze = true;
         }

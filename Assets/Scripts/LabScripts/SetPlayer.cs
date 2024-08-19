@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class SetPlayer : MonoBehaviour
 {
-    public Slider sliderPlayer; 
+    //public Slider sliderPlayer; 
     GameDefinitions gameDefinitions;
     private void Start()
     {
         gameDefinitions = FindObjectOfType<GameDefinitions>();
     }
 
-    public void ChangePlayer()
+    public void ChangePlayer(int b)
     {
-        gameDefinitions.PLAYER = (int)sliderPlayer.value;
-        Debug.Log((int)sliderPlayer.value);
-
-        float b = sliderPlayer.value;
+        gameDefinitions.PLAYER = b;
+        
 
         if (b == 1 || b == 2 || b == 5 || b == 6 || b == 35 || b == 36 || b == 39 || b == 40)
         {

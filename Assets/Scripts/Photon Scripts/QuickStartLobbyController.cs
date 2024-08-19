@@ -4,6 +4,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
 using UnityEngine.InputSystem.Controls;
+using TMPro;
 
 public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 {
@@ -15,7 +16,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     GameDefinitions gameDefinitions;
 
     public GameObject painel;
-    public Slider slider;
+    public TextMeshProUGUI text;
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     public void QuickStart() //Paired to the Quick Start Button
     {
                 
-        if(slider.value != 0)
+        if(text.text != "0")
         {            
             quickStartButton.SetActive(false);
             quickCancelButton.SetActive(true);

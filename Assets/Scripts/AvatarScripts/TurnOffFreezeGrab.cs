@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class TurnOffFreezeGrab : MonoBehaviour
 {
-    public GrabMoveProvider grabMoveProvider;
+    public UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.GrabMoveProvider grabMoveProvider;
 
     // Start is called before the first frame update
     void Start()

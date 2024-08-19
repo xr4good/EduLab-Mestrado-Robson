@@ -50,7 +50,7 @@ public class LoadAvatar : MonoBehaviourPunCallbacks
         notSeeHead.changeLayer();
 
         //Trocando o que a câmera pode ver       
-        Transform mainCamera = XR.transform.Find("CameraOffset").transform.Find("Main Camera");      
+        Transform mainCamera = XR.transform.Find("Camera Offset").transform.Find("Main Camera");      
         Camera camera = mainCamera.GetComponent<Camera>();
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer(notSeeHead.IgnoreLayer));
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer("DICA"));

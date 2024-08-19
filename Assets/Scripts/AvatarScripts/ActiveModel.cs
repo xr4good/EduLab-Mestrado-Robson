@@ -7,16 +7,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ActiveModel : MonoBehaviour
 {    
-    [SerializeField] List<ActionBasedController> controllers;
+    [SerializeField] List<GameObject> controllers;
 
     //Remove os modelos de controle para instanciar os Avatares
    public void desativarModel()
     {       
         foreach (var controller in controllers)
         {
-            controller.hideControllerModel = true;
-            controller.modelPrefab = null;
-            controller.model = null;    
+            controller.SetActive(false); 
             
         }
     }

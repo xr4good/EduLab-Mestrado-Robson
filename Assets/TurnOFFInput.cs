@@ -13,14 +13,14 @@ public class TurnOFFInput : MonoBehaviourPunCallbacks
     [SerializeField] SnapTurnProviderBase snapTurnProvider;
     [SerializeField] ActionBasedContinuousMoveProvider actionBasedContinuousMoveProvider;
     [SerializeField] DynamicMoveProvider dynamicMoveProvider;
-    [SerializeField] TwoHandedGrabMoveProvider twoHandedGrabMoveProvider;
+    [SerializeField] UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.TwoHandedGrabMoveProvider twoHandedGrabMoveProvider;
     //[SerializeField] InputSystem trackedPoseDrive;
-    [SerializeField] ActionBasedControllerManager actionBasedControllerManagerLeft;
+   // [SerializeField] ActionBasedControllerManager actionBasedControllerManagerLeft;
     [SerializeField] XRController XRControllerLeft;
-    [SerializeField] GrabMoveProvider GrabMoveProviderLeft;
-    [SerializeField] ActionBasedControllerManager actionBasedControllerManagerRight;
+    [SerializeField] UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.GrabMoveProvider GrabMoveProviderLeft;
+   // [SerializeField] ActionBasedControllerManager actionBasedControllerManagerRight;
     [SerializeField] XRController XRControllerRight;
-    [SerializeField] GrabMoveProvider GrabMoveProviderRight;
+    [SerializeField] UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.GrabMoveProvider GrabMoveProviderRight;
 
 
 
@@ -34,10 +34,10 @@ public class TurnOFFInput : MonoBehaviourPunCallbacks
             dynamicMoveProvider.enabled = false;
             twoHandedGrabMoveProvider.enabled = false;
             //trackedPoseDrive.enabled = false;
-            actionBasedControllerManagerLeft.enabled = false;
+          //  actionBasedControllerManagerLeft.enabled = false;
             XRControllerLeft.enabled = false;
             GrabMoveProviderLeft.enabled = false;
-            actionBasedControllerManagerRight.enabled = false;
+           // actionBasedControllerManagerRight.enabled = false;
             XRControllerRight.enabled = false;
             GrabMoveProviderRight.enabled = false;
 

@@ -62,13 +62,13 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
         //Instanciate XROrigin            
         ActiveVR = Instantiate(XRPrefab, pos(n), Quaternion.identity);
-        
+        ActiveVR.tag = "Player";
 
         //ativa o áudio
-        Transform cameraOffSet = ActiveVR.transform.Find("CameraOffset");
+        Transform cameraOffSet = ActiveVR.transform.Find("Camera Offset");
         Transform mainCamera = cameraOffSet.transform.Find("Main Camera");
-        Transform lefthand = cameraOffSet.transform.Find("LeftHand").transform;
-        Transform righthand = cameraOffSet.transform.Find("RightHand").transform;
+        Transform lefthand = cameraOffSet.transform.Find("Left Controller Teleport Stabilized Origin").transform;
+        Transform righthand = cameraOffSet.transform.Find("Right Controller Teleport Stabilized Origin").transform;
         mainCamera.GetComponent<AudioListener>().enabled = true;
         
 

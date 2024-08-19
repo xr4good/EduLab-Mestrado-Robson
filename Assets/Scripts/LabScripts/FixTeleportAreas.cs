@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class FixTeleportAreas : MonoBehaviour
 {
-    [SerializeField] private TeleportationProvider teleportationProvider;
+    [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationProvider teleportationProvider;
     void Start()
     {
-        foreach (TeleportationArea obj in FindObjectsOfType<TeleportationArea>())
+        foreach (UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationArea obj in FindObjectsOfType<UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationArea>())
         {
             obj.teleportationProvider = teleportationProvider;
         }

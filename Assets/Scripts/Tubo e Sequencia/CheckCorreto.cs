@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class CheckCorreto : MonoBehaviourPunCallbacks
 {
@@ -36,14 +36,14 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                 if (numero == sequencia.getProximo())
                 {
 
-                    if (!other.GetComponent<XRGrabInteractable>().isSelected)
+                    if (!other.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>().isSelected)
                     {
                         //cria uma nova esfera no lugar inicial e atualiza a sequencia de bolas
                         PhotonNetwork.Instantiate(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
                         sequencia.updateProximo();
 
                         //tira a possibilidade de segurar a bolinha inserida no tubo
-                        other.GetComponent<XRGrabInteractable>().enabled = false;
+                        other.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>().enabled = false;
 
                         //atualiza o quadro de pontos
                         trocaPonto.TrocarPontos(10, true);
@@ -64,7 +64,7 @@ public class CheckCorreto : MonoBehaviourPunCallbacks
                 }
                 else
                 {
-                    // ativa animação, destroi o objeto e cria uma nova esfera no lugar de origem
+                    // ativa animaï¿½ï¿½o, destroi o objeto e cria uma nova esfera no lugar de origem
                     this.photonView.RPC("PlaySmoke", RpcTarget.All);
                     PhotonNetwork.Destroy(other.gameObject);
                     PhotonNetwork.Instantiate(Path.Combine(pasta, "Sphere " + numero), posicaoInicial, Quaternion.identity);
