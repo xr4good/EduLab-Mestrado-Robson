@@ -6,7 +6,7 @@ public class helperClick : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject helperLeft;
+    //public GameObject helperLeft;
     public GameObject helperRight;
 
     bool isActive = false;
@@ -16,13 +16,13 @@ public class helperClick : MonoBehaviour
     {
         if(isActive)
         {
-            helperLeft.SetActive(false);
+           // helperLeft.SetActive(false);
             helperRight.SetActive(false);
             isActive = false;
         }
         else
         {
-            helperLeft.SetActive(true);
+           // helperLeft.SetActive(true);
             helperRight.SetActive(true);
             isActive = true;
         }
