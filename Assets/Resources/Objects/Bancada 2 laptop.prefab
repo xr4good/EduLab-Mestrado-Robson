@@ -5604,11 +5604,11 @@ MonoBehaviour:
   - {fileID: 5915281668697616264, guid: f2299c233b934a94da6e6b5115481fec, type: 3}
   dicas2:
   - {fileID: 6914434013226489283, guid: 42981a73856e0ed4bb139512080512d2, type: 3}
-  - {fileID: 990468291471020483, guid: 3236041fdf4bda9408feb56bd85e812c, type: 3}
+  - {fileID: 990468291471020483, guid: 89579b8cb75aee1499297533d238f573, type: 3}
   - {fileID: 5915281668697616264, guid: 74611131871f94f4dabf6452d5cf3d62, type: 3}
   - {fileID: 5915281668697616264, guid: e30fae9c7cacabf448fc21885d5ddd55, type: 3}
   - {fileID: 5915281668697616264, guid: f9f2c3aa7b58f0d4fb0982309546d07d, type: 3}
-  - {fileID: 5915281668697616264, guid: 89579b8cb75aee1499297533d238f573, type: 3}
+  - {fileID: 5915281668697616264, guid: 3236041fdf4bda9408feb56bd85e812c, type: 3}
   - {fileID: 5915281668697616264, guid: 457815a75122ca44ea4b83b7d8c40ca0, type: 3}
   - {fileID: 5915281668697616264, guid: ba531581308e8f0439a8a984bfa45d95, type: 3}
   pedido: {fileID: 3250145199537444385, guid: 0c4b4af7c438ae24d9732853c171cda6, type: 3}
@@ -5809,7 +5809,7 @@ MonoBehaviour:
   m_ApplyIfChildIsTarget: 1
   m_ClampToMaxDistance: 0
   m_MaxDistance: 0
-  m_PokeFilter: {fileID: 0}
+  m_PokeFilter: {fileID: 3704668060528741647}
 --- !u!1 &1635858990505419050
 GameObject:
   m_ObjectHideFlags: 0
