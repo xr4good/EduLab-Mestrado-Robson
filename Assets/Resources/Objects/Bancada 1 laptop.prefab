@@ -5969,7 +5969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d7b8310ee34f747a704d5e695b5fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  painelPai: {fileID: 0}
+  painelPai: {fileID: 6371852184073134446}
   dicas1:
   - {fileID: 6914434013226489283, guid: 2ea82c525a311fb4690b516b16b5d9f4, type: 3}
   - {fileID: 990468291471020483, guid: 291739944b7d81e488fbc63e2ac253ec, type: 3}
