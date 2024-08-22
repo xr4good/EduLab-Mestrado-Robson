@@ -7,7 +7,7 @@ public class adicionaNumero : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public SetPlayer setPlayer;
-    int n = 0;
+    public int n;
 
     public void aumentar()
     {
