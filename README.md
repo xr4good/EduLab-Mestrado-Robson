@@ -11,4 +11,4 @@ VIOL, ROBSON SANTIAGO ; FERNANDES, PAULA C. ; LACERDA, I. ; MELO, KODA G. F. ; N
 VIOL, ROBSON SANTIAGO ; FERNANDES, PAULA CINTRA ; LACERDA, IAGO IZIDÓRIO ; MELO, KODA GABRIEL FARIA ; NUNES, ARILTON JUNIOR DE AGUILAR ; PIMENTA, ANDRÉ SCHNEIDER GUIMARÃES MONTRESOR ; CARNEIRO, CLÁUDIA MARTINS ; SILVA, MATEUS COELHO ; DELABRIDA, SAUL . EduVR: Towards an Evaluation Platform for User Interactions in Personalized Virtual Reality Learning Environments. In: IHC '23: XXII Brazilian Symposium on Human Factors in Computing Systems, 2023, Maceió Brazil. Proceedings of the XXII Brazilian Symposium on Human Factors in Computing Systems.
 
 
-Este projeto é co-financiado pela FAPEMIG, Instituto Tecnológico Vale, CAPES, agências as quais estendemos nossos reconhecimentos e agradecimentos.
+Este projeto é co-financiado pela FAPEMIG (APQ-01331-18), Instituto Tecnológico Vale, CAPES, agências as quais estendemos nossos reconhecimentos e agradecimentos.
